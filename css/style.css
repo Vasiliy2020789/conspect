@@ -1,0 +1,66 @@
+span{
+	font-size: 20px;
+	color: red;	
+}
+
+h1{
+	color: #4A8AF4;
+	
+}
+
+h2{
+	color: #139F5A;
+}
+
+h3{
+	color: #dd5044;
+}
+p.css_code{
+	color: #b8a891;
+}
+
+.bigred span{
+	font-size: 20px;
+	color: #00ff00;	
+}
+
+.block>p{
+	color: blue;
+}
+.method {}
+.structure {}
+.po {}
+.frilanserlife {}
+
+.teg {}
+.teg_exemple {}
+.hot_key {
+	color: #0000ff
+}
+.ico {
+	height: 20px;
+}
+/* Стили отзывчиво-адаптивной верстки===========================*/
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+@media (max-width: 1200px) {
+	.container {
+		max-width: 970px;
+	}
+}
+
+@media (max-width: 992px) {
+	.container {
+		max-width: 750px;
+	}
+}
+
+@media (max-width: 767px) {
+	.container {
+		max-width: none;
+	}
+}
+/*end Стили отзывчиво-адаптивной верстки===========================*/

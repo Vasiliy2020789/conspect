@@ -1,0 +1,225 @@
+<!--Сообщаем браузеру как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных-->
+<head>
+	<!--кодировка страницы-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../../css/Lesson_6.css">
+	<!--Заголовок страницы в браузере-->
+	<title>CSS Стили шрифта и текста. CSS font-size. CSS color, CSS text-shadow. </title>
+</head>
+<!--отображаемое тело страницы-->
+<body>
+	<a href="../../index.html"> Домой </a><br><!--Поле навигации по сайту. ../ - означает переход на директорию выше-->
+	<p class="time">Затраты времени: 6 h 00 m</p>
+	<a href="../Frelancerpojizni/Lesson_6_dz.html">Домашнее задание!</a>
+<h3>Материалы по теме</h3>
+<a href="../../files/Lesson_6_info.txt" target="blank" title="Скачать текстовик со значенями параметров" download="../../files/Lesson_6_info.txt">Файл со значениями параметров</a><br>
+<a href="../../files/Lesson_6_arhiv.zip" target="blank" title="Скачать текстовик со значенями параметров" download="../../files/Lesson_6_arhiv.zip">Архив с файлами проекта</a><br>
+<a href="../../files/Lesson_6_maket.psd" target="blank" title="Скачать текстовик со значенями параметров" download="../../files/Lesson_6_maket.psd">Макет PSD для верстки</a><br>
+
+<p>Внимание! Начиная в этом и последующих уроках мы будем использовать обнуляющий код css!</p>
+<h1>CSS Стили шрифта и текста. CSS font-size. CSS color, CSS text-shadow.</h1>
+<p>Стилизация текста это одно из основных предназначений css.</p>
+<h2>В этом уроке мы изучим и научимся применять стили шрифта и текста. А в конце урока выполним практическое задание из макета PSD.</h2>
+<h3>Терминология.</h3>
+	<div class="frame_cod_css">
+		<p class="css_code">
+			span{ <span>/* селектор типа*/</span><br>
+			font-size: 20px; <span>/* (свойство: значение) вся запись называется параметр*/</span><br>
+				  color: red; <span>/* (свойство: значение) вся запись называется параметр*/</span><br>
+			} <br>
+		</p>
+		<p class="css_code">
+			.hot_key { <span>/* селектор класса*/</span> <br>
+			  color: #0000ff <br>
+			} <br>
+		</p>
+		<p class="css_code">		
+			p.css_code{ <span>/* селектор типа и класса */</span><br>
+			  color: #FF8A00; <br>
+			} <br>
+		</p>
+				<p class="css_code">		
+			.block, .block2{ <span>/* Задает параметры двух селекторов */</span><br>
+			  color: #FF8A00; <br>
+			  font-size: 20px;
+			} <br>
+		</p>
+	</div>
+<h3>Параметры форматитования текста</h3>
+<div class="example">
+	<p>ffa + <span class="hotKey">Tab</span> = font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;</p>
+	<p class="css_code">.arial {	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; <span>/*Меняем семейство шрифтов на Arial*/</span>}</p>
+	<p class="arial">
+		Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Suscipit, quibusdam repudiandae, voluptate maxime, minus dolores magni quia alias voluptatem, laudantium cupiditate eum minima illum. Autem sequi neque obcaecati quam earum.
+	</p>
+</div>
+<div class="example_2">
+	<div class="emmet">
+		<p>fz30 + <span class="hotKey">Tab</span> = font-size: 30px;</p>
+	</div>
+	<p class="css_code">.fontsize30 {font-size: 30px; <span>/* Устанавливает размер текста 30 пикселей*/</span>}</p>
+	<p class="fontsize30">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Error sunt magni amet ipsa impedit repudiandae numquam ipsum facilis corporis sint inventore molestiae totam porro modi, explicabo soluta, ea quas repellat.
+	</p>
+</div>
+<div class="example_2">
+	<p>fsi + <span class="hotKey">Tab</span> = font-style: italic;</p>
+	<p class="css_code">.italic{font-style: italic; <span>>/*курсив, может быть normal - обычный, oblique - наклонное начертание*/</s>}</p>
+	<p class="italic">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Error sunt magni amet ipsa impedit repudiandae numquam ipsum facilis corporis sint inventore molestiae totam porro modi, explicabo soluta, ea quas repellat.
+	</p>
+</div>
+<div class="example">
+	<p>fw700 + <span class="hotKey">Tab</span> = font-weight: 700;</p>
+	<p class="css_code">.font700 {font-weight: 700; <span>/*Устанавливает вес текста 700 (жирный)*/</span>}</p>
+	<p class="font700">
+		Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Aut, dignissimos, error! Pariatur harum, deserunt autem culpa dolorum mollitia. Similique, blanditiis consectetur voluptate possimus excepturi tenetur porro maxime, corporis ipsa. Veniam.
+	</p>
+</div>
+<div class="example_2">
+
+	<p> с + <span class="hotKey">Tab</span> + red = color: red;</p>
+
+		<p class="css_code">.colorred { <br />
+		color: red; <span>/* Задает цвет текста красный */</span> <br />
+		color: #f00f00; <span>/*Задает цвет текста красный 16-ричным кодом*/</span> <br />
+		color: rgb(255, 0, 0); <span>/*Задает цвет текста красный rgb значением*/</span> <br />
+		color: rgba(255, 0, 0, 1); <span>/*Задает цвет текста красный rgba значением (4й параметр это непрозрачность)*/</span> <br />
+		} <br />
+		</p>
+
+	<p class="colorred">
+		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, eos recusandae, voluptatibus amet, dolor temporibus consequuntur commodi veniam architecto aperiam consequatur. At veritatis expedita earum ea libero, temporibus quidem tenetur.
+	</p>
+</div>
+<div class="example">
+		<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p> tar + <span class="hotKey">Tab</span> = text-align: right;</p>
+			<p> tal + <span class="hotKey">Tab</span> = text-align-last: left;</p>
+			<p> tac + <span class="hotKey">Tab</span> = text-align: center;</p>
+			<p> taj + <span class="hotKey">Tab</span> = text-align: justify;</p>
+		</div>
+	<p class="css_code">
+		.textright {<br />
+		text-align-last: left; <span>/* Выравнивает текст по левому краю (по умолчанию*/</span><br />
+		text-align: center; <span>/* Выравнивает текст по центру*/</span><br />
+		text-align: justify; <span>/* Выравнивает текст по ширине*/</span><br />
+		text-align: right; <span>/* Выравнивает текст по правому краю*/</span><br />
+		}<br />
+	</p>
+	<p class="textright">
+		Lorem ipsum dolor sit maxime? 
+	</p>
+</div>
+<div class="example">
+	<p> taj + <span class="hotKey">Tab</span> = text-align: justify;</p>
+	<p class="css_code">.textJustifi{text-align: justify; <span>/* Выравнивает текст по ширине родителя*/}</span></p>
+	<p class="textJustifi">
+		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quae, commodi a. Dignissimos eaque voluptas hic atque labore fugit nisi ut dolore vero, laboriosam corporis accusantium earum, aliquid nam impedit quas accusamus voluptate consectetur, similique sint voluptates quod quibusdam repudiandae. Culpa magnam, alias explicabo, provident deserunt maiores expedita at odio. Pariatur nobis mollitia omnis nam assumenda alias architecto reiciendis delectus maxime? Earum praesentium rerum temporibus. At itaque qui molestias? Perspiciatis, error, esse.
+	</p>
+</div>
+<div class="example_2">
+	<p>tdu + <span class="hotKey">Tab</span> = text-decoration: underline;</p>
+	<p>tdo + <span class="hotKey">Tab</span> = text-decoration: overline;</p>
+	<p>tdl + <span class="hotKey">Tab</span> = text-decoration: line-through;</p>
+	<p class="css_code">
+		.decoration>.underline {text-decoration: underline; <span>/* Подчеркивает текст*/</span>}<br />
+		.decoration>.overline{text-decoration: overline; <span>/* Линия над текстом*/</span>}<br />
+		.decoration>.lineThrough{text-decoration: line-through; <span>/*Зачеркивает текст*/</span>}
+</p>
+	<p class="decoration">
+		<span class="underline">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span> <br />
+		<br>
+		<span class="overline">Natus voluptates libero quisquam perspiciatis praesentium quo pariatur dolore ad.</span> <br />
+		<span class="lineThrough">Ad a exercitationem perferendis temporibus officia id, eos aspernatur ipsum eius magnam.</span>
+	</p>
+</div>
+<div class="example">
+	<p> ts + <span class="hotKey">Tab</span> + 1px 2px 3px #000000; = text-shadow: 1px 2px 3px #000000;</p>
+	<p class="css_code">.shadow {text-shadow: 1px 2px 3px #000000; <span>/*Задает тень со значениями: 1пиксель сдвиг влево, на 2 пикселя вниз и размытие 3 пикселя, цвет черный */</span>}</p>
+	<p class="shadow">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quo fuga voluptate illum molestiae sequi dolore odio, at quia perferendis accusamus, libero, aliquid? Quas nulla aliquid qui error exercitationem possimus.
+	</p>
+</div>
+<div class="example_2">
+	<p> ttn + <span class="hotKey">Tab</span> = text-transform: none;</p>
+	<p> ttl + <span class="hotKey">Tab</span> = text-transform: lowercase;</p>
+	<p> ttu + <span class="hotKey">Tab</span> = text-transform: uppercase;</p>
+	<p> ttc + <span class="hotKey">Tab</span> = text-transform: capitalize;</p>
+	<p class="css_code">
+		.uppercase {<br />
+		text-transform: none; <span>/*Обычное состояние*/</span><br />
+		text-transform: lowercase; <span>/* Делает строчные*/</span><br />
+		text-transform: uppercase; <span>/* Делает буквы заглавные*/</span><br />
+		text-transform: capitalize; <span>/* Делает первые буквы слов заглавными*/</span><br />
+		}<br />
+	</p>
+	<p class="uppercase">
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate quod hic sunt reprehenderit sit adipisci molestias saepe? Earum, est amet incidunt nemo omnis ex esse similique, odit debitis, ut, pariatur.
+	</p>
+</div>
+<div class="example">
+	<p> ti50 + <span class="hotKey">Tab</span> = text-indent: 50px;</p>
+	<p class="css_code"><span>/*Задает размер отступа красной строки 50пикселей*/</span><br>
+	.ident {text-indent: 50px;}
+	</p>
+	<p class="ident">
+		Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque dolorum, deleniti modi nihil quidem delectus, corporis harum blanditiis ipsum illum velit, beatae eligendi quo dolore. Corrupti libero, deleniti a mollitia!
+	</p>
+</div>
+<div class="example_2">
+	<p> + <span class="hotKey">Tab</span> = </p>
+	<p class="css_code"></p>
+	<p class="lspace">
+		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, repellendus aut sit explicabo rerum illum quas odit sequi dolor pariatur, dolore reprehenderit optio iste distinctio, quasi, numquam quaerat deleniti quidem.
+	</p>
+</div>
+<div class="example">
+	<p>ws10 + <span class="hotKey">Tab</span> = word-spacing: 10px;</p>
+	<p class="css_code">
+		<span>/*определяет интервал между словами 10 пикселей*/</span><br>
+		.wspace {word-spacing: 10px;}<br>
+	</p>
+	<p class="wspace">
+		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatum impedit velit, enim perspiciatis inventore labore nobis voluptates, ipsum beatae amet debitis recusandae laborum? A, tempore quam enim repudiandae omnis.
+	</p>
+</div>
+<div class="example_2">
+	<p>white-space: управляет свойствами пробелов между словами.</p>
+	<p> whsn + <span class="hotKey">Tab</span> = white-space: normal;</p>
+	<p> whsnp + <span class="hotKey">Tab</span> = white-space: nowrap;</p>
+	<p> whsp + <span class="hotKey">Tab</span> = white-space: pre;</p>
+	<p> whspl + <span class="hotKey">Tab</span> = white-space: pre-line;</p>
+	<p> whspw + <span class="hotKey">Tab</span> = white-space: pre-wrap;</p>
+	<p class="css_code">
+	.whitespace { <br>
+		white-space: normal; <span>/*Текст переносится пробелы НЕ учитываются*/</span> <br>
+		white-space: pre; <span>/*Текст НЕ переносится пробелы учитываются*/</span> <br>
+		white-space: pre-line; <span>/*Текст переносится пробелы НЕ учитываются*/</span> <br>
+		white-space: pre-wrap; <span>/*Текст переносится пробелы учитываются*/</span> <br>
+				white-space: nowrap; <span>/*Запрещает перенос строки, появляется ползунок прокрутки*/</span> <br>
+	} <br>
+	</p>
+	<p class="whitespace">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, eaque, dicta! Hic nostrum molestiae a consequatur veniam, rem maxime nesciunt. Ut atque quos illo temporibus adipisci deleniti maiores aut. Atque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque consectetur totam iusto alias reiciendis accusamus voluptatem libero, dolor consequuntur at deleniti possimus voluptatibus voluptatum, ex earum dolorem tempore quibusdam ut.
+	</p>
+</div>
+<div class="example">
+	<p>lh5px + <span class="hotKey">Tab</span> = line-height: 5px;</p>
+	
+	<p class="css_code">
+		<span>/*Устанавливает высоту строки 30 пикселей*/</span><br>
+		.linehight {line-height: 30px;}</p>
+	<p class="linehight">
+		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatum impedit velit, enim perspiciatis inventore labore nobis voluptates, ipsum beatae amet debitis recusandae laborum? A, tempore quam enim repudiandae omnis.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatum impedit velit, enim perspiciatis inventore labore nobis voluptates, ipsum beatae amet debitis recusandae laborum? A, tempore quam enim repudiandae omnis.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatum impedit velit, enim perspiciatis inventore labore nobis voluptates, ipsum beatae amet debitis recusandae laborum? A, tempore quam enim repudiandae omnis.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatum impedit velit, enim perspiciatis inventore labore nobis voluptates, ipsum beatae amet debitis recusandae laborum? A, tempore quam enim repudiandae omnis.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptatum impedit velit, enim perspiciatis inventore labore nobis voluptates, ipsum beatae amet debitis recusandae laborum? A, tempore quam enim repudiandae omnis.
+	</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../css/js.css">
+	<title>Урок 5</title>
+</head>
+
+<body>
+	<h1> Операторы в <span class="yellow">JavaScript</span></h1>
+	<h4>Операторы в JavaScript делятся на 3 группы
+		<h4> Операнд или аргумент - это то к чему применяются операторы</p>
+			<ul>
+				<li>Базовые операторы (+ - * / **) Унарные пример 1 - применяются к одному и бинарные пример 2- применяются
+					к двум
+					операндам</li>
+				<ul>
+					<li>+ пример 3</li>
+					<li>- пример 4</li>
+					<li>* пример 5</li>
+					<li>/ пример 6</li>
+					<li>% пример 7</li>
+					<li>** пример 8</li>
+				</ul>
+				<li>Операторы сравнения</li>
+				<ul>
+					<li>Больше: a > b</li>
+					<li>Меньше: a < b</li>
+					<li>Больше или равно: a >= b</li>
+					<li>Меньше или равно: a <= b</li>
+					<li>Равно: a == b</li>
+					<li>Не равно: a != b</li>
+					<li>Строго равно: a === b</li>
+					<li>Строго не равно: a !== b</li>
+				</ul>
+				<li>Логические операторы</li>
+				<ul>
+					<li>ИЛИ || </li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</ul>
+
+
+			<h3>Приоритет выполнения операторов</h3>
+			<h4>Если в выражении несколько операторов то порядок выполнения операций будет в соответствии с приоритетом
+				операторов
+				</p>
+				</p>
+				<h2>Специальные возможности операторов.</h2>
+				<h3>Логика работы базовых оператров с разными типами данных. Автоматические преобразования ТД.</h3>
+				<h4>Все базовые операторы работают только с числами и преобразуют иные типы данных в числа перед
+					выполнением.
+					Исключением является оператор <span class="yellow">+</span> но только в бинарном применении!</p>
+					<h4> <span class="yellow">+</span> оператор сложения</h4>
+					<h4> Сложение операндов String слепляет их, см. пример 9</p>
+						<div class="jsCode">
+							let result_1 = 'Фрилансер' + ' ' + 'по' + ' ' + 'жизни';
+						</div>
+						<h4> Сложение строки с числом возвращает строку, порядок расположения операндов значения не имеет см.
+							пример 10</p>
+							<div class="jsCode">
+								let result_2 = 'Фрилансер ' + 58; <br>
+								let result_2_1 = 58 + ' Фрилансер';
+							</div>
+							<h4> пример 11</p>
+								<div class="jsCode">
+
+								</div>
+								<h4>При сложении числа и строки содержащей число, число преобразуется в строку</p>
+									<div class="jsCode">
+										let result_3 = 2 + '2';
+									</div>
+									<h4> Операции с числами до сложения со строкой выполняются как математические, а после строки
+										как в примере 10. см.
+										пример 12</p>
+										<div class="jsCode">
+											let result_4 = 1 + 2 + ' Фрилансер ' + 3 + 4 ;
+										</div>
+										<div class="example">
+											<h4>Пример 12.1 Унарный оператор + со строкой вернет число</p>
+												<div class="jsCode">
+													let result_4_1 = +'20';
+												</div>
+										</div>
+										<div class="example">
+											<h4>Пример 12.2 простое сложение слепит строки, используя унарный + сработает
+												преобразование в число</p>
+												<div class="jsCode">
+													let string_1 = '25';<br>
+													let string_2 = '10';<br>
+													console.log(string_1 + string_2);<br>
+													console.log(+string_1 + +string_2);<br>
+													console.log(Number(string_1) + Number(string_2)); //более длинная запись<br>
+												</div>
+										</div>
+										<h4> <span class="yellow">-</span> оператор вычитания</h4>
+										<h4> - преобразует данные в число перед выполнением</p>
+											<div class="example">
+												<h4>Пример 13 вычитание из строки содержащей только цифры</p>
+													<div class="jsCode">
+														x = '25' - 5;
+													</div>
+											</div>
+											<h4> <span class="yellow">*</span></h4>
+											<div class="example">
+												<h4>Пример 14 Умножение на строку преобразует строку в число </p>
+													<div class="jsCode">
+														x = '25' * 5;
+													</div>
+											</div>
+											<div class="example">
+												<h4>Пример 15 Умножение на строку содержащую текст вернет NaN </p>
+													<div class="jsCode">
+														x = 'Фрилансер' * 5;
+													</div>
+											</div>
+											<div class="example">
+												<h4>Пример 16. Приоритет выполнения операторов как в математике</p>
+													<div class="jsCode">
+														x = 4 - 3 * 2 <br>
+														console.log(`4 - 3 * 2 = ${x}`);<br>
+														console.log('//скобки');<br>
+														x = (4 - 3) * 2<br>
+														console.log(`(4 - 3) * 2 = ${x}`);<br>
+														console.log('//одинаковый приоритет');<br>
+														x = 4 - 3 + 2<br>
+														console.log(`4 - 3 + 2 = ${x}`);<br>
+													</div>
+											</div>
+											<div class="example">
+												<h4>Пример 17 = оператор присвоения рассмотрим пример: 8 - (a = b +3)') </p>
+													<div class="jsCode">
+														let a = 1 + 2;<br>
+														let b = 2;<br>
+														x = 8 - (a = b + 3);// не рекомендуется, низкая читаемость кода!<br>
+													</div>
+											</div>
+											<div class="example">
+												<h4>Пример 18 присвоение по цепочке. В с</p>
+													<div class="jsCode">
+														let result_5 = result_6 = result_7 = 1 + 2;<br>
+														console.log(result_5);<br>
+														console.log(result_6);<br>
+														console.log(result_7);<br>
+													</div>
+											</div>
+											<div class="example">
+												<h4>Пример 19. Сокращенная запись вычисления с присвоением. Вместо d = d + 3; можно
+													писать d += 3; </p>
+													<div class="jsCode">
+														let d = 5;<br>
+														d = d + 3;<br>
+														d = d * 2;<br>
+														//укороченая запись:<br>
+														let e = 5;<br>
+														e += 3;<br>
+														e *= 2;<br>
+													</div>
+											</div>
+											<div class="example">
+												<h4>Пример 20. Инкримент увеличевает значение переменной на 1 а дикримент уменьшает
+													на 1</p>
+													<div class="jsCode">
+														d++;<br>
+														console.log(d);<br>
+														e--;<br>
+														console.log(e);<br>
+													</div>
+											</div>
+											<div class="example">
+												<h4>Пример 20.1 Постфиксная (x++) и префиксная форма (++x). Разница в порядке
+													исполнения операторов. </p>
+													<div class="jsCode">
+														let userCounter = 0;<br>
+														let newUsers = userCounter++ //Постфиксная. Сначала исполняется = а потом
+														++<br>
+														console.log(newUsers);<br>
+														let userCounter1 = 0;<br>
+														let newUsers1 = ++userCounter1 //Префиксная. Сначала исполняется ++ а потом
+														=<br>
+														console.log(newUsers1);<br>
+													</div>
+											</div>
+											<div class="example">
+												<h4>Пример 20.2. ++ и -- можно применять в любых выражениях, при этом приоритет у
+													них будет высокий</p>
+													<div class="jsCode">
+														userCounter = 0;<br>
+														newUsers = 2 * ++userCounter; //порядок выполнения: 1++ 2* 3=<br>
+													</div>
+											</div>
+											<div class="example">
+												<h4>Пример 21 Оператор , предоставляет возможность вычислять несколько выражений,
+													разделяя их запятой. Каждое
+													выражение выполняется, но возвращается результат только последнего выражения.</p>
+													<div class="jsCode">
+														userCounter = (8 + 2, 19 + 1);<br>
+														console.log(userCounter);<br>
+													</div>
+											</div>
+											<h2>Операторы сравнения</h2>
+											<h4>ОС возвращают логический тип данных (boolean) со значением true или false </p>
+												<div class="example">
+													<h4>Пример 22. Сравнение чисел. если выражение верно возвращает true если нет то
+														false </p>
+														<div class="jsCode">
+															console.log(2 > 1);<br>
+															console.log(2 < 1);<br>
+																console.log(58 == 36);<br>
+																console.log(2 > 1);<br>
+																console.log(8 != 9);<br>
+																result = 11 > 10; //присвоение результата переменной<br>
+																console.log(`11 > 10 is ${result}`);<br>
+														</div>
+												</div>
+												<div class="example">
+													<h4>Пример 23. Сравнение строк. Длясравнения строк JS использует алфавитный
+														порядок, а точнее порядок расположение
+														символов в unicode при этом сравнивает строки посимвольно</p>
+														<div class="jsCode">
+															console.log("А" < "Б" );<br>
+																console.log("А" > "а");<br>
+																console.log("//Код ASCII для А и а соответственно:");<br>
+																console.log("Aа".charCodeAt(0));//преобразует 0й символ в код ASCII <br>
+																console.log("Аа".charCodeAt(1));//преобразует 1й символ в код ASCII<br>
+																console.log("Скрипт" > "Скрипка");//т > к, остальные одинаковые<br>
+																console.log("Слайдер" > "Слайд");//Длинна первого больше чем второго<br>
+																console.log("Фрилансер" > "фрилансер");//ф > Ф<br>
+														</div>
+												</div>
+												<div class="example">
+													<h4>Пример 23.1. Сравнение разных типов данных</p>
+														<div class="jsCode">
+															console.log("58" > 10);//строка 58 преобразуется в число<br>
+															console.log("007" == 7);//строка 007 преобразуется в число<br>
+															console.log(true == 1);//true преобразуется в 1, false в 0<br>
+															console.log(false == 0);//true преобразуется в 1, false в 0<br>
+															console.log('//Пример 23.2. Интересные ситуации.');<br>
+
+														</div>
+												</div>
+												<div class="example">
+													<h4>Пример 23.2. Интересные ситуации.</p>
+														<div class="jsCode">
+															let itemA = 0;<br>
+															let itemB = "0";<br>
+															console.log(`Boolean(0) преобразуется в ${Boolean(itemA)}`);<br>
+															console.log(`Boolean('0') преобразуется в ${Boolean(itemB)} т.к. строка не
+															пуста`);<br>
+															console.log(itemA == itemB);//Однако при сравнении будет работать
+															преобразование строки в число<br>
+														</div>
+												</div>
+												<div class="example">
+													<h4>Пример 23.3 Оператор строгого равенства === проверяет равенство без
+														преобразования типов.</p>
+														<div class="jsCode">
+															console.log(0 === false);</br>
+															console.log('007' === 7);</br>
+															console.log('58' !== 58);</br>
+															x = 33;</br>
+															console.log(x === 33);</br>
+
+														</div>
+												</div>
+												<div class="example">
+													<h4>Пример 24 Сравнение null undefined и 0. Лучше не использовать операторы <>
+															<=>= с переменными которые могут принимать значение null или undefined.
+																</p>
+																<div class="jsCode">
+																	console.log(null === undefined);//Строгое равенство</br>
+																	console.log(null == undefined);//Не строгое равенство</br>
+																	console.log('Сравнение null и 0');</br>
+																	console.log(null > 0);</br>
+																	console.log(null == 0);</br>
+																	console.log(null >= 0);</br>
+																	console.log('Сравнение undefined и 0');</br>
+																	console.log(undefined > 0);</br>
+																	console.log(undefined == 0);</br>
+																	console.log(undefined >= 0);</br>
+																</div>
+												</div>
+												<h2>Логические операторы.</h2>
+												<h3>Оператор ИЛИ. || </h3>
+												<div class="example">
+													<h4>Пример 25.1. ИЛИ ||</br>
+														1. Вычисляет операнды слева направо.</br>
+														2. Каждый оеранд конвертируется в Bollean, если результат true,
+														останавливается и возвращает исходное значение
+														этого операнда. </br>
+														3. Если все false то возвращает значение последнего из них.</br>
+														</p>
+														<div class="jsCode">
+															console.log('//Пример 25.1 ИЛИ ||. Булевые значения');</br>
+															console.log(true || true);</br>
+															console.log(false || true);</br>
+															console.log(true || false);</br>
+															console.log(false || false);</br>
+														</div>
+												</div>
+
+												<div class="example">
+													<h4>Пример 25.2 ИЛИ ||. Разные типы данных.'</p>
+														<div class="jsCode">
+															console.log(1 || 0);</br>
+															console.log(true || 'Фрилансер');</br>
+															console.log(null || 58);</br>
+															console.log(null || 'Фрилансер' || 0);</br>
+															console.log(undefined || '' || null || 0);</br>
+														</div>
+												</div>
+												Далее смотреть 19:30 //20211107-15:00
+												<div class="example">
+													<h4>Пример 25.3 Присвоение значения в переменную</p>
+														<div class="jsCode">
+															userName = '';</br>
+															userNickName = 'Фрилансер';</br>
+															user = userName || userNickName || "Без имени";//userNickName вернет true
+															поэтому в user запишится
+															'Фрилансер'</br>
+															console.log(user);</br>
+														</div>
+												</div>
+												<div class="example">
+													<h4>Пример 25.4 Сокращенные вычисления. Условия.</p>
+														<div class="jsCode">
+															let admins = 0;</br>
+															let users = 5;</br>
+															admins > users || users++; //при admins = 0 admins > users будет false и
+															инкримент сработает
+															//при admins = 10 admins > users будет true и инкримент не сработает</br>
+															console.log(users);</br>
+														</div>
+												</div>
+												<h3>Оператор И. && </h3>
+												<h4>1. Вычисляет операторы слева направо.</p>
+													<h4>2. Каждый операнд преобразуется в логическое значение. Если результат false,
+														останавливается и возвращает исходное
+														значение этого операнда.</p>
+														<h4>3. Если все операнды были истинными возвращает значение последнего.</p>
+															<div class="example">
+																<h4>Пример 26.1 И &&. Булевые значения</p>
+																	<div class="jsCode">
+																		console.log(true && true);</br>
+																		console.log(false && true);</br>
+																		console.log(true && false);</br>
+																		console.log(false && false);</br>
+																	</div>
+															</div>
+															<div class="example">
+																<h4>Пример 26.3 И. Разные типы данных.'</p>
+																	<div class="jsCode">
+																		console.log(' Фрилансер' && 0 && 2 && 3);//0 - false результат
+																		0</br>
+																		console.log(1 && 2 && null && 3);//null - false результат
+																		null</br>
+																		console.log(15 && 42);//0 - false результат 42</br>
+																	</div>
+															</div>
+															<div class="example">
+																<h4>Пример 26.4 Приоритет && больше чем ||</p>
+																	<div class="jsCode">
+																		console.log(1 && 0 || 1 && 2);
+																	</div>
+															</div>
+															<h3>Оператор НЕ !</h3>
+															<h4>1. Сначала приводит аргумент к логическому типу true или false.</p>
+																<h4>2. Затем возвращает противоположное значение.</p>
+																	<div class="example">
+																		<h4>Пример 27.1 НЕ ! . Булевые значения</p>
+																			<div class="jsCode">
+																				console.log(!true);
+																			</div>
+																	</div>
+																	<div class="example">
+																		<h4>Пример 27.1 НЕ ! . Разные типы данных</p>
+																			<div class="jsCode">
+																				console.log(!null);//true </br>
+																				console.log(!1);//false</br>
+																				console.log(!'');//true </br>
+																				console.log(!' Фрилансер');//false</br>
+																			</div>
+																	</div>
+																	<div class="example">
+																		<h4>Пример 27.3 Приоритет у НЕ наивысший.</p>
+																			<div class="jsCode">
+																				console.log(!true && 58 || 18 && !1);//false
+																			</div>
+																	</div>
+																	<div class="example">
+																		<h4>Пример</p>
+																			<div class="jsCode">
+																				console.log(!!'99');</br>
+																				console.log(' то же что и:');</br>
+																				console.log(Boolean('99'));</br>
+																			</div>
+																	</div>
+																	<div class="example">
+																		<h4>Пример 28 ?? Оператор сравнения с null / undefined.</p>
+																			<h4>Оператор ?? возвращает 1й аргумент, если он не null
+																				/undefined, иначе второй.</p>
+																				<div class="jsCode">
+																					let myName;
+																					console.log(myName ?? "Без имени");</br>
+																					myName = 'Вася';</br>
+																					console.log(myName ?? "Без имени");</br>
+																					console.log(undefined ?? null);</br>
+																					console.log(null ?? undefined);</br>
+																					console.log(null ?? undefined ?? 2);</br>
+																				</div>
+																	</div>
+																	<p class="red">ВАЖНО!!! 3 раза перечитать этот урок 11.11, 15.11,
+																		20.11. Учить теорию!</p>
+																	<p class="red">ВАЖНО!!! Домашка таймкод 26:50</p>
+																	s
+																	<script src="../../js/JawaScriptFPJ/Lesson_5.js"></script>
+</body>
+
+</html>

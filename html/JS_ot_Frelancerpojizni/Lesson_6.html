@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../css/js.css">
+	<title>Урок 6</title>
+</head>
+
+<body>
+	<h1> Условное ветвление if, "?" в <span class="yellow">JavaScript</span></h1>
+	<p>Урок № 6</p>
+	<p>Условный оператор if применяется когда выполнение кода требуется при выполнении определенных условий.</p>
+	<div class="example">
+		<h4>Пример 1 Синтаксис</h4>
+		<div class="jsCode">
+			let message = "Привет Фрилансер";<br>
+			if (2 > 1) { //Код выполняется если значение в скобках вернет true <br>
+			console.log(message); //2 > 1 <br>
+			}<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 2 В качестве операндов могут быть переменные</h4>
+		<div class="jsCode">
+			let x = 1;<br>
+			let y = 10;<br>
+			if (x === y) { //Код выполняется если значение в скобках вернет true<br>
+			console.log('Условие выполнено');<br>
+			}<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 3 Более сложное условие</h4>
+		<div class="jsCode">
+			if (2 + 1 === 3 && '1' == 1 || 10 > 5 && 10 === 1) { //Код выполняется если значение в скобках вернет true<br>
+			console.log('Условие выполнено');<br>
+			}<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 4 Преобразование типов ""</h4>
+		В скобках происходит преобразование в Boolean см. урок № 5.
+		<div class="jsCode">
+			if ('') { //Пустая строка - вернет false<br>
+			console.log('Условие выполнено');<br>
+			}<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 4.1 Преобразование типов " "</h4>
+		<div class="jsCode">
+			if (' ') { //пробел вернет true<br>
+			console.log('Условие выполнено');<br>
+			}<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 4.2 Преобразование типов 0</h4>
+		<div class="jsCode">
+			if (0) { //0 вернет false<br>
+			console.log('Условие выполнено');<br>
+			}<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 4.3 Преобразование типов </h4>
+		<div class="jsCode">
+			if (1) { //1 вернет true<br>
+			console.log('Условие выполнено');<br>
+			}<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 5 Более короткая запись</h4>
+		<p>Если нужно провенить только одно условие то классическую запись можно сократить до 1 строчки.</p>
+		<div class="jsCode">
+			if (2 > 1) console.log(message);<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 6 Блоки else и else if</h4>
+		<p>Если нужно проверить 2 условия то используют блок else, если более 2х то else if.</p>
+		<div class="jsCode">
+			if (2 > 1) console.log(message);<br>
+			console.log('//');<br>
+			let number = 0;<br>
+			if (number > 1) {<br>
+			console.log(message);<br>
+			} else {<br>
+			console.log('Условие не выполнено');<br>
+			}<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 6.1 Проверка нескольких условий</h4>
+		<div class="jsCode">
+			number = 29.9999999;<br>
+			if (number > 50) {<br>
+			console.log('Число больше 50');<br>
+			} else if (number > 30) {<br>
+			console.log('Число больше 30');<br>
+			} else if (number > 10) {<br>
+			console.log('Число больше 10');<br>
+			} else if (number > 1) {<br>
+			console.log('Число больше 1');<br>
+			} else {<br>
+			console.log('Условие не выполнено');<br>
+			}<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 7.1 "?"//Классическая запись</h4>
+		<p>Классическая запись очень хорошо читается в коде и используется всегда когда условий больше 2х.</p>
+		<div class="jsCode">
+			if (5 > 1) {<br>
+			messageEnd = 'Вася!';<br>
+			} else {<br>
+			messageEnd = 'Оля!';<br>
+			}<br>
+			message += messageEnd;<br>
+			console.log(message);<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 7.2 "?"//Сокращенная запись</h4>
+		<p>Сокращенную запись рекомендуется использовать когда нужно вывесть то или иное зачение. В остальных случаях
+			использовать классическую запись.</p>
+		<div class="jsCode">
+			messageEnd = (0 > 1) ? 'Вася!' : 'Оля!';<br>
+			message += messageEnd;<br>
+			console.log(message);<br>
+		</div>
+	</div>
+	<div class="example">
+		<h4>Пример 7.3 "?" Более сложное ветвление</h4>
+		<div class="jsCode">
+			messageEnd = 5 > 50 ? 'Вася!' :<br>
+			5 > 30 ? 'Оля!' :<br>
+			5 > 10 ? 'Миша!' :<br>
+			5 > 1 ? 'Андрей!' : 'Инокентий!'<br>
+			message += messageEnd;<br>
+			console.log(message);<br>
+		</div>
+	</div>
+
+	<p class="red">ВАЖНО!!! 3 раза перечитать этот урок 11.11, 15.11, 20.11. Учить теорию!</h4>
+	<p class="red">ВАЖНО!!! Домашка таймкод 8:35 </h4>
+
+		<script src="../../js/JawaScriptFPJ/Lesson_6.js"></script>
+</body>
+
+</html>

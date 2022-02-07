@@ -1,0 +1,161 @@
+a {
+	text-decoration: none;
+	color: white;
+}
+ul, ol, li {
+	list-style: none;
+}
+
+body {
+	background-color: #9ED0D1;
+position: relative;
+}
+.wrapper {
+	position: absolute;
+	height: 100%;
+	width: 310px;
+	top: 0;
+	left: 50%;
+	margin: 0 0 0 -155px;
+}
+.header {
+position: fixed;
+background-color: #277;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 40px;
+	z-index: 50;
+}
+.header__menu {
+	background-color: #277;
+	height: 40px;
+	width: 100%;
+	background-color: #fff;
+}
+.header__list {
+	display: flex;
+	position: relative;
+	background-color: #277;
+}
+.header__list>li {
+	display: flex;
+	flex-direction: column;
+	height: 40px;
+}
+.header__list>li>a {
+	height: 100%;
+	padding: 10px;
+}
+.header__list>li>a:hover {
+	background-color: #FFFF00;
+	color: black;
+}
+
+.content {
+	padding: 40px 0 0 0;
+}
+.playing_field__table {
+	width: 300px;
+	height: 300px;
+	background: url(../img/XO/pole1.png) 100%/100% no-repeat;
+}
+
+td {
+width: 100px;
+height: 100px;
+}
+.o {
+width: 100px;
+height: 100px;
+background: url(../img/XO/O2.png) 100%/100% no-repeat;
+}
+.x {
+	width: 100px;
+	height: 100px;
+	background: url(../img/XO/X1.png) 100%/100% no-repeat;
+}
+.current__move {
+	height: 100px;
+	width: 300px;
+	position: relative;
+	border: 3px solid #FEFE33;
+}
+.current__move-title {
+	position: absolute;
+	top: 35px;
+	left: 0;
+	width: 200px;
+	height: 30px;
+	font-size: 20px;
+	font-weight: 600;
+	/*border: 3px solid #658;*/
+
+}
+.current__move-value {
+position: absolute;
+top: 0;
+left: 200px;	
+	width: 100px;
+	height: 100px;
+}
+
+.button {
+	width: 300px;
+	background-color: #FEFE33;
+	/*border: 3px solid #FEFE33;*/
+	padding: 10px;
+	margin: 3px;
+	border: none;
+	font-weight: bold;
+	font-size: 14px;
+	display: inline-block;
+	cursor: pointer
+	}
+
+	.button:hover {
+		background-color: #FFFF00;
+	}
+
+	.button:active {
+		background-color: #FFAE42;
+	}	
+
+.no_active {
+	background-color: #555;
+}
+.score {
+	position: relative;
+	height: 25px;
+	width: 300px;
+	border: 3px solid #FEFE33;
+
+}
+.score__img__o {
+height: 25px;
+width: 25px;
+position: absolute;
+top: 0;
+left: 0;
+}
+.score__value__o {
+	height: 25px;
+	width: 30px;
+	position: absolute;
+	top: 0;
+	left: 50px;
+}
+.score__img__x {
+	height: 25px;
+	width: 25px;
+	position: absolute;
+	top: 0;
+	left: 150px;
+}
+.score__value__x {
+	height: 25px;
+	width: 40px;
+	position: absolute;
+	top: 0;
+	left: 200px;
+}

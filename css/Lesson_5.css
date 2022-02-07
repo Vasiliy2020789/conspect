@@ -1,0 +1,49 @@
+span{
+	font-size: 20px;
+	color: red;	
+}
+
+h1{
+	color: #4A8AF4;
+	
+}
+
+h2{
+	color: #139F5A;
+}
+
+h3{
+	color: #dd5044;
+}
+
+h4.primer{
+	color: #A65DFF;
+}
+p.css_code{
+	color: #FF9A00;
+}
+
+.bigred span{
+	font-size: 20px;
+	color: #00ff00;	
+}
+
+.block>p{
+	color: blue;
+}
+.method {}
+.structure {}
+.po {}
+.frilanserlife {}
+
+.teg {}
+.teg_exemple {}
+.hot_key {
+	color: #0000ff
+}
+
+.block_nas{
+	color: blue; /*наследуется*/
+	font-size: 18; /*наследуется*/
+	border: 3px solid #000; /*НЕнаследуется*/
+}

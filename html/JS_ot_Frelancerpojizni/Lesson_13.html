@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../css/js.css">
+	<title>Урок 13</title>
+</head>
+
+<body>
+	<h1> <span class="yellow">JavaScript</span> Браузерное окружение. Работа с <span class="yellow">DOM.</span> </h1>
+	<div class="lesson">
+		<div class="lesson__text">
+
+
+		</div>
+		<ul name="list" class="lesson__list">
+			<li class="lesson__item-list lesson__item-list_red">Пункт №1</li>
+			<li id="listItem" class="lesson__item-list">Пункт №2</li>
+			<li pip="23" data-item="40" class="lesson__item-list">Пункт №3
+				<ul class="lesson__sub-list">
+					<li class="lesson__item-sub-list">ПодПункт №1</li>
+					<li data-item="85" class="lesson__item-sub-list">ПодПункт №2</li>
+					<li class="lesson__item-sub-list">ПодПункт №3</li>
+				</ul>
+			</li>
+			<li class="lesson__item-list lesson__item-list_blue">Пункт №4</li>
+		</ul>
+		<h2>Изменение документа</h2>
+		<div class="lesson__text lesson__text_P22">
+			<h3>Пример 22</h3>
+			Привет! Это <span class="yellow">"Фрилансер по жизни"</span>
+		</div>
+		<div class="lesson__text lesson__text_P23">
+			<h3>Пример 23</h3>
+			Привет! Это <span class="yellow">"Фрилансер по жизни"</span>
+		</div>
+		<h3>Пример 24</h3>
+		<div class="lesson__text lesson__text_P24">
+
+			Привет! Это <span class="yellow">"Фрилансер по жизни"</span>
+		</div>
+
+
+		<div class="lesson__text lesson__text_P25">
+			<h3>Пример 25</h3>
+			Привет! Это <span class="yellow">"Фрилансер по жизни"</span>
+		</div>
+		<!--Это коментарий-->
+		<div class="lesson__text lesson__text_P27">
+			<h3>Пример 27 Вставляем новый элемент</h3>
+			<div class="lesson__text-content">
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P28">
+			<h3>Пример 28 .insertAdjacentHTML() Вставка элементов с исполнением тегов html</h3>
+			Значения отвечающие за место вставки:
+			<ul>
+				<li>beforebegin</li>
+				<li>beforeend</li>
+				<li>afterbegin</li>
+				<li>afterend</li>
+			</ul>
+			<div class="lesson__text-content">
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P29">
+			<h3>Пример 29 .insertAdjacentText вставка текста на страницу (используется редко) </h3>
+			<p> Вставляет текст на страницу в "безопасном режиме", тоесть теги не исполняются</p>
+			<div class="lesson__text-content">
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P30">
+			<h3>Пример 30 .insertAdjacentElement Вставка элемента на страницу (используется редко) </h3>
+			<p> Атрибуты те же что и для .insertAdjacentHTML </p>
+			<div class="lesson__text-content">
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P31">
+			<h3>Пример 31 перенос элемента</h3>
+			<div class="lesson__text-content">
+				<p>Параграф. lesson__text-content</p>
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P32">
+			<h3>Пример 32 Клонирование элемента</h3>
+			<div class="lesson__text-content">
+				<p>Параграф. lesson__text-content</p>
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P33">
+			<h3>Пример 33</h3>
+			<div class="lesson__text-content">
+				<p>Этот параграф будем удалять!</p>
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P34">
+			<h3>Пример 34 .className Изменение класса </h3>
+			<div class="lesson__text-content lesson__text-content_red">
+				<p>Этот параграф будем удалять!</p>
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P35">
+			<h3>Пример 35 .classList - специальный объект с методами для добавления/удаления одного класса </h3>
+			<div class="lesson__text-content lesson__text-content_noDecore">
+				<h5>Методы объекта .classList : </h5>
+				<ul>
+					<li>.add - добавляет класс </li>
+					<li>.remove - удаляет класс</li>
+					<li>.toggle - добавит класс если его нет а если есть то удалит</li>
+					<li>.contains - проверяет наличие класса, возвращает true/false</li>
+				</ul>
+			</div>
+			<p class="lesson__text-paragraph"> 1) Этому параграфу добавим класс .aqua</p>
+			<p class="lesson__text-paragraph red"> 2) У этого параграфа удалим класс .red</p>
+			<p class="lesson__text-paragraph active"> 3) Этому параграфу добавим или удалим класс .active</p>
+			<p class="lesson__text-paragraph bold"> 4) Этому параграфу добавим или удалим класс .active</p>
+			<p class="lesson__text-paragraph red"> 5) У этого параграфа проверим наличие класса .red</p>
+		</div>
+		<div class="lesson__text lesson__text_P36">
+			<h3>Пример 36</h3>
+			<div class="lesson__text-content lesson__text-content_noDecore">
+				<p>.classList является перебираемым, поэтому можно перечислить все классы при помощи for...of. </p>
+				<p>Перечислим в консоль классы парграфа 4 из примера 35.</p>
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P37">
+			<h3>Пример 37</h3>
+			<div class="lesson__text-content">
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+				<p>Зададим ему цвет cyan и стиль текста жирный с помощью JavaScript</p>
+			</div>
+			<div class="lesson__text-content lesson__text-content_noDecore">
+				<p>Для свойств из нескольких слов используется camelCase </p>
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P39">
+			<h3>Пример 39</h3>
+			<div class="lesson__text-content">
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+				<p>Сначала установим padding а потом сбросим его с помощью JavaScript</p>
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P40">
+			<h3>Пример 40 .style.cssText </h3>
+			<div class="lesson__text-content lesson__text-content_noDecore">
+				<p>Позволяет полностью перезаписать все css свойства. </p>
+			</div>
+			<div class="lesson__text-content">
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+				<p>Сначала установим padding а потом сбросим его с помощью JavaScript</p>
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P41">
+			<h3>Пример 41 getComputedStyle(element) Вычисление стилей CSS </h3>
+			<div class="lesson__text-content lesson__text-content_noDecore">
+				<p>Позволяет вычислить css свойства даже если их нет в атрибуте style. С помощью getComputedStyle можно
+					только получить свойство, изменить его нельзя! </p>
+			</div>
+			<div class="lesson__text-content">
+				Это div с классом .lesson__text-content (фиолетовый background-color)
+				<p>Давайте выведем в консоль размер шрифта и цвет фона с помощью JavaScript</p>
+				<ul>
+					<li>Пункт №1</li>
+				</ul>
+			</div>
+		</div>
+		<div class="lesson__text lesson__text_P43">
+			<h3>Пример 43 Лаив хаки по работе со стилями</h3>
+			<div class="lesson__text-content lesson__text-content_noDecore">
+				<ol>
+					<li>parseInt() - использовать для получения числового значения</li>
+					<li>Не забываем про еденицы измерения</li>
+					<li>Управлять классами приоритетнее чем управлять стилями</li>
+					<li>Управлять стилями нужно когда задачу не решить с помощью классов, например изменение координат
+						объекта на лету</li>
+				</ol>
+
+
+				<p> </p>
+			</div>
+			<div class="lesson__text-content">
+				<ol>
+					<li>43.1 Выведем в консоль значения Padding-Left и Padding-Left через parseInt()</li>
+				</ol>
+			</div>
+		</div>
+		<h2>Свойства и атрибуты DOM элементов</h2>
+		<p>У разных DOM элементов могут быть разные свойства. например у тега a - свойства связанные со ссылкой; у
+			тега input - cd-df связанные с полем ввода и т.д.</p>
+		<p>В HTML у тегов могут быть атрибуты. Когда браузер парсит HTML, чтобы создать DOM-объекты для тегов, он
+			распознает стандартные атрибуты и создает DOM свойства для них </p>
+		<p>Каждый DOM узел принадлежит соответствующему встроенному классу </p>
+		<p>Подробнее про классы DOM-узлов: <a
+				href="https://learn.javascript.ru/basic-dom-node-properties#klassy-dom-uzlov">https://learn.javascript.ru/basic-dom-node-properties#klassy-dom-uzlov</a>
+		</p>
+		<div class="lesson__text lesson__text_P44">
+			<h3>Пример 44 </h3>
+			<div class="lesson__text-content lesson__text-content_noDecore">
+
+			</div>
+			<p><a class="lesson__link" href="#">Я ссылка </a></p>
+			<p><input class="lesson__input" type="text" value="Я инпут "></p>
+
+
+			<div class="lesson__text-content">
+
+			</div>
+
+			<div class="lesson__text lesson__text_P45">
+				<h3>Пример 45 Произвольные атрибуты </h3>
+				<div class="lesson__text-content" data-size="1058">
+					Это div с классом .lesson__text-content (фиолетовый background-color)
+				</div>
+				<div class="lesson__text-content lesson__text-content_noDecore">
+
+				</div>
+			</div>
+
+
+
+
+
+
+			<p class="red">ВАЖНО!!! 3 раза вернуться к этому уроку:<br>
+				заполнить и оформить страницу;<br>
+				сделать домашку таймкод ;<br>
+				найти и решить 10 задач по этой теме из других источников;<br>
+				придумать и реализовать проект с использованием полученых знаний.<br><br>
+				Учить теорию!
+				Переписать таблицу шпаргалку!
+				тк 23:30 пересмотреть
+			</p>
+
+			<script src="../../js/JawaScriptFPJ/Lesson_13.js"></script>
+</body>
+<!-- nextElementSubling (null)-->
+
+</html>

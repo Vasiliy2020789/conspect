@@ -1,0 +1,422 @@
+<!--Сообщаем браузеру как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных-->
+<head>
+	<!--кодировка страницы-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../../css/Lesson_8.css">
+	<!--Заголовок страницы в браузере-->
+	<title>Свойства и стили оформления блоков</title>
+</head>
+<!--отображаемое тело страницы-->
+<body>
+	<a href="../../index.html"> Домой </a><!--Поле навигации по сайту. ../ - означает переход на директорию выше-->
+	<p class="time-lesson">Время видеоурока 18:49</p>
+	<p class="time">Затраты времени: 4 h 30 m</p>
+<h1>Свойства и стили оформления блоков</h1>
+<p></p>
+<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<div class="example">
+	<h2>Граница со всех сторон</h2>
+	<p class="css_code_H">border:</p>
+	<p>Пояснение параметра</p>
+		Задает границу блочного тега. Работает только для блочных тегов и картинок. К строчным тегам не применяется.
+	<p>
+		<br>Возможные значения:
+		<br> Толщину границы можно задавать в пикселях, а цвет в любой системе #, rgb или rgba.
+		<br>Типы границы могут быть такие: solid | dotted | dashed
+	</p>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<h3> Значение:  1px solid #000;</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p> bd + <span class="hotKey">Tab</span> = border: 1px solid #000;</p>
+	</div>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block {<br>
+			margin: 0 0 30px 0; <span>/*внешний отступ 30 пикселей вниз*/</span><br>
+			border: 1px solid #000; <span>/*Задает границу в 1 пиксель сплошной линией черным цветом*/</span><br>
+		}<br>
+	</p>
+	<!--пример-->
+	<div class="example-block">
+		Блочный тег. Граница 1 пиксель сплошной линией черным цветом <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<p>
+		<img class="example-image" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+
+	<h3> Значение:  10px dotted #f00;</h3>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block-1 {<br>
+			border: 10px dotted #f00; <span>/*Задает границу в 10 пикселей точками красным цветом*/</span><br>
+			border: 1px solid #000; <span>/*Задает границу в 1 пиксель сплошной линией черным цветом*/</span><br>
+		}<br>
+	</p>
+	<!--пример-->
+	<div class="example-block-1">
+		Блочный тег. Название рассматриваемого свойства и его значение <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<p>
+		<img class="example-image-1" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+	<h3> Значение: 10px dashed #0f0;</h3>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block-1 {<br>
+			border: 10px dotted #f00; <span>/*Задает границу в 10 пикселей точками красным цветом*/</span><br>
+			border: 1px solid #000; <span>/*Задает границу в 1 пиксель сплошной линией черным цветом*/</span><br>
+		}<br>
+	</p>
+	<!--пример-->
+	<div class="example-block-2">
+		Блочный тег. Название рассматриваемого свойства и его значение <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<p>
+		<img class="example-image-2" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+		<!--/ ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+</div>
+<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<div class="example">
+	<h2>Граница с выбором стороны</h2>
+	<p class="css_code_H">border-top: border-right: border-bottom: border-left: </p>
+	<p>Пояснение параметра</p>
+		Задает границу блочного тега. Работает только для блочных тегов и картинок. К строчным тегам не применяется.
+	<p>
+		<br>Возможные значения:
+		<br> Толщину границы можно задавать в пикселях, а цвет в любой системе #, rgb или rgba.
+		<br>Типы границы могут быть такие: solid | dotted | dashed
+	</p>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<h3> Значение:  1px solid #000;</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p> bd + <span class="hotKey">Tab</span> = border: 1px solid #000;</p>
+	</div>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block {<br>
+			margin: 0 0 30px 0; <span>/*внешний отступ 30 пикселей вниз*/<br>
+			border: 1px solid #000; <span>/*Задает границу в 1 пиксель сплошной линией черным цветом*/</span><br>
+		}<br>
+	</p>
+	<!--пример-->
+	<div class="example-block-3">
+		Блочный тег. Граница 1 пиксель сплошной линией черным цветом <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<p>
+		<img class="example-image-3" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+
+	<h3> Значение: none</h3>
+	<p>	Если мы хотим убрать границу с одной из сторон то используем такоую запись</p>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block-4 {<br>
+			margin: 0 0 30px 0; <span>/*внешний отступ 30 пикселей вниз*/</span><br>
+			border: 10px solid #00f; <span>/*Задает границу в 10 пикселей сплошной линией синим цветом*/</span><br>
+			border-bottom: none; <span>/*Убирает нижнюю границу*/</span><br>
+		}<br>
+	</p>
+	<!--пример-->
+	<div class="example-block-4">
+		Блочный тег. С синей границей со всех сторон кроме нижней. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<p>
+		<img class="example-image-4" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+		<!--/ ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+</div>
+<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<div class="example">
+	<h2>Скругление краёв границы</h2>
+	<p class="css_code_H">border-radius: </p>
+	<p>Устанавливает радиус скругления углов блока</p>
+	<p>Значения параметру задаются также как и у параметра margin: можно присваивать в пикселях и %.</p>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<h3> Значение:  10px</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p> bo + ищем в выпадающем списке и выбираем border-radius:</p>
+	</div>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block-5 {<br>
+			border: 10px solid #00f; <span>/*Задает границу в 10 пикселей сплошной линией синим цветом*/</span><br>
+			border-radius: 50px; <span>/*Задает радиус скругления по всем углам 50 пикселей*/</span><br>
+		}<br>
+	</p>
+	<!--пример-->
+	<div class="example-block-5">
+		Блочный тег. Граница 1 пиксель сплошной линией черным цветом <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<p>
+		<img class="example-image-5" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+	<h3> Значение:  10px 40px 70px 100px;</h3>
+	Для наглядности дадим разным углам разные значения скругления.
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block-6 {<br>
+		border: 10px solid #00f; <span> /*Задает границу в 10 пикселей сплошной линией синим цветом*/</span><br>
+			border-radius: 10px 40px 70px 100px; <span>/*Верх.лев. - 10px, верх.прав. - 40px, ниж.прав. - 70px, ниж.лев. - 100px, */</span><br>
+		}<br>
+	</p>
+		<!--пример-->
+		<div class="example-block-6">
+		Блочный тег. Граница 1 пиксель сплошной линией черным цветом <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<p>
+		<img class="example-image-6" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+		<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block-7 {<br>
+			text-align: justify; <span>/* Выравнивает содержимое по ширине*/</span><br>
+			overflow: hidden; <span>/*Скрывает содержимое за границей блока*/</span><br>
+			margin: 0 0 30px 0; <span>/*внешний отступ 30 пикселей вниз*/</span><br>
+			border-radius: 80px; <span>/* Задает скругление всем углам*/</span><br>
+		}<br><br>
+		.example-image-7 {<br>
+			margin: 0 0 30px 0; <span>/*внешний отступ 30 пикселей вниз*/</span><br>
+			border-radius: 80px; <span>/* Задает скругление всем углам*/</span><br>
+		}<br>
+	</p>
+		<!--пример-->
+		<div class="example-block-7">
+		Блочный тег. Граница 1 пиксель сплошной линией черным цветом <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<p>
+		<img class="example-image-7" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+	<h3> Сделаем круглый элемент</h3>
+		<p class="css_code">
+	.example-block-8 {<br>
+		text-align: right; <span>/* Выравнивает содержимое по по правому краю*/</span><br>
+		overflow: hidden; <span>/*Скрывает содержимое за границей блока*/</span><br>
+		margin: 0 0 30px 0; <span>/*внешний отступ 30 пикселей вниз*/</span><br>
+		width: 100px;<br>
+		height: 100px;<br>
+		background-color: #0ff;<br>
+		border: 5px solid #00f;<br>
+		border-radius: 50%; <span>/* Задает скругление всем углам*/</span><br>
+	}<br><br>
+	.example-image-8 {<br>
+		text-align: justify; <span>/* Выравнивает содержимое по ширине*/</span><br>
+		overflow: hidden; <span>/*Скрывает содержимое за границей блока*/</span><br>
+		margin: 0 0 30px 0; <span>/*внешний отступ 30 пикселей вниз*/</span><br>
+		width: 100px;<br>
+		height: 100px;<br>
+		background-color: #0ff;<br>
+		border: 5px solid #00f;<br>
+		border-radius: 50%; <span>/* Задает скругление всем углам*/</span><br>
+	}<br>
+	</p>
+			<!--пример-->
+		<div class="example-block-8">
+		Блочный тег. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<p>
+		<img class="example-image-8" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+
+		<!--/ ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+</div>
+<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<div class="example">
+	<h2>Внешняя граница блока</h2>
+	<p class="css_code_H">outline: </p>
+	<p>Задает внешнюю границу блока</p>
+	<p>
+	Значения параметру задаются также как и у border:. Однако в отличии от border: у свойства outline: нельзя скруглить края и нельзя отменить свойство у одной из сторон. </p>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<h3> Значение:  5px solid #0f0;</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p> ol + ищем в выпадающем списке и выбираем outline: и присваиваем значения</p>
+	</div>
+			<!--пример-->
+		<div class="example-block-9">
+		Блочный тег. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<span class="example_string">
+		Строчный тег с внешней границей
+		Название рассматриваемого свойства и его значение <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</span><br><br>
+	<p>
+		<img class="example-image-9" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+	Как видим снаружи тега появилась внешняя граница.
+		<!--/ ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+</div>
+<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<div class="example">
+	<h2>Тень блока</h2>
+	<p class="css_code_H">box-shadow: 5px 10px 20px 5px #000; </p>
+	<p>Устанавливает тень блоку</p>
+	<p>Значения параметру дается в пикселях и кодом цвета более подробно рассмотрим на примерах ниже. <br>
+	</p>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<h3> Значение:  5px 10px 20px 5px #000;</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p> box + ищем в выпадающем списке и выбираем box-shadow: и вводим параметры</p>
+	</div>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block-10 {<br>
+			margin: 30px;<br>
+			padding: 10px;<br>
+			box-shadow: 5px 10px 15px 20px #000; <span>/* 5влево 10вниз 15радиус 20расстояние код цвета*/</span><br>
+			border-radius: 30px; <span>/* Задает скругление всем углам*/</span><br>
+		}<br><br>
+			.example-image-10 {<br>
+			margin: 30px;<br>
+			padding: 10px;<br>
+			box-shadow: 5px 10px 20px 5px #000;<br>
+			border-radius: 30px; <span>/* Задает скругление всем углам*/</span><br>
+		}<br><br>
+	</p>
+	<p> Также можно задавать несколько теней через , а также делать тень вовнутрь блока.</p>
+	<!--пример-->
+	<div class="example-block-10">
+		Блочный тег с тенью наружу. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? 
+	</div>
+	<p>
+		<img class="example-image-10" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+
+		<p class="css_code">
+		.example-block-11 {<br>
+			margin: 30px;<br>
+			padding: 10px;<br>
+			box-shadow: 5px 5px 5px 5px #000, inset 5px 5px 5px 5px #222; <span>/* 5влево 5 вниз 5 радиус 5 расстояние, код цвета и такая-же во внутрь но более светлая*/</span><br>
+			border-radius: 30px; <span>/* Задает скругление всем углам*/</span><br>
+		}<br><br>
+			.example-image-11 {<br>
+			margin: 30px;<br>
+			padding: 10px;<br>
+			box-shadow: 5px 5px 5px 5px #000, inset 5px 5px 5px 5px #222;<span>/* 5влево 5 вниз 5 радиус 5 расстояние, код цвета и такая-же во внутрь но более светлая*/</span><br>
+			border-radius: 30px; <span>/* Задает скругление всем углам*/</span><br>
+		}<br><br>
+	</p>
+		<!--пример-->
+	<div class="example-block-10">
+		Блочный тег с тенью вовнутрь и наружу.. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? 
+	</div>
+	<p>
+		<img class="example-image-10" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+			<!--/ ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+</div>
+<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<div class="example">
+	<h2>Прозрачность элемента</h2>
+	<p class="css_code_H">opacity: </p>
+	<p>Задает прозрачность элементу</p>
+	<p>Значение задается в долях 0 - полная прозрачность, 1 - нет прозрачности. В отличии от display: none; блок не убирается из верстки а просто становится прозрачным. С прозрачными элементами также можно взаимодействовать, ссылки и кнопки, также продолжают работать. <br></p>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<h3></h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p> box + ищем в выпадающем списке и выбираем box-shadow: и вводим параметры</p>
+	</div>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block-11 {<br>
+			border: 1px solid #000;<br>
+			opacity: 0; <span>/*Элемент не видим, но находится на странице*/</span><br>
+		}<br>
+		.example-block-12 {<br>
+			border: 1px solid #000;<br>
+			opacity: 0.5;<span>/*Задает прозрачность 50%*/</span><br>
+		}<br>
+	</p>
+
+	<!--пример-->
+	<div class="example-block-11">
+		Блочный тег с полной прозрачностью<br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? 
+	</div>
+		<!--пример-->
+	<div class="example-block-12">
+		Блочный тег с 50% прозрачностью <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? 
+	</div>
+
+			<!--/ ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+</div>
+<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<div class="example">
+	<h2>Отображение / скрытие элемента. </h2>
+	<p class="css_code_H">visibility: </p>
+	<p>Значение по умолчанию visible. При скрытии элемента данным свойством место занимаемое им резервируется, взаимодействовать с элементом нельзя. </p>
+	<p>:<br></p>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<h3> Значение: hidden</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p> vh + <span class="hotKey">Tab</span> = visibility: hidden;</p>
+	</div>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block-13 {<br>
+			border: 1px solid #000;<br>
+			visibility: visible;  <span>/*Элемент отображается*/</span><br>
+		}<br>
+		.example-block-14 {<br>
+			border: 1px solid #000;<br>
+			visibility: hidden; <span>/*Элемент скрыт*/</span><br>
+		}<br>
+	</p>
+	<!--пример-->
+	<div class="example-block-14">
+		Блочный тег скрытый<br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? 
+	</div>
+		<!--пример-->
+	<div class="example-block-13">
+		Блочный тег скрытый<br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? 
+	</div>
+	<!--/ ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+</div>
+<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+
+
+	<!--
+	<span class="example_string">
+		Строчный тег 
+		Название рассматриваемого свойства и его значение <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</span>
+	<p>
+		<img class="example-image" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt="">
+	</p>
+-->
+</body>
+</html>

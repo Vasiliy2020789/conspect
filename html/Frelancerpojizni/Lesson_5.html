@@ -1,0 +1,121 @@
+<!--Сообщаем браузеру как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных-->
+<head>
+	<!--кодировка страницы-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Заголовок страницы в браузере-->
+	<title>Урок 5. CSS</title>
+	<link rel="stylesheet" type="text/css" href="../../css/Lesson_5.css">
+</head>
+<!--отображаемое тело страницы-->
+<body>
+	<a href="../../index.html"> Домой </a><!--Поле навигации по сайту. ../ - означает переход на директорию выше-->
+	<h1>Каскадные таблицы стилей - CSS. Обнуление CSS стилей.</h1>
+	<p>CSS описывает как наша страница будет выглядеть. Задает цвета, шрифт, размеры и положение элементов, их поведение при адаптации. Используется для создания анимации на странице. </p>
+	<h3> В этом уроке мы создадим css файл, подключим его к странице, рассмотрим синтаксис, классы, к концу урока получим т.н. обнуляющий css файл, с которым будем работать дальше. </h3>
+	<h4>Подключение css файла.</h4>
+	<p>Создаем новый файл, пользуясь сочетанием клавиш <span class="hot_key"> Ctrl + N </span> и тутже сохраняем его нажимая <span class="hot_key"> Ctrl + S </span>в папку ..//css/style.css</p>
+	<p> Далее нужно подключить файл стилей к странице. Для этого пишем в теге <span class="teg">&lt;head&gt;</span>  <span class="teg">&lt;link rel="stylesheet" type="text/css" href="../../css/style.css"&gt;</span></p>
+	<p>Синтаксис css очень простой, нужно обратиться к тегу или группе тегов в нашем html документе и описать в них нужные стили.</p>
+	<p>Если обратиться к названию тега, например div то ко всем тегам div применятся описаные стили.</p>
+	<p>Если обратиться к классу то ко всем элементам указанного класса применятся описаные стили.</p>
+	<p>Таке можно обращаться к тегу и классу одновременно</p>
+	<p>В CSS файле это выглядет вот так:</p>
+	<p>Давайте выделим текст в тегах span красным и сделаем его крупнее:</p>
+	<p class="css_code">
+		span{<br>
+			font-size: 20px; <br>
+			color: red;	<br>
+		}<br>
+	</p>
+		<div>
+			<p>Lorem ipsum dolor sit <span>amet consectetur adipisicing</span>, elit. Minus architecto, amet deserunt odio omnis, repellat explicabo illum animi quod quidem sed iure dolore culpa sit placeat minima. Veniam necessitatibus, incidunt.</p>
+			<p>Lorem <span>ipsum, dolor sit amet</span> consectetur adipisicing elit. Ipsam.</p>
+		</div>
+	<p>
+		Задает размер текста 20 пикселей и цвет красный содержимому любых тегов <span class="teg">&lt;span&gt;</span>:
+		<p class="css_code">
+			span{ <br>
+			font-size: 20px; <br>
+				  color: red;	<br>
+			} <br>
+		</p>
+		Задает синий цвет классу .hot_key
+		<p class="css_code">
+			.hot_key { <br>
+			  color: #0000ff <br>
+			} <br>
+		</p>
+		Задает оранжевый цвет всем параграфам с классом css_code. У такого вида селектора приоритет выше чем если бы мы обратились только к классу или только к тегу. Не зависит от места расположения в каскаде.
+		<p class="css_code">		
+			p.css_code{ <br>
+			  color: #FF8A00; <br>
+			} <br>
+		</p>
+	</p>
+	<h3>Вложенность.</h3>
+	<div class="primer">
+		Задача: Есть 2 параграфа, первый с классом  .bigred второй без класса. Сделать зеленым текстом span-ы внутри класса .bigred<br>
+
+		Решение:<br>
+			<p class="css_code">		
+				.bigred span{<br>
+					font-size: 20px;<br>
+					color: #00ff00;	<br>
+				}<br>
+			</p>
+		Результат:<br>
+		<div>
+			<p class="bigred">Lorem ipsum dolor sit <span>amet consectetur adipisicing</span>, elit. Minus architecto, amet deserunt odio omnis, repellat explicabo illum animi quod quidem sed iure dolore culpa sit placeat minima. Veniam necessitatibus, incidunt.</p>
+			<p>Lorem <span>ipsum, dolor sit amet</span> consectetur adipisicing elit. Ipsam.</p>
+		</div>
+	</div>
+	<div class="primer">
+		Задача: Есть 2 параграфа внутри div-а и есть еще div внутри него, первый с классом  .bigred второй без класса в котором тоже есть параграф. Сделать внутри первого div параграфы голубым, а внутри второго div-а оставить без изменений.
+		Решение:<br>
+			<p class="css_code">
+				.block>p{<br>
+					color: blue;<br>
+				}<br>
+			</p>
+		Результат:<br>
+		<div class="block">
+			<p class="bigred">Первый параграф внутри первого тега div. Lorem ipsum dolor sit <span>amet consectetur adipisicing</span>, elit. Minus architecto, amet deserunt odio omnis, repellat explicabo illum animi quod quidem sed iure dolore culpa sit placeat minima. Veniam necessitatibus, incidunt.</p>
+			<p>Второй параграф внутри первого тега div. Lorem <span>ipsum, dolor sit amet</span> consectetur adipisicing elit. Ipsam.</p>
+			<div>	
+				<p>TEXT. Параграф внутри второго тега div.</p>
+			</div>
+		</div>
+	</div>
+	<h3>Наследование параметров.</h3>
+	<p>Параметры могут наследоваться тегами находящимися внутри стилизированого элемента, но не все.</p>
+	<h4 class="primer">Например</h4>
+	<p>У нас есть div внутри которого есть 2 параграфа и есть 2-й div в котором есть параграф. Зададим ему несколько стилей:</p>
+	<p class="css_code">
+		.block_nas{<br>
+		color: blue; /*наследуется*/<br>
+		font-size: 18; /*наследуется*/<br>
+		border: 3px solid #000; /*НЕнаследуется*/<br>
+		}<br>
+	</p>
+		<div class="block_nas">
+			<p>Первый параграф внутри первого тега div. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Minus architecto, amet deserunt odio omnis, repellat explicabo illum animi quod quidem sed iure dolore culpa sit placeat minima. Veniam necessitatibus, incidunt.</p>
+			<p>Второй параграф внутри первого тега div. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam.</p>
+			<div>	
+				<p>TEXT. Параграф внутри второго тега div.</p>
+			</div>
+		</div>
+	<p>Как видим цвет и размер текста наследовались вложеными тегами а вот рамка присвоилась только к родительскому элементу то есть к первому тегу div. Более подробно наследование того или иного параметра мы изучим в ходе практики. И к тому же вместо css мы в далнейшем будем использовать препроцессор SAS в синтаксисе scss, это значительно упростит нам работу.</p>
+	<h3>Обнуляющий css файл</h3>
+	<p>У разных тегов по умолчанию присутствуют разные стили, отступы размеры шрифта и т.п. и каждый браузер отображает стили по своему. Это не соответствует требованиям по верстке и не будет совпадать с макетом. Обнуляющий css файл нужен для того чтобы убрать все эти стили. Этот обнуляющий CSS код нужно будет использовать в КАЖДОМ проекте. А впоследствии мы сформируем т.н. стартовый шаблон в который включим стартовые записи html, css и js кода для простого старта проекта.</p>
+	
+	<p>Рассмотрим разницу в представлении html странички:</p>
+	<a href="../../files/style.css" target="blank" title="Скачать готовый файл обнуления css" download="../../files/style.css">Файл обнуления css</a>
+	<p><a href="Lesson_5_NOreset_css.html">БЕЗ ОБНУЛЯЮЩЕГО SCC </a> и <a href="Lesson_5_reset_css.html"> С ОБНУЛЕНИЕМ CSS</a></p>
+	<p>Время 5ч</p>
+</body>
+</html>

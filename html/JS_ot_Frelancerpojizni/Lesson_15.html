@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../css/js.css">
+	<title>Урок 15</title>
+</head>
+
+<body>
+	<h1> <span class="yellow">JavaScript</span> Размеры, прокрутка, координаты </h1>
+	<h2>Урок №15</h2>
+	<div class="lesson"></div>
+	<div class="lesson__text lesson__text_P1">
+		<h3>Пример 1 </h3>
+		<h4>Обработка событий с помощью атрибута HTML</h4>
+		<div class="lesson__text-content lesson__text-content_noDecore buttons-content buttons-content_P1">
+			<button onclick="console.log('Клик!');" type="button" class="button">Нажать</button>
+			<!--исполняемый js код находится непосредственно в атрибуте тега html -->
+			<button onclick="countClick(count)" type="button" class="button no_active">Счетчик кликов</button>
+			<button class="button button__1_2">Кнопка 1.2</button>
+			<button onclick="setScrollBy()" class="scroll button button__1_3">Кнопка 1.3</button>
+			<button onclick="setScrollBy()" class="scroll button button__1_4">Кнопка 1.4 клик клак (неправильная)</button>
+			<button class="scroll button button__1_5">Кнопка 1.5 клик клак</button>
+			<button class="scroll button button__1_6">Кнопка 1.6</button>
+			<button class="scroll button button__1_7">Кнопка 1.7</button>
+			<button class="scroll button button__1_8">Кнопка 1.8</button>
+		</div>
+
+		<h3>Пример 1.8 </h3>
+		<h4>Опции обработчика .addEventListener() </h4>
+		<p>const options = {<br>
+			"capture": false,//фаза на которой должен сработать обработчик<br>
+			"once": false,//если true то обработчик будет автоматически удален после выполнения<br>
+			"passive": false,//если true то указывает что обработчик никогда не вызовет preventDefault()<br>
+			}</p>
+
+		<div class="lesson__text-table">
+			<button class="button button_000">capture-0, once-0, passive-0</button>
+			<button class="button button_100">capture-1, once-0, passive-0</button>
+			<button class="button button_010">capture-0, once-1, passive-0</button>
+			<button class="button button_001">capture-0, once-0, passive-1</button>
+			<button class="button button_101">capture-1, once-0, passive-1</button>
+			<button class="button button_011">capture-0, once-1, passive-1</button>
+			<button class="button button_111">capture-1, once-1, passive-1</button>
+		</div>
+	</div>
+	<div class="lesson__text lesson__text_P2">
+		<h3>Пример 2 </h3>
+		<h4>Объект события</h4>
+		<p class="content_P2">Чтобы хорошо обработать событие, могут понадобиться детали того, что произошло. Не просто
+			клик или нажатие
+			клавиши а также какие координаты курсора, какая именно кнопка нажата и т.д. Когда происходит событие,
+			браузер создает объект события, записывает в него детали и передает его в качестве аргумента функции -
+			обработчику.</p>
+
+		<table>
+			<tr>
+				<td><button class="button button__2"><span>Кнопка 2</span></button></td>
+			</tr>
+		</table>
+
+
+	</div>
+
+	<div class="lesson__text lesson__text_P3">
+		<h3>Пример 3 </h3>
+		<h4>Всплытие</h4>
+		<p>У нас есть три вложенных друг в друга элемента всего 3 уровня, на каждом из них отслеживается событие КЛИК.
+			Когда на элементе происходит событие, обработчики сначала срабатывают на нем, потом на его родителе, затем
+			выше и так далее, вверх по цепочке предков.</p>
+
+		<div class="level_1 blockP3__level_1">
+			<span>Блок</span>
+			<div class="level_2 blockP3__level_2">
+				<span>Блок 2 уровня</span>
+
+				<div class="level_3 blockP3__level_3">
+					<span>Блок 3 уровня</span>
+
+				</div>
+			</div>
+		</div>
+
+		<h3>Пример 3.1 Препятствие всплытию</h3>
+		<p>Для того чтобы сработал только обработчик блока на котором сработало событие используется </p>
+		<div class="level_1 block__level_1">
+			<span>Блок</span>
+			<div class="level_2 block__level_2">
+				<span>Блок 2 уровня</span>
+
+				<div class="level_3 block__level_3">
+					<span>Блок 3 уровня</span>
+
+				</div>
+			</div>
+		</div>
+		<h3>Пример 3.2 </h3>
+		<h4>Погружение</h4>
+		<p>при погружении до элемента самого нижнего уровня вложенности можно изменить приоритет сработки обработчиков
+			с помощю свойства { "capture": true }</p>
+		<p>В разработке используется крайне редко.</p>
+		<div class="level_1 blockP3_2__level_1">
+			<span>Блок</span>
+			<div class="level_2 blockP3_2__level_2">
+				<span>Блок 2 уровня</span>
+
+				<div class="level_3 blockP3_2__level_3">
+					<span>Блок 3 уровня</span>
+
+				</div>
+			</div>
+		</div>
+		<h3>Пример 3.3 </h3>
+		<h4>Несколько кнопок - одна функция</h4>
+		<p>Если требуется отслеживать события у многих элементов, например у 4х кнопок то навешивание обработчика на
+			каждый элемент замедляет браузер</p>
+
+		<div class="buttonArr">
+			<button class="button button__P3_3">Кнопка 3.3.1</button>
+			<button class="button button__P3_3">Кнопка 3.3.2</button>
+			<button class="button button__P3_3">Кнопка 3.3.3</button>
+			<button class="button button__P3_3">Кнопка 3.3.4</button>
+		</div>
+
+
+	</div>
+
+	<div class="lesson__text lesson__text_P4">
+		<h3>Пример 4 </h3>
+		<h4>Делегирование событий.</h4>
+		<P>Если 4 кнопки поместить в общий родительский элемент к которому назначить событие то всплытие </P>
+		<div class="buttonArr__P4">
+			<button class="button button__P4">Кнопка 4.1</button>
+			<button class="button button__P4">Кнопка 4.2</button>
+			<button class="button button__P4">Кнопка 4.3</button>
+			<button class="button button__P4">Кнопка 4.4</button>
+		</div>
+
+		<h3>Пример 4.1</h3>
+		<h4>Изчезающее меню с помощью делегирования.</h4>
+		<p>Меню вызывается нажатием на кнопку "Открыть меню",при этом надпись на кнопке меняется на "Закрыть меню", меню
+			сворачивается повторным нажатием </p>
+		<nav class="menu">
+			<button type="button" class="menu__button">
+				<span>Открыть меню</span>
+				<span>Закрыть меню</span>
+			</button>
+			<ul hidden class="menu__list">
+				<li><a href="" class="menu__link">Пункт №1</a></li>
+				<li><a href="" class="menu__link">Пункт №2</a></li>
+				<li><a href="" class="menu__link">Пункт №3</a></li>
+				<li><a href="" class="menu__link">Пункт №4</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="lesson__text lesson__text_P5">
+		<h3>Пример 5</h3>
+		<h4>Действие браузера по умолчанию и их отмена</h4>
+		<p>Многие события автоматически влекут за собой действие браузера. Например клик по ссылке инициирует переход на
+			новый URL, нажатие на кнопку отправить в форме - отсылку формы на сервер, зажатие ЛКМ и движение инициирует
+			выделение текста и т. д.</p>
+		<p> Если мы обрабатываем событие в JavaScript то зачастую такое действие браузера нам не нужно. И его можно
+			отменить</p>
+		<p>Например отменим переход по ссылке</p>
+		<a target="blank" href="https://yandex.ru/">Перейдем на Яндекс</a><br>
+		<a target="blank" href="https://yandex.ru/" class="link_P5">НЕ перейдем на Яндекс при .addEventListener</a><br>
+		<a target="blank" href="https://yandex.ru/" class="link_P5_onclick">НЕ перейдем на Яндекс при .onclick</a>
+
+		<h3>Пример 5.1</h3>
+		<h4>Необязательная опция 'passive'</h4>
+		<p>{ "passive": true } для .addEventListener сигнализирует браузеру, что обработчик не собирается выполнять
+			preventDefault(). Это может быть полезнол при некоторых событиях например touchmove или touchstart на мобильных
+			устройствах (когда пользователь перемещает палец по экрану), которое по умолчанию начинает прокрутку, но мы
+			можем отменить это действие, используя preventDefault() в обработчике. Поэтому, когда браузер обнаруживает
+			такое событие он должен для начала запустить все обработчики и после, если preventDefault() не вызывается
+			нигде, он может начать прокрутку. Это может вызывать ненужные задержки в пользовательском интерфейсе.</p>
+		<P>Опция { "passive": true } сообщает браузеру что обработчик не собирается отменять прокрутку. Тогда браузер
+			начинает её немедленно, обеспечивая максимально плавный интерфейс, паралельно обрабатывая событие.</P>
+		<p>Для некоторых браузеров (firefox, Chrome) опция passive по умолчанию включена в true для таких событий как
+			touchmove или touchstart.</p>
+		<br>
+		<p>Таким образом одновременное использование { "passive": true } и preventDefault() приведет к действию по
+			умолчанию а также вызовет ошибку говорящую о том что нельзя использовать preventDefault() внутри обработчика
+			для которого passive указан true </p>
+		<a target="blank" href="https://yandex.ru/" class="link_P5_1">Перейдем на Яндекс</a><br>
+	</div>
+	<div class="lesson__text lesson__text_P6">
+		<h2>Основы событий мыши</h2>
+		<p>События мыши можно разделить на простые и комплексные</p>
+		<h3>Простые события мыши</h3>
+		<ul>
+			<li>mousedown / mouseup - кнопка мыши нажата / отпущена над элементом</li>
+			<li>mouseover / mouseout - курсор мыши появляется над элементом / уходит с элемента</li>
+			<li>mousemove - каждое движение мыши над элементом вызывает это событие</li>
+			<li>contextmrnu - вызывается при попытке открыть контекстное меню ПКМ, но заметим что это же событие может
+				вызываться и специальной клавишей на клавиатуре.</li>
+		</ul>
+		<h3>Комплексные события</h3>
+		<ul>
+			<li>click - вызывается при mousedown а затем mouseup над одним и тем же элементом ЛКМ</li>
+			<li>dblclick - вызывается двойным кликом на элементе</li>
+		</ul>
+		<p>Комплексные события состоят из простых, но пользоваться ими гораздо удобнее.</p>
+		<button class="button button__P6">Кнопка 6</button>
+		<button class="button button__P6_db">Кликни 2 раза</button>
+		<h3>Пример 6.1</h3>
+		<h4>Координаты курсора мыши</h4>
+		<p>Чтобы отслеживать положение мыши у массива event есть свойство .clientX / .clientY и .pageX / .page Y</p>
+		<p>Использовать можно например при создании паралакс эфекта, в играх.</p>
+
+		<div class="block-for-mouse"><span>Дочерний span</span></div>
+		<h3>Пример 6.2</h3>
+		<h4>События mouseover / mouseout</h4>
+		<p>Добавим к блоку из примера 6.1 обработчики на события mouseover / mouseout и будем отслеживать когда курсон над
+			полем и когда уходит с него.</p>
+		<div class="block-for-mouse-status"></div>
+		<h3>Пример 6.3</h3>
+		<h4>Свойство event.target и event.relatedTarget</h4>
+		<p>События mouseover / mouseout особенные, так как у них имеется свойство event.relatedTarget. Оно дополняет
+			event.target. Когда курсор переходит с одного элемента на другой, то один из них будет .target а .relatedTarget
+		</p>
+		<p>Для события mouseover: event.target - элемент на который перешел курсор а event.relatedTarget это элемент с
+			которого курсор ушел</p>
+		<p>Для события mouseout: event.target - элемент с которого курсор ушел а event.relatedTarget это элемент на
+			который перешел курсор</p>
+		<p class="red bold">mouseover: event.relatedTarget > event.target / mouseout: event.target > event.relatedTarget
+		</p>
+		<h3>Пример 6.4</h3>
+		<h4>Всплытие событий mouseover / mouseout</h4>
+		<p>При наведении на дочерний элемент в консоле видно как курсор сначала уходит с элемента и снова на него
+			возвращается.</p>
+		<div class="block-for-mouse block-for-mouse_P6_4">
+			<span>Дочерний span</span>
+		</div>
+		<div class="block-for-mouse-status block-for-mouse-status_P6_4"></div>
+		<h3>Пример 6.5</h3>
+		<h4>События mouseenter / mouseleave</h4>
+		<p>Отличия отmouseover / mouseout:
+		<ol>
+			<li>Переходы внутри элемента на его потомки не считаются</li>
+			<li>не всплывают</li>
+			<li>Не возможно использовать делегирование</li>
+		</ol>
+		Повторим код как в примере 6.4 но уже используя события mouseenter / mouseleave. <br>
+		Заметим что теперь перехода курсора на дочерний спан невидно ни в консоли ни в блоке статуса.
+		</p>
+		<div class="block-for-mouse block-for-mouse_P6_5">
+			<span>Дочерний span</span>
+		</div>
+		<div class="block-for-mouse-status block-for-mouse-status_P6_5"></div>
+
+		<h3>Пример 6.6</h3>
+		<H3>Делегирование событий наведения мыши</H3>
+		<p>Внутри поля расположены spanы обработчик навешен на всё поле при наведении добавляется css-свойство.</p>
+		<div class="number-key">
+			<span class="number-key__item span item_1">1</span>
+			<span class="number-key__item span item_2">2</span>
+			<span class="number-key__item span item_3">3</span>
+			<span class="number-key__item span item_4">4</span>
+			<span class="number-key__item span item_5">5</span>
+			<span class="number-key__item span item_6">6</span>
+			<span class="number-key__item span item_7">7</span>
+			<span class="number-key__item span item_8">8</span>
+			<span class="number-key__item span item_9">9</span>
+		</div>
+		<p>При использовании событий mouseenter / mouseleave эта красота работать не будет:</p>
+		<div class="number-key_2">
+			<span class="number-key__item span item_1">1</span>
+			<span class="number-key__item span item_2">2</span>
+			<span class="number-key__item span item_3">3</span>
+			<span class="number-key__item span item_4">4</span>
+			<span class="number-key__item span item_5">5</span>
+			<span class="number-key__item span item_6">6</span>
+			<span class="number-key__item span item_7">7</span>
+			<span class="number-key__item span item_8">8</span>
+			<span class="number-key__item span item_9">9</span>
+		</div>
+		<h3>Пример 6.7 <span class="remark">слишком много кода переписать в свободное время таймкод=41:30</span></h3>
+		<h4>Перетаскивание Drag'nDrop</h4>
+		<p>Рисуем с помощью css три квадрата один - поле второй можно перетаскивать, третий реагирует когда над ним второй
+			квадрат.</p>
+		<div class="block-for-mouse block-for-mouse_P6_7">
+			<div class="block-for-mouse__move"></div>
+			<div class="block-for-mouse__reacts"></div>
+		</div>
+	</div>
+	<div class="lesson__text lesson__text_P7">
+		<h2>События клавиатуры</h2>
+		<p>Основные события клавиатуры это
+		<ul>
+			<li>keydown - срабатывает когда клавиша нажата</li>
+			<li>keyup - срабатывает когда клавишу отпустили</li>
+		</ul>
+		</p>
+		<p>В массиве event событий клавиатуры понадобятся эти свойства:
+		<ul>
+			<li>event.code - содержит код клавиши которая вызвала событие</li>
+			<li>event.key - содержит символ который напечатался</li>
+		</ul>
+		</p>
+		<h3>Пример 7</h3>
+		<h4>event.code и event.key</h4>
+		<p>Из таблицы внизу можно узнать код клавиши. </p>
+
+		<div class="key_control"></div>
+		<table class="key_control-table">
+			<tr>
+				<th><input placeholder="Введите текст" class="key_control-text" type="text"></th>
+			</tr>
+			<tr>
+				<th>Просто нажми любую клавишу!</th>
+				<th>event .code</th>
+				<th>event .keyCode</th>
+				<th>event .key</th>
+			</tr>
+			<tr>
+				<td>Последняя нажатая клавиша</td>
+				<td class="key-code"></td>
+				<td class="key-keyCode"></td>
+				<td class="key-key"></td>
+			</tr>
+		</table>
+		<p>Если пользователь работает с разными языками то при переключении на другой язык символ (event.key) изменится а
+			вот event.code и event.keyCode не изменится.</p>
+		<p>Поэтому при выборе каким свойством пользоваться следует понимать чего мы хотим добиться. Например для сочетания
+			клавиш больше подходит event.code и event.keyCode </p>
+		<h3>Пример 7.1</h3>
+		<h4>Сочетание клавиш</h4>
+		<p>при сочетании клавиш ctrl + Z будет очищаться консоль</p>
+		<h3>Пример 7.2</h3>
+		<h4>Автоповтор</h4>
+		<p>При долгом нажатии клавиши возникает автоповтор, т.е. keydown срабатывает снова, и когда клавишу отпускают
+			срабатывает keyup. У событий вызванных автоповтором есть свойство event.repeat = true </p>
+
+
+		<h3>Пример 7.3</h3>
+		<h4>Счетчик символов</h4>
+		<textarea maxlength="30" class="textarea__item" placeholder="" name="text"></textarea><br>
+		<span class="textarea__counter">Осталось <span></span> символов</span>
+		<h3>Пример 7.4</h3>
+		<h4>Закрытие меню из Примера 4.1 нажатием кнопки Escape</h4>
+		<p>см. пример 4.1</p>
+	</div>
+
+	<div class="lesson__text lesson__text_P8">
+		<h2>Прокрутка страницы. Событие "scroll"</h2>
+		<p>
+			Использование: <br>
+			Событие прокрутки "scroll" позволяет реагировать на прокрутку страницы или элемента. <br>
+			Это позволяет например <br>
+			- показать / скрыть дополнительные элементы управления или информацию, основываясь на том, в какой части
+			документа находится пользователь. Например анимация при скролле или ленивая подгрузка. <br>
+			- Подгрузить данные, когда пользователь прокручивает страницу вниз до конца. Бесконечный скролл.
+		</p>
+		<p>Подробнее ознакомиться с функционалом и посмотреть дополнительные примеры использования события "scroll" а
+			также <span class="red">IntersectionObserver</span> можно в описании к
+			<a
+				href="https://www.youtube.com/watch?v=bWCzbR5DvCo&list=PLM6XATa8CAG7DDIBjNVd78Fv5Ueo930IV&index=19&ab_channel=%D0%A4%D1%80%D0%B8%D0%BB%D0%B0%D0%BD%D1%81%D0%B5%D1%80%D0%BF%D0%BE%D0%B6%D0%B8%D0%B7%D0%BD%D0%B8-IT%D0%B8%D1%84%D1%80%D0%B8%D0%BB%D0%B0%D0%BD%D1%81">видео-уроку</a>.
+		</p>
+	</div>
+	<div class="lesson__text lesson__text_P9">
+		<h2>События загрузки страницы</h2>
+		таймкод 54:00
+	</div>
+
+
+	<canvas id="canvas"></canvas>
+	<a href="XO.html">Играть в крестики - нолики</a>
+	<script src="../../js/JawaScriptFPJ/Lesson_15.js"></script>
+</body>
+
+</html>

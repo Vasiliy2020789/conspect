@@ -1,0 +1,153 @@
+/* */
+/*Обнуление*/
+/* Очищаем все отступы и границы во ВСЕХ тегах на странице*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+/* Меняет подсчет ширины блока для удобства верстания*/
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* Убираем линии обводки у некооторых браузеров*/
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+/* Делает теги блочными*/
+nav,footer,header,aside{display: block;}
+/* Уравнивает поведение шрифтов в разных браузерах*/
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1; /* просто 1(без 'px') */
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+/* Задаем наследование шрифта (по умолчанию эти теги не наследуют шрифт)*/
+input,button,textarea{font-family:inherit;}/* */
+/* Убирают некоторые особености в некоторых  браузерах*/
+input::-ms-clear{display: none;}/* */
+button{cursor: pointer;}/* */
+button::-moz-focus-inner {padding:0;border:0;}/* */
+a, a:visited{text-decoration: none;}/* */
+a:hover{text-decoration: none;}/* */
+ul li{list-style: none;}/* чистит стили в маркированых списках*/
+img{vertical-align: top;}/* */
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}/*Обнуляет заголовки */
+/*--------------------*/
+/* Далее задаем стили согласно ТЕХ. ЗАДАНИЮ */
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+a {
+	font-size: 16px;
+	text-decoration: none;
+	color: chartreuse;
+	font-weight: bold;
+	padding: 17px;
+}
+ul, li, ol{
+	list-style: none;
+}
+.wrapper {
+width: 100%;
+}
+.header {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background-color: #277;
+}
+.container {
+	width: 1170px;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	margin: 0 -575px;
+}
+.header__body {
+display: flex;
+flex-direction: row;
+}
+.header__logo {
+	padding: 5px;
+	height: 40px;
+	width: 40px;
+}
+.header__logo__img {
+	height: 40px;
+	width: 40px;
+}
+.header__title {
+	letter-spacing: 2px;
+	margin: auto 10px;
+}
+.header__menu {
+}
+.header__list {
+	display: flex;
+	flex-direction: row;
+}
+.header__list>li {
+}
+.header__list>li>a, .header__title {
+	letter-spacing: 2px;
+	display: block;
+	height: 50px;
+}
+.header__list>li>a:hover, .header__title:hover {
+	background-color: #FFFF00;
+	color: black;
+}
+.content {
+	width: 550px;
+	position: absolute;
+	left: 50%;
+	top: 50px;
+	margin: 0 -275px;
+}
+.game_info {
+	height: 50px;
+	width: 500px;
+	border: 5px solid #779;
+}
+.game_info>ul {
+	display: flex;
+	flex-direction: row;
+}
+.game_info>ul>li {
+	
+	margin: 10px;
+}
+.live {
+}
+.score {
+}
+.speed {
+}
+.playing_field {
+	position: relative;
+	height: 500px;
+	width: 500px;
+	border: 5px solid #779;
+}
+.snake__head {
+height: 20px;
+width: 20px;
+background-color: #f23;
+border-radius: 5px;
+position: absolute;
+margin: -10px 0 0 -10px;
+top: 10px;
+left: 10px;
+}
+.snake__tail {
+}

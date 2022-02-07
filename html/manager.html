@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных-->
+<head>
+	<!--кодировка страницы-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Заголовок страницы в браузере-->
+	<title>manager</title>
+</head>
+<body><div class="fg-toolbar ui-toolbar ui-widget-header ui-corner-tl ui-corner-tr ui-helper-clearfix">
+		<div id="SelectFromTable_length" class="dataTables_length">
+			<label>Записей: 
+				<select size="1" name="SelectFromTable_length" aria-controls="SelectFromTable">
+					<option value="20">20</option>
+					<option value="28" selected="selected">28</option>
+					<option value="50">50</option><option value="100">100</option>
+					<option value="200">200</option><option value="500">500</option>
+					<option value="-1">Все</option>
+				</select> 
+			</label>
+		</div>
+		<div class="dataTables_filter" id="SelectFromTable_filter">
+		<label>Поиск по всем столбцам:  <input type="text" aria-controls="SelectFromTable"></label>
+		</div>
+		<div id="SelectFromTable_processing" class="dataTables_processing" style="visibility: hidden;">Идёт процесс загрузки данных.....
+		</div>
+	</div>
+
+	<table cellpadding="0" border="0" width="100%" align="center" bordercolor="#000000" id="SelectFromTable" class="display dataTable" aria-describedby="SelectFromTable_info" style="width: 100%;">
+	
+	<thead>
+        <tr role="row">
+        	<th rowspan="1" colspan="1">
+        		<input type="text" name="search_street" placeholder="Улица" value="" class="search_init"></th>
+        		<th rowspan="1" colspan="1"><input type="text" name="search_house" placeholder="Дом" value="" class="search_init"></th>
+        		<th rowspan="1" colspan="1"><input type="text" name="search_entrance" placeholder="Подъезд" value="" class="search_init"></th><th rowspan="1" colspan="1"><input type="text" name="search_zone" placeholder="Зона" value="" class="search_init"></th><th rowspan="1" colspan="1"><input type="text" name="search_switch" placeholder="IP" value="" class="search_init"></th></tr>		
+		<tr role="row"><th class="selected_td ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-label="Улица: activate to sort column ascending" style="width: 199px;"><div class="DataTables_sort_wrapper">Улица<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="selected_td_center ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-label="Дом: activate to sort column ascending" style="width: 199px;"><div class="DataTables_sort_wrapper">Дом<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="selected_td_center ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-label="Подъезд: activate to sort column ascending" style="width: 199px;"><div class="DataTables_sort_wrapper">Подъезд<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="selected_td_center ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Зона: activate to sort column descending" style="width: 199px;"><div class="DataTables_sort_wrapper">Зона<span class="DataTables_sort_icon css_right ui-icon ui-icon-triangle-1-n"></span></div></th><th class="selected_td_center ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-label="IP Коммутатора: activate to sort column ascending" style="width: 199px;"><div class="DataTables_sort_wrapper">IP Коммутатора<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="selected_td_center ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-label="Статус: activate to sort column ascending" style="width: 60px;"><div class="DataTables_sort_wrapper">Статус<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="selected_td_center ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-label="Подсеть: activate to sort column ascending" style="width: 71px;"><div class="DataTables_sort_wrapper">Подсеть<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="selected_td_center ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-label="Vlan: activate to sort column ascending" style="width: 47px;"><div class="DataTables_sort_wrapper">Vlan<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="selected_td_center ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-label="Количество абонентов: activate to sort column ascending" style="width: 94px;"><div class="DataTables_sort_wrapper">Количество абонентов<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="selected_td_center ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-label="Модель коммутатора: activate to sort column ascending" style="width: 102px;"><div class="DataTables_sort_wrapper">Модель коммутатора<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="selected_td_center ui-state-default" role="columnheader" tabindex="0" aria-controls="SelectFromTable" rowspan="1" colspan="1" aria-label="Размещение: activate to sort column ascending" style="width: 99px;"><div class="DataTables_sort_wrapper">Размещение<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th></tr>
+	</thead>
+
+<tfoot>
+		<tr><th class="ui-state-default selected_td" rowspan="1" colspan="1"><input type="text" name="search_street" placeholder="Улица" value="" class="search_init"></th><th class="ui-state-default selected_td_center" rowspan="1" colspan="1"><input type="text" name="search_house" placeholder="Дом" value="" class="search_init"></th><th class="ui-state-default selected_td_center" rowspan="1" colspan="1"><input type="text" name="search_entrance" placeholder="Подъезд" value="" class="search_init"></th><th class="ui-state-default selected_td_center" rowspan="1" colspan="1"><input type="text" name="search_zone" placeholder="Зона" value="" class="search_init"></th><th class="ui-state-default selected_td_center" rowspan="1" colspan="1"><input type="text" name="search_switch" placeholder="IP" value="" class="search_init"></th></tr>
+</tfoot>
+
+
+<tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="11" class="dataTables_empty">Извините, по вашему запросу ничего не найдено</td></tr></tbody></table>
+</body>

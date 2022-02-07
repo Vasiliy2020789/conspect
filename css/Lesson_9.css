@@ -1,0 +1,372 @@
+/* */
+/*Обнуление*/
+/* Очищаем все отступы и границы во ВСЕХ тегах на странице*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+/* Меняет подсчет ширины блока для удобства верстания
+(задаваемая ширина блока будет с учетом границ border и внутреннего отступа padding) 
+внешний отступ margin в расчет ширины блока не входит*/
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box; 
+}
+/* Убираем линии обводки у некооторых браузеров*/
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+/* Делает теги блочными*/
+nav,footer,header,aside{display: block;}
+/* Уравнивает поведение шрифтов в разных браузерах*/
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1; /* просто 1(без 'px') */
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+/* Задаем наследование шрифта (по умолчанию эти теги не наследуют шрифт)*/
+input,button,textarea{font-family:inherit;}/* */
+/* Убирают некоторые особености в некоторых  браузерах*/
+input::-ms-clear{display: none;}/* */
+button{cursor: pointer;}/* */
+button::-moz-focus-inner {padding:0;border:0;}/* */
+a, a:visited{text-decoration: none;}/* */
+a:hover{text-decoration: none;}/* */
+ul li{list-style: none;}/* чистит стили в маркированых списках*/
+img{vertical-align: top;}/* */
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}/*Обнуляет заголовки */
+/*--------------------*/
+/* Далее задаем стили согласно ТЕХ. ЗАДАНИЮ */
+/* Стили применяемые ко всем урокам */
+html,body{
+	padding: 20px;
+	font-size: 18px;
+}
+
+h1{
+	font-size: 37px;
+	color: #4A8AF4;
+}
+
+h2{
+	font-size: 27px;
+	color: #139F5A;
+}
+
+h3{
+	font-size: 25px;
+	color: #b42DFF;
+}
+
+h4.primer{
+	color: #A65DFF;
+}
+
+.css_code_H{
+	text-align: center;
+	width: auto;
+	font-size: 22px;
+	font-family: monospace;
+	margin-top: 5px;
+	padding: 10px;
+	background-color: #000000;
+	color: #FF9A00;
+}
+.time{
+	padding: 5px;
+	height: 30px;
+	width: 300px;
+	position: center;
+	background-color: #ffff00;
+	font-family: monospace;
+	font-weight: bold;
+	text-align: center;
+	font-size: 18px;
+	color: red;
+}
+.css_code{
+	font-family: monospace;
+	margin-top: 5px;
+	padding: 10px;
+	background-color: #000000;
+	color: #FF9A00;
+}
+div.frame_cod_css{
+	border: 0px;
+	color: #FF9A00;
+}
+.emmet>p{
+	line-height: 30px;
+}
+.css_code>span{
+	font-family: monospace;
+	color: #748074
+}
+p{
+	margin-top: 8px;
+}
+.emmet{
+	background-color: rgba(36,180,253, 1);
+		font-family: monospace;
+}
+.emmet>p{
+	line-height: 30px;
+}
+.hotKey{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin: 3px;
+	padding: 3px;
+	background-color: #303030;
+	color: #fff;
+	border: 6px;
+	border-radius: 5px;
+}
+.example {
+	border: 1px solid #000;
+	margin: 10px 10px 30px 10px;
+	padding: 5px;
+	background-color: rgba(50,0,0, 0.3);
+		background-color:  #FAE8E0
+}
+.example-display-none{
+	display: none;
+}
+/*=======================================================================================*/
+
+/*Свойства для данного урока*/
+.example-block_1{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	background:  #B6E2D3;
+	background-color:  #B6E2D3;
+}
+
+.example-block_2{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	background-image: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg');
+}
+.example-block_3{
+	height: 300px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	background-image: url('../img/Frelancerpojizni/Lesson_9/bg_repeat.jpg');
+}
+
+.example-block_4{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+/*===========ЛИНЕЙНЫЙ ГРАДИЕНТ===========*/
+/* Old browsers */
+background: rgb(236,232,157);
+/* FF3.6-15 */
+background: -moz-linear-gradient(top, rgba(236,232,157,1) 0%, rgba(94,83,115,1) 50%, rgba(24,181,164,1) 100%);
+/* Chrome10-25,Safari5.1-6 */
+background: -webkit-linear-gradient(top, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);
+/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background: linear-gradient(to bottom, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);
+/*===========ЛИНЕЙНЫЙ ГРАДИЕНТ===========*/
+}
+.example-block_5{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	/*===========РАДИАЛЬНЫЙ ГРАДИЕНТ===========*/
+	/* Old browsers */
+	background: rgb(236,232,157);
+	/* FF3.6-15 */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(236,232,157,1) 0%, rgba(94,83,115,1) 50%, rgba(24,181,164,1) 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: radial-gradient(ellipse at center, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);
+	/*===========РАДИАЛЬНЫЙ ГРАДИЕНТ===========*/
+}
+
+.example-block_6{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	background: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg') no-repeat;
+}
+.example-block_7{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	background: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg') repeat-x;
+}
+.example-block_8{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	background: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg') repeat-y;
+}
+.example-block_9{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	background: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg') repeat-y;
+background: #000;
+}
+.example-block_10{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	background: url('../img/Frelancerpojizni/Lesson_9/avatar_2.jpg') 0 0 no-repeat, url('../img/Frelancerpojizni/Lesson_9/avatar_3.jpg') center no-repeat, url('../img/Frelancerpojizni/Lesson_9/avatar_2.jpg') right/50px no-repeat, url('../img/Frelancerpojizni/Lesson_9/bg_repeat.jpg');/*фон и 3 картинки*/
+}
+.example-block_11{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') center no-repeat;/*фон - картинка, равнение по центру, не повторять*/
+	background-attachment: fixed; /*Не прокручивать*/
+}
+.example-block_12{
+	height: 200px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0 no-repeat scroll; /*фон - картинка, равнение вверх влево, не повторять, прокручивать*/
+}
+.example-block_13{
+	height: 100px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+	overflow: scroll;
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') center 0 no-repeat local;/*фон картинка, выравнивание горизонтально-по центру, по вертикали к верху, не повторять, прокручивать локально*/
+}
+.example-block_14{
+	margin: 0 0 30px 0; /*внешний отступ*/
+	padding: 10px 10px 10px 10px; /*внутренний отступ*/
+	height: 150px; /*высота блока*/
+	border-radius: 15px; /*скругление краёв*/
+	box-shadow: 0 0 10px #000; /*тень блока x - 0, y - 0, размытие - 10px, цвет черный*/
+	overflow: hidden; /*Скрывает содержимое вне блока*/
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0 no-repeat;/*фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать*/
+	/*Выделенная запись свойства:*/
+	background-size: auto auto; /*значение по умолчанию*/
+	/*Сокращенная запись:*/
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0/auto auto no-repeat;/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция auto*/
+}
+.example-block_15{
+	margin: 0 0 30px 0; /*внешний отступ*/
+	padding: 10px 10px 10px 10px; /*внутренний отступ*/
+	height: 150px; /*высота блока*/
+	border-radius: 15px; /*скругление краёв*/
+	box-shadow: 0 0 10px #000; /*тень блока x - 0, y - 0, размытие - 10px, цвет черный*/
+	overflow: hidden; /*Скрывает содержимое вне блока*/
+	/*Сокращенная запись:*/
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0/100% auto no-repeat;/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция верх-лево, размер по ширине блока*/
+}
+.example-block_16{
+	margin: 0 0 30px 0; /*внешний отступ*/
+	padding: 10px 10px 10px 10px; /*внутренний отступ*/
+	height: 150px; /*высота блока*/
+	border-radius: 15px; /*скругление краёв*/
+	box-shadow: 0 0 10px #000; /*тень блока x - 0, y - 0, размытие - 10px, цвет черный*/
+	overflow: hidden; /*Скрывает содержимое вне блока*/
+	/*Сокращенная запись:*/
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0/auto 100% no-repeat;/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция верх-лево, размер по  высоте блока*/
+}
+.example-block_17{
+	margin: 0 0 30px 0; /*внешний отступ*/
+	padding: 10px 10px 10px 10px; /*внутренний отступ*/
+	height: 150px; /*высота блока*/
+	border-radius: 15px; /*скругление краёв*/
+	box-shadow: 0 0 10px #000; /*тень блока x - 0, y - 0, размытие - 10px, цвет черный*/
+	overflow: hidden; /*Скрывает содержимое вне блока*/
+	/*Сокращенная запись:*/
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0/100% 100% no-repeat;/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция верх-лево, размер горизонтальный по размеру блока*/
+}
+.example-block_18{
+	padding: 10px 10px 10px 10px; /*внутренний отступ*/
+	height: 150px; /*высота блока*/
+	border-radius: 15px; /*скругление краёв*/
+	box-shadow: 0 0 10px #000; /*тень блока x - 0, y - 0, размытие - 10px, цвет черный*/
+	overflow: hidden; /*Скрывает содержимое вне блока*/
+	margin: 0 35% 30px 35%; /*внешний отступ*/
+	width: 30%; /*Ограничим ширину для наглядности*/
+	/*Сокращенная запись:*/
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0/contain no-repeat;/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция верх-лево, размер горизонтальный по размеру блока*/
+}
+.example-block_19{
+	padding: 10px 10px 10px 10px; /*внутренний отступ*/
+	height: 150px; /*высота блока*/
+	border-radius: 15px; /*скругление краёв*/
+	box-shadow: 0 0 10px #000; /*тень блока x - 0, y - 0, размытие - 10px, цвет черный*/
+	overflow: hidden; /*Скрывает содержимое вне блока*/
+	/*Сокращенная запись:*/
+	margin: 0 25% 30px 25%; /*внешний отступ*/
+	width: 50%; /*Ограничим ширину для наглядности*/
+	/*Сокращенная запись:*/
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') center/cover no-repeat;/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция верх-лево, размер горизонтальный по размеру блока*/
+}
+.example-block_20{
+	margin: 0 0 30px 0; /*внешний отступ*/
+	padding: 10px 10px 10px 10px; /*внутренний отступ*/
+	height: 150px; /*высота блока*/
+	border-radius: 15px; /*скругление краёв*/
+	box-shadow: 0 0 10px #000; /*тень блока x - 0, y - 0, размытие - 10px, цвет черный*/
+	overflow: hidden; /*Скрывает содержимое вне блока*/
+	/*Сокращенная запись:*/
+	background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0/300px 200px no-repeat;/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция верх-лево, размер горизонтальный по размеру блока*/
+}
+
+.example-block_21{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; /*Задаем шрифт Arial*/
+	margin: 0 0 30px 0; /*внешний отступ*/
+	padding: 10px 10px 10px 10px; /*внутренний отступ*/
+	height: 300px; /*высота блока*/
+	border-radius: 15px; /*скругление краёв*/
+	box-shadow: 0 0 10px #000; /*тень блока x - 0, y - 0, размытие - 10px, цвет черный*/
+	overflow: hidden; /*Скрывает содержимое вне блока*/
+	/*Сокращенная запись:*/
+	background: url('../img/Frelancerpojizni/Lesson_9/bg_repeat.jpg') 0 0;/*фон - посвторяющаяся картинка*/
+}
+.list {}
+.list li{
+	font-size: 24px; /*Размер текста побольше*/
+	margin: 0 0 15px 0;/*Нижний отступ от пункта*/
+	padding: 0 0 0 30px; /*отступаем место для иконок*/
+	background: url(../img/Frelancerpojizni/Lesson_9/icons/li.svg) 0 5px no-repeat; /*Задаем картинку и позиционируем её для красоты*/
+}
+
+/*
+#D8A7B1
+#B6E2D3   	background-color: rgba(182,226,211,1);
+#FAE8E0
+#EF7C8E
+body{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	padding: 150px 30px 30px 30px;
+}
+
+.list{
+	margin: 0 0 50px 0;
+}
+
+.list li{
+	font-size: 24px;
+	margin: 0 0 15px 0;
+	background: url('../img/icons/li.svg') left 5px no-repeat;
+	padding: 0px 0px 0px 30px;
+}
+
+.block{
+	background: url('../img/avatar_3.jpg') 50%/100px no-repeat,
+	url('../img/avatar.jpg') 100px 20px/200px no-repeat,
+	url('../img/bg.jpg') 50%/cover no-repeat;
+
+	height: 500px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #000;
+}

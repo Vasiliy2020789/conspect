@@ -1,0 +1,216 @@
+<!--Сообщаем браузеру как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных-->
+<head>
+	<!--кодировка страницы-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../../css/Lesson_10.css">
+	<!--Заголовок страницы в браузере-->
+	<title>CSS псевдоклассы.</title>
+</head>
+	<!--отображаемое тело страницы-->
+	<body>
+			<a href="../../index.html"> Домой </a><!--Поле навигации по сайту. ../ - означает переход на директорию выше-->
+			<p class="time">Затраты времени: 2 h 00 m</p>
+		<h1>CSS псевдоклассы.</h1>
+	
+		<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========Б====================================================-->
+			<div class="example">
+				<p class="css_code_H"></p>
+				<p>Пояснение параметра</p>
+				<p>Возможные значения:
+					</p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<h2>Стилизация параграфов с использованием псевдоклассов состояния и события</h2>
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_1<br>
+						}<br>
+						.example-block_1 p{<br>
+							margin: 0 0 0 30px 0;<br>
+							font-size: 18px;<br>
+							line-height: 24px;<br>
+							margin: 0px 0px 20px 0px;<br>
+						}<br>
+						.example-block_1:hover { <span>/*срабатывает при наведении курсора на элемент*/</span><br>
+							background-color: green;<br>
+							color: #fff;<br>
+						}<br>
+						.link{<br>
+							color: red;<br>
+						}<br>
+						.link:visited{ <span>/*Срабатывает для посещенных ссылок*/</span><br>
+							color: #099;<br>
+						}<br>
+						.link:hover{  <span>/*параметры применяются при наведении курсора на элемент */</span><br>
+							text-decoration: underline;<br>
+							color: blue;<br>
+						}<br>
+						.link:active{ <span>/*Срабатывает в момент нажатия на объект*/</span><br>
+						color: yellow;<br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_1">
+							Блок 1.<br>
+							<p><a href="http://google.com" class="link">Lorem</a> ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.</p>
+							<p>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.</p>
+							<p>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.</p>
+					</div>
+					<div class="example-block_2">
+						<h2>Стилизация формы ввода с использованием псевдоклассов состояния и события.</h2>
+						<!--Вставка CSS кода============-->
+						<p class="css_code">
+							.textinput {<br>
+								border: 1px solid #666;<br>
+								height: 50px;<br>
+								padding: 0 15px;<br>
+								font-size: 18px;<br>
+								width: 300px;<br>
+								margin: 0px 0px 10px 0px;<br>
+							}<br>
+							.textinput:focus{<span>/*срабатывает при получении элементом фокуса*/</span><br>
+							box-shadow: 0 0 10px rgba(150, 0, 200, 0.5);<br>
+							}<br><br>
+							.textbutton {<br>
+								display: block;<br>
+								border: 1px solid #666;<br>
+								height: 50px;<br>
+								padding: 0 15px;<br>
+								font-size: 18px;<br>
+								width: 300px;<br>
+								color: #fff;<br>
+								text-transform: uppercase;<br>
+								margin: 0px 0px 10px 0px;<br>
+								color: #000;<br>
+							}<br>
+						</p>
+						<form action="#">
+							<input type="text" class="textinput">
+							<button type="submit" class="textbutton">отправить</button>
+						</form>
+					</div>
+						<h2>Стилизация списка с использованием псевдоклассов позиции.</h2>
+
+						<div class="example-block_3">
+							<!--Вставка CSS кода============-->
+							<p class="css_code">
+								.list{<br>
+									width: 500px; <span>/*ширина 500 пикселей*/</span><br>
+								}<br>
+								<br>
+								.list li{<br>
+									font-size: 18px;<br>
+									margin: 0px 0px 15px 0px;<br>
+								}<br>
+								<br>
+								.list li:first-child{<span>/*обращается к первому элементу в блоке*/</span><br>
+									color: #147;<span>/*текст синий*/</span><br>
+								}<br>
+									<br>
+								.list li:last-child{<span>/*обращается к последнему элементу в блоке*/</span><br>
+									color: #741;<span>/*текст коричневый*/</span><br>
+								}<br>
+									<br>
+								.list li:nth-child(4){<span>/*обращается к конкретному элементу в блоке*/</span><br>
+									color: #471; <span>/*текст зеленый*/</span><br>
+								}<br>
+									<br>
+								.list li:nth-child(odd){<span>/*применяется ко всем нечетным элементам*/</span><br>
+									background-color:yellow; <span>/*фон желтый*/</span><br>
+								}<br>
+									<br>
+								.list li:nth-child(even){<span>/*применяется ко всем четным элементам*/</span><br>
+									background-color:orange; <span>/*фон оранжевый*/</span><br>
+								}<br>
+							</p>
+							<ul class="list">
+								<li>text 1</li>
+								<li>text 2</li>
+								<li>text 3</li>
+								<li>text 4</li>
+								<li>text 5</li>
+							</ul>
+						</div>
+					</div>
+
+
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+			</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+		<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========БСК==================================================-->
+			<div class="example-display-none">
+				<p class="css_code_H">overflow:</p>
+				<p>Пояснение параметра</p>
+				<p>Возможные значения:
+					</p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<div class="emmet">
+							<p>Абревиатура EMMET : __+ <span class="hotKey">Tab</span> = _________</p>
+					</div>
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_1{<br>
+						overflow: visible; <span>/*коментарий css*/</span><br>
+						}<br>
+					</p>
+					<!--БЛОЧНЫЙ пример-->
+					<div class="example-block_2">
+						Блочный тег. Свойство: значение. <br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<!--СТРОЧНЫЙ пример-->
+					<span class="example-string_2">
+						Строчный тег. Свойство: значение. <br>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro id quae ducimus, blanditiis eveniet esse commodi quod amet optio quam deserunt nesciunt, ullam temporibus sequi explicabo autem quas! Magnam eaque debitis totam iure atque illo deleniti, laborum numquam? Veniam dolore provident dolorem, tenetur dolores est rerum eligendi placeat commodi doloribus atque obcaecati delectus cupiditate impedit animi quas, perferendis temporibus magni unde, voluptate iure aspernatur eum. Quos deserunt, laborum minus iure delectus ipsa beatae nobis illum, nulla distinctio. Consectetur culpa obcaecati delectus ut rem quo molestiae, alias molestias adipisci natus nemo cum. Laudantium, perferendis provident. Explicabo sapiente id dicta labore architecto.
+					</span>
+					<p><img class="example-image_2" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt=""></p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+			</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->		
+		<div class="teoriya">
+			<p>	
+				Синтаксис, то есть правило записи псевдоклассов прост, мы пишем селектор класса либо селектор типа 
+				ставим двоеточие, пишем тот или иной псевдосласс и уже после этого открываем фигурные 
+				скобки и пишем нужные CSS параметры:<br>
+				Селектор:Псевдокласс { параметры стиля }<br>
+				================================================================================================================<br>
+			</p>
+			<p>
+				Отлично, теперь рассмотрим псевдоклассы состояния.<br>
+<br>
+				:hover<br>
+				Срабатывает при наведении на элемент, часто применяется применяется как для ссылок так и для любого другого элемента.<br>
+<br>
+				:active<br>
+				Срабатывает при нажатии на элемент. В основном применяется к ссылкам и кнопкам.<br>
+<br>
+				:visited<br>
+				Срабатывает для посещенных ссылок<br>
+<br>
+				:focus<br>
+				Срабатывает при получении элементом фокуса. Часто применяется к елементам форм. Например инпутам.<br>
+				================================================================================================================<br>
+			</p>
+			<p>
+				Теперь рассмотрим псевдоклассы положения в коде.<br>
+<br>
+				:first-child<br>
+				Обращение к первому элементу в блоке<br>
+<br>
+				:last-child<br>
+				Обращение к последнему элементу в блоке<br>
+<br>
+				:nth-child(порядковый номер элемента)<br>
+				Обращение к конкретным элементам в блоке<br>
+<br>
+				odd - Обращается к элементам с нечётными номерами<br>
+				even - Обращается к элементам с чётными номерами<br>
+				================================================================================================================<br>
+			</p>
+		</div>
+	</body>
+</html>

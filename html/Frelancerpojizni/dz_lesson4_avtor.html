@@ -1,0 +1,71 @@
+<!--Сообщаем браузеру как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных-->
+<head>
+		<!--кодировка страницы-->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Заголовок страницы в браузере-->
+		<title>ДЗ урок 4</title>
+</head>
+	<!--отображаемое тело страницы-->
+<body>
+	<p><a href="../../index.html"> Домой </a> / <a href="../../html/Frelancerpojizni/Lesson_4.html"> Урок 4. </a> / <a href="dz_lesson_4.html">Домашняя работа</a></p>
+	<form action="#" method="get">
+		<div>	
+			<p>Имя:</p>
+			<p><input type="text" name="username" tabindex="1" /></p>
+		</div>
+		<div>	
+			<p>Пароль:</p>
+			<p><input type="password" name="username" tabindex="2" /></p>
+		</div>
+		<div>	
+			<p>Телефон:</p>
+			<p><input type="tel" name="username" value="" tabindex="3" /></p>
+		</div>
+		<div>
+			<p><input checked type="radio" name="gender" value="male" tabindex="4"/> Мужской</p>
+		</div>
+		<div>
+			<p><input type="radio" name="gender" value="women" tabindex="4"/> Женский</p>
+		</div>
+		<div>
+			<p>Имущество:</p>
+			<div>
+				<input tabindex="5" type="checkbox" name="bike" value="no" /> Велик 
+			</div>
+			<div>
+				<input tabindex="6" checked type="checkbox" name="car" value="yes" /> Машина
+			</div>
+			<div>
+				<input tabindex="7" disabled type="checkbox" name="haus" value="no" /> Дом
+			</div>
+		</div>
+		<div>
+			<p>Дополнительная информация</p>
+			<textarea tabindex="8" placeholder="" name="text"></textarea>
+		</div>
+		<div>
+			<p>Прикрепить фото</p>
+			<input tabindex="9" type="file" name="foto">
+		</div>
+		<div>
+			<p>Любимый цвет</p>
+			<select tabindex="10" name="color">
+				<option value="red">Красный</option>
+				<option selected value="yellow">Желтый</option>
+				<option value="blue">Голубой</option>
+			</select>
+		</div>
+		<div>
+			<p>Действия</p>
+			<button tabindex="11"type="submit">Отправить</button>
+			<button tabindex="12"type="reser">Очистить</button>
+		</div>
+	</form>
+<p>Работа над ошибками 30 минут</p>
+</body>
+</html>

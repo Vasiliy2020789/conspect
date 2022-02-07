@@ -1,0 +1,517 @@
+<!--Сообщаем браузеру как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных-->
+<head>
+	<!--кодировка страницы-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../../css/Lesson_9.css">
+	<!--Заголовок страницы в браузере-->
+	<title>CSS свойство BACKGROUND. Делаем фон для сайта</title>
+</head>
+	<!--отображаемое тело страницы-->
+	<body>
+			<a href="../../index.html"> Домой </a><!--Поле навигации по сайту. ../ - означает переход на директорию выше-->
+			<p class="time">Затраты времени: 7 h 30 m</p>
+			<a href="../Frelancerpojizni/Lesson_9_dz.html">Домашнее задание!</a>
+			<a target="blank" href="https://fls.guru/cssbackground.html"> Шпаргалка по BACKGROUND </a><br>
+			<a href="../../files/Lesson_9.txt" target="blank" title="Шпаргалка по BACKGROUND" download="../../files/Lesson_9.txt">Скачать файл-шпаргалку</a>
+		<h1>CSS свойство BACKGROUND. Делаем фон для сайта</h1>
+		<p> Универсальное свойство, позволяющее установить цвет, фоновое изображение, задать начальную позицию фонового изображения, задать как часто будет повторяться фоновое изображение, задать будетли прокручиваться, масштабировать, градиент.</p>
+		<p>Универсальное свойство background позволяет установить одновременно до пяти характеристик фона. Значения могут идти в любом порядке, браузер сам определит, какое из них соответствует нужному свойству. Для подробного ознакомления смотрите информацию о каждом свойстве отдельно. В CSS3 допустимо указывать параметры сразу нескольких фонов, перечисляя их через запятую.</p>
+				
+		<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========Б====================================================-->
+			<div class="example">
+				<p class="css_code_H">background-color:</p>
+				<p>Значения можно задавать как и для других параметров использующих цвет, например:</p>
+				<p>background:  #B6E2D3; = background-color:  #B6E2D3; = background-color: rgb(182,226,211); = background-color: rgba(182,226,211,1);</p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<div class="emmet">
+							<p>Абревиатура EMMET : bc+ <span class="hotKey">Tab</span> = background-color: #fff;</p>
+					</div>
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_1{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							background-color:  #B6E2D3;<br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_1">
+						<br>Блочный тег 1. Залитый цветом. <br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<br>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+			</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+
+		<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========Б====================================================-->
+			<div class="example">
+				<p class="css_code_H">background-image:</p>
+				<p></p>
+				<p>:</p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<div class="emmet">
+							<p>Абревиатура EMMET : bi + <span class="hotKey">Tab</span> = background-image: url();</p>
+					</div>
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_2{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							background-image: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg');<br>
+						}<br>
+						.example-block_3{<br>
+							height: 300px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							background-image: url('../img/Frelancerpojizni/Lesson_9/bg_repeat.jpg');<br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_2">
+						<br>Блочный тег 2. С картинкой аватаркой. Выглядет не очень. <br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+						<div class="example-block_3">
+						<br>Блочный тег 3. С бесконечно повторяющейся картинкой вырезаной таким способом что её правый край подходит к левому а нижний к верхнему. Выглядит намного лучше. <br>
+						<br>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<h2>Градиентная заливка</h2>
+					<p><a target="blank" href="https://www.colorzilla.com/gradient-editor/">Инструмент для создания градиентов</a> </p>
+					<p class="css_code">
+						.example-block_4{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							<span>/*===========ЛИНЕЙНЫЙ ГРАДИЕНТ===========*/</span><br>
+							<span>/* Old browsers */</span><br>
+							background: rgb(236,232,157);<br>
+							<span>/* FF3.6-15 */</span><br>
+							background: -moz-linear-gradient(top, rgba(236,232,157,1) 0%, rgba(94,83,115,1) 50%, rgba(24,181,164,1) 100%);<br>
+							<span>/* Chrome10-25,Safari5.1-6 */</span><br>
+							background: -webkit-linear-gradient(top, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);<br>
+							<span>/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */</span><br>
+							background: linear-gradient(to bottom, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);<br>
+							<span>/*===========ЛИНЕЙНЫЙ ГРАДИЕНТ===========*/</span><br>
+						}<br><br>
+						.example-block_5{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							<span>/*===========РАДИАЛЬНЫЙ ГРАДИЕНТ===========*/</span><br>
+							<span>/* Old browsers */</span><br>
+							background: rgb(236,232,157);<br>
+							<span>/* FF3.6-15 */</span><br>
+							background: -moz-radial-gradient(center, ellipse cover, rgba(236,232,157,1) 0%, rgba(94,83,115,1) 50%, rgba(24,181,164,1) 100%);<br>
+							<span>/* Chrome10-25,Safari5.1-6 */</span><br>
+							background: -webkit-radial-gradient(center, ellipse cover, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);<br>
+							<span>/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */</span><br>
+							background: radial-gradient(ellipse at center, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);<br>
+							<span>/*===========РАДИАЛЬНЫЙ ГРАДИЕНТ===========*/</span><br>
+						}<br>
+					</p>
+					<div class="example-block_4">
+						<br>Блочный тег 4. С линейной градиентной заливкой. <br>
+						<br>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<div class="example-block_5">
+						<br>Блочный тег 5. С радиальной градиентной заливкой. <br>
+						<br>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+			</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+
+		<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========Б====================================================-->
+			<div class="example">
+				<p class="css_code_H">background-repeat:</p>
+				<p>
+					Определяет как повторять картинку<br> 
+					Значения можно задавать используя отдельное свойство, так и перечислением через пробел при использовании параметраbackground:
+					Например следующие записи будут равноценными:<br>
+					background-image: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg'); <br>
+					background-repeat: no-repeat;<br>
+					=<br>
+					background: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg') no-repeat;<br>
+					Синтаксис: <br>
+					background-repeat: no-repeat | repeat | repeat-x | repeat-y | <br>
+				</p>
+				<p></p>
+				<p></p>
+
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_6{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							background: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg') no-repeat;<br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_6">
+						Блочный тег 6. Свойство: значение. <br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<p class="css_code">
+						.example-block_7{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							background: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg') repeat-x;<br>
+						}<br>
+					</p>
+					<div class="example-block_7">
+						Блочный тег 7. Повторение по X <br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<p class="css_code">
+						.example-block_8{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							background: url('../img/Frelancerpojizni/Lesson_9/avatar.jpg') repeat-y;<br>
+						}<br>
+					</p>
+					<div class="example-block_8">
+						Блочный тег 8. Повторение по Y. <br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<br>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+			</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+
+		<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========Б====================================================-->
+			<div class="example">
+				<p class="css_code_H">background-position:</p>
+				<p>Параметр задает куда именно вставить картинку. Можно присваивать значение через пробел используя background:<br> 
+					Фон можо задавать несколькими картинками, цветом и текстурой одновременно. <br>
+					При указании места вставки картинки первым значением задаем отступ от левого края блока, вторым отступ от верхнего края блока. Можно задавать в px, в %, или словами top | bottom | left | righr |
+				</p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<div class="emmet">
+							<p>Абревиатура EMMET : bg+ + <span class="hotKey">Tab</span> = _________(у меня почему-то не работает) </p>
+					</div>
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_10{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							background: url('../img/Frelancerpojizni/Lesson_9/avatar_2.jpg') 0 0 no-repeat, url('../img/Frelancerpojizni/Lesson_9/avatar_3.jpg') center no-repeat, url('../img/Frelancerpojizni/Lesson_9/avatar_2.jpg') right/50px no-repeat, url('../img/Frelancerpojizni/Lesson_9/bg_repeat.jpg');<span>/*фон и 3 картинки*/</span><br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_10">
+						Блочный тег 10. Как видим фон можо задавать несколькими картинками, цветом и текстурой одновременно. <br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<br>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+			</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+
+		<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========Б====================================================-->
+			<div class="example">
+				<p class="css_code_H">background-attachment:</p>
+				<p>Определяет будет ли прокручиваться фон вместе с содержимым блока<br> <br>
+					background-attachment: fixed | scroll | local[, fixed | scroll | local] <br><br>
+					<ul class="values">
+						<li>fixed - Делает фоновое изображение элемента неподвижным.</li>
+						<li>scroll - Позволяет перемещаться фону вместе с содержимым.</li>
+						<li>inherit - Наследует значение родителя.</li>
+						<li>local - Фон фиксируется с учётом поведения элемента. Если элемент имеет прокрутку, то фон будет прокручиваться вместе с содержимым, но фон выходящий за рамки элемента остаётся на месте.</li>
+					</ul>
+				</p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<div class="emmet">
+							<p>Абревиатура EMMET : ba+ <span class="hotKey">Tab</span> = background-attachment: fixed; </p>
+					</div>
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_11{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') center no-repeat;<span>/*фон - картинка*/</span><br>
+							background-attachment: fixed;<br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_11">
+						Блочный тег 11.Фон зафиксирован и не перемещается вместе с блоком.<br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<br>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+								<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_12{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0 no-repeat scroll; <span>/*фон - картинка, равнение вверх влево, не повторять, прокручивать*/</span>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_12">
+						Блочный тег 12. Фон прокручивается вместе с блоком<br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<br>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+								<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_13{<br>
+							height: 200px;<br>
+							border-radius: 15px;<br>
+							box-shadow: 0 0 10px #000;<br>
+							background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') center 0 no-repeat local; <span>/*фон картинка, выравнивание горизонтально - по центру, по вертикали к верху, не повторять, прокручивать локально*/</span>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_13">
+						Блочный тег 13. Фон прокручивается если в блоке есть полоса прокрутки<br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<br>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+			</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+
+		<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========Б=14-20===================================================-->
+			<div class="example">
+				<p class="css_code_H">background-size:</p>
+				<p>Масштабирует изображение по заданным параметрам<br> <br>
+					background-size: [ <значение> | <проценты> | auto ]{1,2} | cover | contain<br><br>
+					<ul class="values">
+						<li> <значение> - Задает размер в любых доступных для CSS единицах — пикселы (px), сантиметры (cm), em и др.</li>
+						<li><проценты> - Задает размер фоновой картинки в процентах от ширины или высоты элемента.</li>
+						<li>auto - Если задано одновременно для ширины и высоты (auto auto), размеры фона остаются исходными; если только для одной стороны картинки (100px auto), то размер вычисляется автоматически исходя из пропорций картинки.</li>
+						<li>cover - Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока.</li>
+						<li>contain - Масштабирует изображение с сохранением пропорций таким образом, чтобы картинка целиком поместилась внутрь блока.</li>
+					</ul>
+				</p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<div class="emmet">
+							<p>Абревиатура EMMET : bz + <span class="hotKey">Tab</span> = background-size: </p>
+					</div>
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_14{<br>
+							margin: 0 0 30px 0; <span>/*внешний отступ*/</span><br>
+							padding: 10px 10px 10px 10px; <span>/*внутренний отступ*/</span><br>
+							height: 150px; <span>/*высота блока*/</span><br>
+							border-radius: 15px; <span>/*скругление краёв*/</span><br>
+							box-shadow: 0 0 10px #000; <span>/*тень блока x - 0, y - 0, размытие - 10px, цвет черный*/</span><br>
+							overflow: hidden; <span>/*Скрывает содержимое вне блока*/</span>
+							background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0 no-repeat;<span>/*фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать*/</span><br>
+							<span>/*Выделенная запись свойства:*/</span><br>
+							background-size: auto auto; <span>/*значение по умолчанию*/</span><br>
+							<span>/*Сокращенная запись:*/</span><br>
+							background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0/auto auto no-repeat;<span>/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция auto*/</span><br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_14">
+						Блочный тег 14.Значение по умолчанию, оригинальный размер картинки.<br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+				<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_15{<br>
+						background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0/100% auto no-repeat;<span>/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция верх-лево, размер по ширине блока*/</span><br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_15">
+						Блочный тег 15. Ширина фоновой картинки = ширине блока.<br>
+						
+					</div>
+				<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_16{<br>
+
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_16">
+						Блочный тег 16. Высота фоновой картинки = высоте блока ширина пропорционально <br>
+						
+					</div>
+				<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_17{<br>
+
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_17">
+						Блочный тег 17. Растягивает картинку на всю ширину и высоту блока.<br>
+						
+					</div>
+				<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_18{<br>
+							margin: 0 35% 30px 35%; <span>/*внешний отступ*/</span><br>
+							width: 30%; <span>/*Ограничим ширину для наглядности*/</span><br>
+							/*Сокращенная запись:*/<br>
+							background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0/contain no-repeat;<span>/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция верх-лево, размер горизонтальный по размеру блока*/</span><br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_18">
+						Блочный тег 18. Масштабирует изображение с сохранением пропорций таким образом, чтобы картинка целиком поместилась внутрь блока. То есть по меньшей стороне картинки.<br>
+						
+					</div>
+				<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_19{<br>
+							margin: 0 25% 30px 25%; <span>/*внешний отступ*/</span><br>
+							width: 50%; <span>/*Ограничим ширину для наглядности*/</span><br>
+							/*Сокращенная запись:*/<br>
+							background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') center/cover no-repeat;<span>/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция верх-лево, размер горизонтальный по размеру блока*/</span><br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_19">
+						Блочный тег 19.Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока. То есть по большей стороне картинки/<br>
+						Очень нужное и часто применяемое значение!
+					</div>
+				<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_20{<br>
+							background: url('../img/Frelancerpojizni/Lesson_9/bg.jpg') 0 0/300px 200px no-repeat;<span>/*(сокращенная запись) фон картинка, выравнивание горизонтально-к левому краю, по вертикали к верху, не повторять, прокручивать, позиция верх-лево, размер горизонтальный по размеру блока*/</span><br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_20">
+						Блочный тег 20.Устанавливаем конкретные размеры. Если установлено одно значение, оно задает ширину фона, второе значение принимается за auto. Пропорции картинки при этом сохраняются. Использование двух значений через пробел задает ширину и высоту фоновой картинки.<br>
+						
+					</div>
+				<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+			</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========Б====================================================-->
+			<div class="example">
+				<h2>Установка любого маркера для списка с помощью свойства background:</h2>
+
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_21{<br>
+							font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; <span>/*Задаем шрифт Arial*/</span><br>
+							margin: 0 0 30px 0;<span> /*внешний отступ*/</span><br>
+							padding: 10px 10px 10px 10px; <span>/*внутренний отступ*/</span><br>
+							height: 300px; <span>/*высота блока*/</span><br>
+							border-radius: 15px; <span>/*скругление краёв*/</span><br>
+							box-shadow: 0 0 10px #000; <span>/*тень блока x - 0, y - 0, размытие - 10px, цвет черный*/</span><br>
+							overflow: hidden; <span>/*Скрывает содержимое вне блока*/</span><br>
+							<span>/*Сокращенная запись:*/</span><br>
+							background: url('../img/Frelancerpojizni/Lesson_9/bg_repeat.jpg') 0 0;<span>/*фон - посвторяющаяся картинка*/</span><br>
+						}<br>
+						.list {}<br><br>
+						.list li{<br>
+							font-size: 24px; <span>/*Размер текста побольше*/</span><br>
+							margin: 0 0 15px 0;<span>/*Нижний отступ от пункта*/</span><br>
+							padding: 0 0 0 30px; <span>/*отступаем место для иконок*</span>/<br>
+							background: url(../img/Frelancerpojizni/Lesson_9/icons/li.svg) 0 5px no-repeat; <span>/*Задаем картинку и позиционируем её для красоты*/</span><br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_21">
+						Блок 21. Зададим для маркерованого списка иконку из папки img<br><br>
+						<ul class="list">
+							<li>Пункт 1.Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non</li>
+							<li>Пункт 2</li>
+							<li>Пункт 3</li>
+							<li>Пункт 4</li>
+							<li>Пункт 5</li>
+						</ul>
+					</div>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+			</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+
+
+
+
+
+		<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========Б====================================================-->
+			<div class="example-display-none">
+				<p class="css_code_H">overflow:</p>
+				<p>Пояснение параметра</p>
+				<p>Возможные значения:
+					</p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<div class="emmet">
+							<p>Абревиатура EMMET : __+ <span class="hotKey">Tab</span> = _________</p>
+					</div>
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_1{<br>
+						overflow: visible; <span>/*коментарий css*/</span><br>
+						}<br>
+					</p>
+					<!--пример-->
+					<div class="example-block_1">
+						Блочный тег. Свойство: значение. <br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+			</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+
+		<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА========БСК==================================================-->
+			<div class="example-display-none">
+				<p class="css_code_H">overflow:</p>
+				<p>Пояснение параметра</p>
+				<p>Возможные значения:
+					</p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+					<div class="emmet">
+							<p>Абревиатура EMMET : __+ <span class="hotKey">Tab</span> = _________</p>
+					</div>
+					<!--Вставка CSS кода============-->
+					<p class="css_code">
+						.example-block_1{<br>
+						overflow: visible; <span>/*коментарий css*/</span><br>
+						}<br>
+					</p>
+					<!--БЛОЧНЫЙ пример-->
+					<div class="example-block_2">
+						Блочный тег. Свойство: значение. <br>
+						Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+					</div>
+					<!--СТРОЧНЫЙ пример-->
+					<span class="example-string_2">
+						Строчный тег. Свойство: значение. <br>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro id quae ducimus, blanditiis eveniet esse commodi quod amet optio quam deserunt nesciunt, ullam temporibus sequi explicabo autem quas! Magnam eaque debitis totam iure atque illo deleniti, laborum numquam? Veniam dolore provident dolorem, tenetur dolores est rerum eligendi placeat commodi doloribus atque obcaecati delectus cupiditate impedit animi quas, perferendis temporibus magni unde, voluptate iure aspernatur eum. Quos deserunt, laborum minus iure delectus ipsa beatae nobis illum, nulla distinctio. Consectetur culpa obcaecati delectus ut rem quo molestiae, alias molestias adipisci natus nemo cum. Laudantium, perferendis provident. Explicabo sapiente id dicta labore architecto.
+					</span>
+					<p><img class="example-image_2" src="../../img/Frelancerpojizni/Lesson_8/youtube.png" alt=""></p>
+				<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+				</div>
+		<!-- / ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->		
+	
+	</body>
+</html>

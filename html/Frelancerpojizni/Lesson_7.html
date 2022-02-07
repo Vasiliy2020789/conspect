@@ -1,0 +1,410 @@
+<!--Сообщаем браузеру как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных-->
+<head>
+	<!--кодировка страницы-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../../css/Lesson_7.css">
+	<!--Заголовок страницы в браузере-->
+	<title>Свойства блоков. CSS padding. CSS margin. CSS display.</title>
+</head>
+<!--отображаемое тело страницы-->
+<body>
+	<a href="../../index.html"> Домой </a><!--Поле навигации по сайту. ../ - означает переход на директорию выше-->
+	<p class="time">Затраты времени: 5 h 00 m</p>
+<h1>Свойства блоков. CSS padding. CSS margin. CSS display.</h1>
+<div class="example">
+	<p class="css_code_H">padding:</p>
+	<p>Определяет отступы ВНУТРИ блочного элемента.</p>
+	<p>Значения можно задавать в пикселях px, в процентах %.</p>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>p + <span class="hotKey">Tab</span> = padding: далее перечисляем значения через пробел </p>
+			<p>p20 + <span class="hotKey">Tab</span> = padding: 20px; </p>
+	</div>
+	<h3>Варианты присваивания значений в пикселях:</h3>
+	<p class="css_code">padding: 10px 20px 30px;<span> /*Определяет отступы ВНУТРИ блочного элемента px в пикселях от верхнего 10, слева и справа 20, снизу 30.*/</span></p>
+	<p class="css_code">padding: 10px 20px;<span> /*Определяет отступы ВНУТРИ блочного элемента px в пикселях от верхнего и нижнего 10, правого и левого 20.*/</span></p>
+	<p class="css_code">padding: 10px;<span> /*Определяет отступы ВНУТРИ блочного элемента px в пикселях от всех старон 10 пикселей*/</span></p>
+	<p class="css_code">padding: 10px 20px 30px 5px;<span> /*/*Определяет отступы ВНУТРИ блочного элемента px в пикселях от верхнего 10, правого 20, снизу 30, слева 5.*/*/</span></p>
+	<div class="example-block">
+			Блочный тег <br>
+			Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<h3>Варианты присваивания значений в процентах:</h3>
+	<p class="css_code">padding: 5%;<span> /*Устанавливает ВНУТРЕННИЙ отступ со всех сторон 5% от ширины родителя*/</span></p>
+	<div class="example-block_1">
+		Блочный тег <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+</div>
+
+<br>
+<p>Если применить те-же параметры к строчному тегу span то нчего не выйдет:</p>
+<br>
+<div class="">
+<span class="example-string">
+	Строчный тег <br>
+	Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro id quae ducimus, blanditiis eveniet esse commodi quod amet optio quam deserunt nesciunt, ullam temporibus sequi explicabo autem quas! Magnam eaque debitis totam iure atque illo deleniti, laborum numquam? Veniam dolore provident dolorem, tenetur dolores est rerum eligendi placeat commodi doloribus atque obcaecati delectus cupiditate impedit animi quas, perferendis temporibus magni unde, voluptate iure aspernatur eum. Quos deserunt, laborum minus iure delectus ipsa beatae nobis illum, nulla distinctio. Consectetur culpa obcaecati delectus ut rem quo molestiae, alias molestias adipisci natus nemo cum. Laudantium, perferendis provident. Explicabo sapiente id dicta labore architecto.
+</span>
+<br>
+</div>
+<br><br><br>
+<div class="example">
+	<p class="css_code_H">margin:</p>
+	<p>Определяет отступы СНАРУЖИ блочного элемента.</p>
+	<p>Значения можно задавать в пикселях px, в процентах %. Все точно также как и для padding: за исключением одной особенности - для margin: можно установливать отрицательное значение!</p>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>m + <span class="hotKey">Tab</span> = margin: далее перечисляем значения через пробел </p>
+			<p>m20 + <span class="hotKey">Tab</span> = margin: 20px; </p>
+	</div>
+	<p>Варианты присваивания значений в пикселях:</p>
+	<p class="css_code">margin: 10px 20px 30px;<span> /*Определяет отступы СНАРУЖИ блочного элемента px в пикселях от верхнего 10, слева и справа 20, снизу 30.*/</span></p>
+	<p class="css_code">margin: 10px 20px;<span> /*Определяет отступы СНАРУЖИ блочного элемента px в пикселях от верхнего и нижнего 10, правого и левого 20.*/</span></p>
+	<p class="css_code">margin: 10px;<span> /*Определяет отступы СНАРУЖИ блочного элемента px в пикселях от всех старон 10 пикселей*/</span></p>
+	<p class="css_code">margin: 10px 20px 30px 5px;<span> /*Определяет отступы СНАРУЖИ блочного элемента px в пикселях от верхнего 10, правого 20, снизу 30, слева 5.*/</span></p>
+	<div class="example-block_2">
+		Блочный тег <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<h3>Варианты присваивания значений в процентах:</h3>
+	<p class="css_code">margin: 5%;<span> /*Устанавливает ВНЕШНИЙ отступ со всех сторон 5% от ширины родителя*/</span></p>
+	<div class="example-block_3">
+		Блочный тег <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+		<h3>Варианты присваивания отрицательных значений:</h3>
+	<p class="css_code">margin: 10px -20px 30px -5px;<span> /*Определяет отступы СНАРУЖИ блочного элемента px в пикселях от верхнего 10, правого -20, снизу 30, слева -5.*/</span></p>
+	<div class="example-block_4">
+		Блочный тег <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+</div>
+<div class="example">
+	<p class="css_code_H">width:</p>
+	<p>Определяет ШИРИНУ блочного элемента. </p>
+	<p>Значения можно задавать в пикселях px, в процентах %. Свойство можно применять к строчному тегу - картинке. К строчному текстовому тегу не применяется!</p>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>w500 + <span class="hotKey">Tab</span> = width: 500px;</p>
+	</div>
+	<h2>Присваивание значения в пикселях:</h2>
+	<p class="css_code">width: 500px;<span>/*Жестко закрепляет ширину блока 500 пикселей при сужении окна браузера появится ползунок прокрутки.*/</span></p>
+	<div class="example-block_5">
+		Блочный тег шириной строго 500 пикселей<br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<br>
+	<p class="css_code">width: 100px;<span>/*Жестко закрепляет ширину блока 100 пикселей при сужении окна браузера появится ползунок прокрутки.*/</span></p>
+	<span> Строчный тег</span>
+	<img class="example-img_1" src="../../img/Frelancerpojizni/600x600.jpg" alt="">
+	<span> Строчный тег-картинка</span>
+	<h3>Минимальная ширина. при уменьшении родителя ниже значения, тег вылазит за рамки родителя и появляется ползунок прокрутки.</h3>
+	<p class="css_code">min-width: 500px;<span>  /*ограничевает минимальную ширину тега 500 пикселей*/</span></p>
+	<div class="example-block_7">
+		Блочный тег <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+		<h3>Максимальная ширина</h3>
+	<p class="css_code">max-width: 500px;<span>  /*ограничевает максимальную ширину тега 500 пикселей*/</span></p>
+	<div class="example-block_8">
+		Блочный тег <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<p>Параметры можно присвоить картинке</p>
+	<p class="css_code">
+		.example-img_2{<br>
+			  width: 100%; <span>/*растягивает тег на всю ширину родителя*/</span><br>
+			  max-width: 500px; <span>/*ограничевает ширину (картинка не увеличится больше 500px)*/</span><br>
+		}<br>
+	</p>
+		<br>
+	<img class="example-img_2" src="../../img/Frelancerpojizni/600x600.jpg" alt="">
+	<p class="css_code">
+		.example-img_2{<br>
+			  width: 100%; <span>/*растягивает тег на всю ширину родителя*/</span><br>
+			  min-width: 500px;<span>/*ограничевает ширину (картинка не станет меньше 500px)*/</span><br>
+		}<br>
+	</p>
+		<br>
+	<img class="example-img_3" src="../../img/Frelancerpojizni/600x600.jpg" alt="">
+</div>
+<div class="example">
+	<p class="css_code_H">height:</p>
+	<p>Определяет ВЫСОТУ блочного элемента. </p>
+	<p>Значения можно задавать в пикселях px, в процентах %. Свойство можно применять к строчному тегу - картинке. К строчному текстовому тегу не применяется!</p>
+	<h3>Присваивание значения в пикселях. При этом высота блока не зависит от того сколько в нем содержимого.</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>h200 + <span class="hotKey">Tab</span> = height: 200px;</p>
+	</div>
+	<p class="css_code">height: 200px; <span>/* Устанавливает высоту блока 200 пикселей*/</span></p>
+	<div class="example-block_9">
+		Блочный тег высотой строго 200 пикселей. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<br>
+	<h3>Присваивание значения в процентах. При этом высота блока зависит от размера родителя</h3>
+	<div class="emmet">
+		<p>Абревиатура EMMET</p>
+		<p>h50% + <span class="hotKey">Tab</span> = height: 50%;</p>
+	</div>
+	<p class="css_code">height: 50%; <span>/* Устанавливает высоту блока 30% от высоты родителя*/</span></p>
+	<div class="example-block_10">
+		Блочный тег высотой 50%. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<h3>Минимальная высота. Если увеличить количество текста в контейнете то он тоже увеличится подстроившись под содержимое.</h3>
+	<p class="css_code">min-hidth: 200px;<span>  /*ограничевает минимальную ВЫСОТУ тега 200 пикселей*/</span></p>
+	<div class="example-block_11">
+		Блочный тег min-hidth: 200px; мало текста. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+		<div class="example-block_11">
+		Блочный тег min-hidth: 200px; МНОГО текста. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<h2>Максимальная высота</h2>
+	<p class="css_code">max-hidth: 200px; мало текста.<span>  /*ограничевает максимальную ВЫСОТУ тега 200 пикселей*/</span></p>
+	<div class="example-block_12">
+		Блочный тег max-hidth: 200px; <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+		<div class="example-block_12">
+		Блочный тег min-hidth: 200px; МНОГО текста. Внизу можно заметить как контент выходит за рамки контейнера!<br>
+		 dicta, cupiditate qui sint sapiente error quas! Ex.Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+</div>
+<br>
+<br>
+<br>
+<div class="example">
+	<p class="css_code_H">overflow:</p>
+	<p>Определяет параметры отображения содержимого блока.</p>
+	<p>
+		<br>Возможные значения:
+		<br>visible
+		<br>Отображается все содержание элемента, даже за пределами установленной высоты и ширины.
+		<br>hidden
+		<br>Отображается только область внутри элемента, остальное будет скрыто.
+		<br>scroll
+		<br>Всегда добавляются полосы прокрутки.
+		<br>auto
+		<br>Полосы прокрутки добавляются только при необходимости.
+		<br>inherit
+		<br>Наследует значение родителя.
+	</p>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ======================================================-->
+	<h3>Зачение visible</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>ovv + <span class="hotKey">Tab</span> = overflow: visible;</p>
+	</div>
+	<p class="css_code">
+		.example-block_13{<br>
+		overflow: visible; <span>/*оставляет видимым контент выходящий за границы блока*/</span><br>
+		height: 40px; <span>/*ограничим высоту блока для наглядности*/</span><br>
+		border: 1px solid #000; <span>/*черная граница блока 1 пиксель */</span><br>
+		}<br>
+	</p>
+	<div class="example-block_13">
+		Блочный тег высотой строго 40 пикселей с отображением содержимого за пределами заданной высоты. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<br>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ======================================================-->
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ======================================================-->
+	<h3>Зачение scroll</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>ovs + <span class="hotKey">Tab</span> = overflow: scroll;</p>
+	</div>
+	<p class="css_code">
+		.example-block_14{<br>
+		overflow: scroll; <span>/*ВСЕГДА добавляет колесо прокрутки*/</span><br>
+		height: 40px; <span>/*ограничим высоту блока для наглядности*/</span><br>
+		border: 1px solid #000; <span>/*черная граница блока 1 пиксель */</span><br>
+		}<br>
+	</p>
+	<div class="example-block_14">
+		Блочный тег высотой строго 40 пикселей с постоянной полосой прокрутки. Много текста. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<br>
+		<div class="example-block_14">
+		Блочный тег высотой строго 40 пикселей с постоянной полосой прокрутки. Мало текста. <br>
+	</div>
+	<br>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ======================================================-->
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ======================================================-->
+	<h3>Зачение auto</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>ova + <span class="hotKey">Tab</span> = overflow: auto;</p>
+	</div>
+	<p class="css_code">
+		.example-block_15{<br>
+		overflow: auto; <span>/*Добавляет колесо прокрутки по необходимости*/</span><br>
+		height: 40px; <span>/*ограничим высоту блока для наглядности*/</span><br>
+		border: 1px solid #000; <span>/*черная граница блока 1 пиксель */</span><br>
+		}<br>
+	</p>
+	<div class="example-block_15">
+		Блочный тег высотой строго 40 пикселей с добавлением полосы прокрутки по необходимости. Много текста. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<br>
+		<div class="example-block_15">
+		Блочный тег высотой строго 40 пикселей с добавлением полосы прокрутки по необходимости. Мало текста. <br>
+	</div>
+	<br>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ======================================================-->
+</div>
+<br>
+<br>
+<br>
+<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+<div class="example">
+	<p class="css_code_H">display:</p>
+	<p>Многоцелевое свойство, которое определяет, как элемент должен быть показан в документе.</p>
+	<p>		<br>Возможные значения:
+		<br> display: block | inline | inline-block | inline-table | list-item | none | run-in | table | table-caption | table-cell | table-column-group | table-column | table-footer-group | table-header-group | table-row | table-row-group <br>
+		<br>	none Временно удаляет элемент из документа. Занимаемое им место не резервируется и веб-страница формируется так, словно элемента и не было. Изменить значение и сделать вновь видимым элемент можно с помощью скриптов, обращаясь к свойствам через объектную модель. В этом случае происходит переформатирование данных на странице с учетом вновь добавленного элемента.
+		<br>	Некоторым значениям этого параметра мы уделим отдельные уроки, на этом занятии рассмотрим основные из них.
+	</p>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<h3>Зачение block</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>db + <span class="hotKey">Tab</span> = display: block;</p>
+	</div>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block_16{<br>
+		display: block;<span> /*Определяет элемент как блочный*/</span><br>
+		border: 1px solid #000;<span>/*черная граница блока 1 пиксель */</span><br>
+		}<br>
+	</p>
+	<!--пример-->
+	<div class="example-block_16">
+		Блочный тег. Разницы не видно. так как тег div по умолчанию определяется как блочный
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+	<br>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<br>
+<br>
+<br>
+	<p class="css_code">
+			.example-string_1{<br>
+			border: 1px solid #000;<span>/*черная граница блока 1 пиксель */</span><br>
+			padding: 10px;	<br>
+			}<br>
+	</p>
+<span class="example-string_1">
+	Строчный тег с границей и внутренним отступом 10 пикселей<br>
+	Lorem ipsum, dolor sit amet, consectetur adipisicing elit. 
+</span>
+<br>
+<br>
+<br>
+	<p class="css_code">
+		.example-string_2{<br>
+		display: block;<span> /*Определяет элемент как блочный*/</span><br>
+		border: 1px solid #000;<span> /*черная граница блока 1 пиксель */</span><br>
+		padding: 10px;	<br>
+		}<br>
+	</p>
+<span class="example-string_2">
+	Строчный тег с границей и внутренним отступом 10 пикселей но с пареметром display: block;<br>
+	Lorem ipsum, dolor sit amet, consectetur adipisicing elit. 
+</span>
+
+</div>
+<br>
+<br>
+<br>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<h3>Зачение inline</h3>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>di + <span class="hotKey">Tab</span> = display: inline;</p>
+	</div>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-block_17{<br>
+		display: inline; <span>	/*Элемент определяется как строчный*/</span><br>
+		border: 1px solid #000;<span>	/*черная граница блока 1 пиксель */</span><br>
+		}<br>
+	</p>
+	<!--пример-->
+	<div class="example-block_17">
+		Блочный элемент div со свойством display: inline; и границей<br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. 
+	</div>
+	<br>
+	<br>
+	<br>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<h3>Зачение inline-block</h3>
+	Гибрит строчного и блочных свойств. Ширина элемента также подстраивается под содержимое тег внешне ведет себя как строчный но внутренне ведет себя как блочный, т.е. будут работать свойства  
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>din + <span class="hotKey">Tab</span> = display: inline-block;</p>
+	</div>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+		.example-string_3{<br>
+			display: inline-block;	 <span>/*Определяет элемент как строчно-блочный*/</span><br>
+			border: 1px solid #000;<span>/*черная граница блока 1 пиксель */</span><br>
+			padding: 10px;	<br>
+		}<br>
+	</p>
+	<!--пример-->
+	<span class="example-string_3">
+		Строчный тег span с границей и внутренним отступом 10 пикселей но переопределенный какстрочно-блочный<br>
+	</span>
+	<br>
+	<br>
+	<br>
+	<div class="emmet">
+			<p>Абревиатура EMMET</p>
+			<p>dn + <span class="hotKey">Tab</span> = display: none;</p>
+	</div>
+	<!--Вставка CSS кода============-->
+	<p class="css_code">
+.example-block_18{
+	display: none; 
+	border: 1px solid #000;/*черная граница блока 1 пиксель */
+}
+	</p>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+	<div class="example-block_18">
+		Блочный элемент div со свойством display: none; и границей<br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. 
+	</div>
+	<br>
+	<br>
+	<br>
+	<!--ТИПОВОЙ КОД С ПРИМЕРОМ ЗНАЧЕНИЙ======================================================-->
+<!--ТИПОВОЙ КОД С ПРИМЕРОМ ПАРАМЕТРА======================================================-->
+
+
+
+	<div class="example-block_10">
+		Блочный тег высотой 50%, у которого родитель - окно браузера. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Quas explicabo eveniet, officia dicta minima quos sint est voluptates, in dignissimos. Eum aperiam vel, repellendus ut labore ad saepe aliquam alias consequatur enim ducimus velit neque non! Velit reiciendis necessitatibus voluptatem nesciunt quod, delectus nisi excepturi voluptates est, sunt praesentium optio? Deleniti nihil accusamus tenetur quae animi aperiam tempore, consectetur reprehenderit vel, commodi quod nisi dolorum quaerat quo officiis qui eaque. Adipisci et, numquam dolor reiciendis ducimus modi quia deleniti sunt quo eaque illo molestiae laudantium voluptate aperiam recusandae non veniam, nostrum eveniet, dicta, cupiditate qui sint sapiente error quas! Ex.
+	</div>
+<div class="example-block_10">
+	<div class="example-block_10">
+		Блочный тег высотой 50%, у которого родитель - другой блочный тег с высотой 50% от окна браузера. <br>
+		Lorem ipsum, dolor sit amet, consectetur adipisicing elit. 
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../css/js.css">
+	<title>Урок 14</title>
+</head>
+
+<body>
+	<h1> <span class="yellow">JavaScript</span> Размеры, прокрутка, координаты </h1>
+	<h2>Урок №14</h2>
+	<div class="lesson"></div>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<button onclick="setScrollBy()" class="scroll">Прокрутить на 50px (scrollBy)</button>
+	<button onclick="setScrollTo()" class="scroll">Прокрутить на 50px (scrollTo)</button>
+	<button onclick="setScrollToOptions()" class="scroll">Прокрутить на 500px (scrollTo + опция)</button>
+	<button onclick="setScrollIntoViev()" class="scroll">Прокрутить до элемента lesson__text_P3
+		setScrollIntoViev()</button>
+	<button onclick="setScrollIntoViev(false)" class="scroll">Прокрутить до элемента lesson__text_P3
+		setScrollIntoViev(false)</button>
+	<p>У ссылки как и у кнопки есть свойство onclick и управлять прокруткой можно как кнопкой(button) так и ссылкой(a)
+	</p>
+	<a onclick="setScrollIntoViev()" class="scroll">Прокрутить до Примера №3
+		setScrollIntoViev()</a>
+	<a onclick="setScrollIntoVievOptions()" class="scroll">Прокрутить до Примера №3 setScrollIntoVievOptions()</a>
+
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+
+
+
+	<div class="lesson__text lesson__text_P1">
+		<h3>Пример 1 </h3>
+		<h4>.clientWidth и .clientHeight - доступная ширина и высота окна</h4>
+		<div class="lesson__text-content lesson__text-content_noDecore">
+			<p>Доступная ширина окна это область доступная нам для работы.</p>
+		</div>
+	</div>
+	<div class="lesson__text lesson__text_P2">
+		<h3>Пример 1 </h3>
+		<h4>.clientWidth и .clientHeight - доступная ширина и высота окна</h4>
+		<div class="lesson__text-content lesson__text-content_noDecore">
+			<p>Доступная ширина окна это область доступная нам для работы.</p>
+		</div>
+	</div>
+	<div class="lesson__text lesson__text_P3">
+		<h3>Пример 3.3 </h3>
+		<h4>elem.scrollIntoView(top)</h4>
+		<div class="lesson__text-content lesson__text-content_noDecore">
+			<p>Прокручивает страницу до элемента. Если значение top не указано (по умолчанию true) - элемент оказывается
+				вверху окна браузера, если top = false то внизу окна браузера </p>
+		</div>
+		<h3>Пример 3.4 </h3>
+		<h4>elem.scrollIntoView(top) с опциями</h4>
+		<div class="lesson__text-content lesson__text-content_noDecore">
+			<p>Опциями можно задать позицию элемента при прокрутке и плавность прокрутки. НЕ РАБОТАЕТ В Safari</p>
+		</div>
+		<h3>Пример 3.5 </h3>
+		<h4>Запрет прокрутки</h4>
+		<div class="lesson__text-content lesson__text-content_noDecore">
+			<button onclick="setEnableDisableScroll()" class="scroll">Запретить/Разрешить прокрутку</button>
+			<p></p>
+		</div>
+
+
+	</div>
+	<div class="lesson__text lesson__text_P4">
+		<h3>Пример 4 </h3>
+		<h4>Метрики элементов на странице - геометрические свойства объекта на странице.</h4>
+		<p>Получим этот объект в переменную:</p>
+		<div class="lesson__block">
+			<button onclick="setElementScrollBy()" class="scroll">Прокрутить на 20px (scrollBy)</button>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid
+				harum
+				totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid
+				harum
+				totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid
+				harum
+				totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid
+				harum
+				totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+		</div>
+		<p>Теперь получим родительский элемент, относительно которого позиционирован наш объект. Это будет ближайший
+			предок, который удовлетворяет следующим условиям:
+		<ol>
+			<li>Является CSS - позиционирорванным (CSS-свойство position равно absolute, relative, fixed или sticky)</li>
+			<li>или теги td th table</li>
+			<li>или body</li>
+		</ol>
+		В данном случае body.
+		</p>
+		<p>Ситуации в которых offsetParent = null :
+		<ol>
+			<li>Для скрытых элементов (с CSS-свойством display: none или когда его нет в документе)</li>
+			<li>для элементов body и html </li>
+			<li>Для элементов с position: fixed.</li>
+		</ol>
+		</p>
+		<h3>Пример 4.1 </h3>
+		<h4>Позиция объекта.</h4>
+		<p>Об</p>
+		<h3>Пример 4.2</h3>
+		<h4>Размеры объекта</h4>
+		Если скрыть объект с помощью css display: none; то значения будут равны 0
+		<h3>Пример 4.6</h3>
+		<h4>Методы прокрутки в элементе теже что и на странице</h4>
+	</div>
+	<div class="lesson__text lesson__text_P5">
+		<h3>Пример 5 </h3>
+		<h4>Координаты </h4>
+		<p>Большинство соответствующих методов JavaSсript работают в одной из 2х системах координат:
+			1. относительно окна браузера
+			2. Относительно документа
+		</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid
+			harum
+			totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+		<div class="lesson__item">
+			Я объект
+		</div>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid
+			harum
+			totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+
+	</div>
+
+
+
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, consequuntur! Quod aut voluptate aliquid harum
+		totam ea illum, fugit ratione iusto cupiditate velit quia veritatis quam officia? Iste, qui dignissimos.</p>
+	<p class="red">ВАЖНО!!! 3 раза вернуться к этому уроку:<br>
+		заполнить и оформить страницу;<br>
+		сделать домашку таймкод ;<br>
+		найти и решить 10 задач по этой теме из других источников;<br>
+		придумать и реализовать проект с использованием полученых знаний.<br><br>
+		Учить теорию!
+		Переписать таблицу шпаргалку!
+		тк 23:30 пересмотреть
+	</p>
+
+	<script src="../../js/JawaScriptFPJ/Lesson_14.js"></script>
+</body>
+
+</html>

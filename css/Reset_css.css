@@ -1,0 +1,46 @@
+/* */
+/*Обнуление*/
+/* Очищаем все отступы и границы во ВСЕХ тегах на странице*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+/* Меняет подсчет ширины блока для удобства верстания*/
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* Убираем линии обводки у некооторых браузеров*/
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+/* Делает теги блочными*/
+nav,footer,header,aside{display: block;}
+/* Уравнивает поведение шрифтов в разных браузерах*/
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1; /* просто 1(без 'px') */
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+/* Задаем наследование шрифта (по умолчанию эти теги не наследуют шрифт)*/
+input,button,textarea{font-family:inherit;}/* */
+/* Убирают некоторые особености в некоторых  браузерах*/
+input::-ms-clear{display: none;}/* */
+button{cursor: pointer;}/* */
+button::-moz-focus-inner {padding:0;border:0;}/* */
+a, a:visited{text-decoration: none;}/* */
+a:hover{text-decoration: none;}/* */
+ul li{list-style: none;}/* чистит стили в маркированых списках*/
+img{vertical-align: top;}/* */
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}/*Обнуляет заголовки */
+/*--------------------*/
+/* Далее задаем стили согласно ТЕХ. ЗАДАНИЮ */
+
+

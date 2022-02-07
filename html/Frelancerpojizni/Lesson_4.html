@@ -1,0 +1,95 @@
+<!--Сообщаем браузеру как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных-->
+<head>
+	<!--кодировка страницы-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Заголовок страницы в браузере-->
+	<link rel="stylesheet" type="text/css" href="../../css/Lesson_4.css">
+	<title>Урок 4.</title>
+</head>
+<!--отображаемое тело страницы-->
+<body>
+	<a href="../../index.html"> Домой </a><!--Поле навигации по сайту. ../ - означает переход на директорию выше-->
+	<h1>HTML формы.</h1>
+HTML формы добавляют сайту интерактивности. Например формы поиска, регистрации, авторизации. С помощью форм данные введеные пользователем передаются на сервер. 
+<h2>HTML теги необходимые для создания форм.</h2>
+<p><span class="teg">&lt;form&gt;&lt;/form&gt;</span> - блочный тег, оболочка формы.Все поля, переключатели, чекбоксы пишутся внутри этого тега. <br>Атрибут action="" определяет куда передавать данные. <br>Атрибут method="" может принимать значение "get" - по умолчанию, передача данных идет прямо в адресной строке подходит для передачи малого количества данных и метод "post" - передает данные скрытно используя запрос браузера.</p>
+<h3>Основные атрибуты тега <span class="teg">&lt;&gt;&lt;/form&gt;</span> </h3>
+
+
+
+
+
+<p>Если мы хотим чтобы наша форма умела отправлять прикрепленные файлы то нужно использовать: <br><span class="teg">&lt;form action="#" method="post" enctype="multipart/form-data"&gt;&lt;/form&gt;</span> </p>
+<p>Метод get работает следующим образом</p>
+<p>после нажатия на кнопку отправить к имени файла добавляется "?" и данные в таком формате:</p>
+/dz_lesson4_avtor.html?username=&username=&username=&gender=male&car=yes&text=&foto=&color=yellow#
+перечисляются имена полей формы
+
+<form action="#" method="post" enctype="multipart/form-data"></form>
+<div>
+	<input type="text" name="username" value=""/>
+</div>
+<div>
+	<input type="password" name="userpass" value=""/>
+</div>
+<div>
+	<p><input checked type="radio" name="beer" value="lager" /> Светлое пиво </p>
+	<p><input type="radio" name="beer" value="dark" /> Темное пиво </p>
+</div>
+	<br>
+<div>
+	<p><input type="radio" name="beer2" value="lager" /> Светлое пиво </p>
+	<p><input checked type="radio" name="beer2" value="dark" /> Темное пиво </p>
+</div>
+
+<div>
+	<p><input type="checkbox" name="car" value="yes" /> Наличие авто </p>
+	<p><input checked type="checkbox" name="car2" value="yes" /> Наличие авто 2 </p>
+	<p><input type="checkbox" name="car3" value="yes" /> Наличие авто 3 </p>
+	<p><input checked type="checkbox" name="car4" value="yes" /> Наличие авто 4 </p>
+</div>
+<br>
+<div>
+	<p><input type="file" name="foto"> Наличие авто </p>
+</div>
+<br>
+<div>
+	<textarea placeholder="" name="text"></textarea>
+</div>
+<br>
+<div>
+	<select name="color">
+		<options value="red">Красный</options>
+		<options value="yellow">Желтый</options>
+		<options value="blue">Голубой</options>
+	</select>
+</div>
+<br>
+<div>
+	<button type="submit">Отправить</button> <!--type="submit" - при нажатии на кнопку отправится вся форма, type="submit" - при нажатии на кнопку вся форма очистится -->
+</div>
+Значение атрибутов:
+type="text" - тип данных. Возможные значения text (по умолчанию) ввод текста, tel - переключит клавиатуру мобильного устройства пользователя на цифры, type="password" - скрывает вводимый текст. name="username" value=""
+Общие атрибуты форм.
+Для тегов &lt;input/&gt; и &lt;textarea/&gt; можно задать атрибут placeholder=""
+placeholder="Подпись кода" задает надпись внутри текстового поля.
+Например:
+<input placeholder="Подпись поля"type="text" name="username" value=""/>
+Атрибут disabled="" отключает форму, данные с нее не передаются на сервер
+Например:
+<input disabled="" placeholder="Отключеное поле"type="text" name="username" value=""/>
+<br>
+
+
+
+
+<h2>Домашнее задание: сверстать форму как изученых тегов.</h2>
+<a href="dz_lesson_4.html">Домашняя работа</a>
+
+</body>
+</html>
