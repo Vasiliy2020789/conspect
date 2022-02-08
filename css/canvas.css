@@ -177,16 +177,20 @@ canvas {
 	/*margin: 40px;*/
 	border: 3px solid #0A202F;
 	background-color: #2B303B;
+	font-family: monospace;
 	/*overflow: auto;*/
 }
 .html_text {
 	color: #EC5E29;
+	font-family: monospace;
 }
 .css_text {
 	color: #2980C1;
+	font-family: monospace;
 }
 .js_text, .js_code {
 	color: #F1C23C;
+	font-family: monospace;
 }
 .html_text::after {
 	font-size: 14px;
