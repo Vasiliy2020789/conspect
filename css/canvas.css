@@ -266,3 +266,8 @@ z-index: 50;
 		background-color: #FFFF00;
 	}
 	/*__end__Стилизация вкладок*/
+
+
+	.options {
+	background-color: rgba(255, 204, 0, 1);
+	}
