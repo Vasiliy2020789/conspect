@@ -12,7 +12,7 @@ const arrLessonTemaTabs = [
 	[1, "Урок", "Рисование прямоугольников", 7, 0],
 	[2, "Урок", "Рисуем линии", 6, 0],
 	[3, "Урок", "Paint в Canvas", 2, 0],
-	[4, "Урок", "Дуги и круги", 4, 0],
+	[4, "Урок", "Дуги и круги", 8, 0],
 	[5, "Урок", "Тема урока", 2, 0],
 	[6, "Урок", "Тема урока", 2, 0],
 	[7, "Урок", "Тема урока", 2, 0],
@@ -26,7 +26,7 @@ const tabsNameArr = [
 	[arrLessonTemaTabs[0][3], "Очистить", "красный прямоугольник", "синий прямогуольник", "очистка облости", "незалитый", "обводка", "заливка"],
 	[arrLessonTemaTabs[1][3], "Очистить", "по умолчанию", "цвет / толщина ", "концы линий", "примыкание линий", "треугольник"],
 	[arrLessonTemaTabs[2][3], "Очистить", "Рисование"],
-	[arrLessonTemaTabs[3][3], "Очистить", "Дуга", "цвет / толщина", "заливка"],
+	[arrLessonTemaTabs[3][3], "Очистить", "Дуга", "цвет / толщина", "заливка", "окружности", "_", "_", "_"],
 	[arrLessonTemaTabs[4][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[5][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[6][3], "Очистить", " _ "],
@@ -418,6 +418,7 @@ functionArr[3][1] =
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
 		var pi = Math.PI;//заносим число пи в переменную для удобства
 		functionArr[3][0](canvasArr[3])
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
 		ctx.lineWidth = 1;//толщина линии
 		ctx.strokeStyle = "black";//цвет линии
 		ctx.arc(100, 100, 75, 0, pi / 2, true);
@@ -425,12 +426,15 @@ functionArr[3][1] =
 		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
 		ctx.arc(300, 100, 75, 0, pi / 2, false);
 		ctx.stroke();
+
 		jsCodeArr[2].innerHTML = ``
 	}
 functionArr[3][2] =
 	function (canvas) {
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
 		var pi = Math.PI;//заносим число пи в переменную для удобства
+		functionArr[3][0](canvasArr[3]);
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
 		ctx.lineWidth = 5;//толщина линии 5px
 		ctx.strokeStyle = "red";//цвет линии красный
 		ctx.arc(100, 100, 75, 0, pi / 2, true);
@@ -445,19 +449,79 @@ functionArr[3][3] =
 	function (canvas) {
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
 		var pi = Math.PI;//заносим число пи в переменную для удобства
+		functionArr[3][0](canvasArr[3]);
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
 		ctx.lineWidth = 5;//толщина линии 5px
 		ctx.strokeStyle = "red";//цвет линии красный
-		ctx.arc(100, 100, 75, 0, pi / 2, true);
+		ctx.fillStyle = "yellow";
+		ctx.arc(100, 50, 40, 0, 2 * pi, true);
 		ctx.stroke();
+		ctx.fill();
 
 		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
-		ctx.arc(300, 100, 75, 0, pi / 2, false);
-		ctx.fillStyle = "yellow";
+		ctx.lineWidth = 5;//толщина линии 5px
+		ctx.strokeStyle = "red";//цвет линии красный
+		ctx.fillStyle = "#7eb8e7";
+		ctx.arc(100, 150, 40, 0, pi / 2, true);
 		ctx.stroke();
-		//ctx.fillRect();
+		ctx.fill();
+
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+		ctx.lineWidth = 5;//толщина линии 5px
+		ctx.strokeStyle = "red";//цвет линии красный
+		ctx.fillStyle = "#770066";
+		ctx.arc(200, 50, 40, 0, pi, true);
+		ctx.stroke();
+		ctx.fill();
+
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+		ctx.lineWidth = 5;//толщина линии 5px
+		ctx.strokeStyle = "red";//цвет линии красный
+		ctx.fillStyle = "#000055";
+		ctx.arc(200, 150, 40, 0, 3 * pi / 2, true);
+		ctx.stroke();
+		ctx.fill();
+
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+		ctx.lineWidth = 5;//толщина линии 5px
+		ctx.strokeStyle = "red";//цвет линии красный
+		ctx.fillStyle = "#73ffd4";
+		ctx.arc(300, 50, 40, 0, pi / 2, true);
+		ctx.closePath();//замыкает нарисованный путь
+		ctx.stroke();
+		ctx.fill();
+
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+		ctx.lineWidth = 5;//толщина линии 5px
+		ctx.strokeStyle = "red";//цвет линии красный
+		ctx.fillStyle = "#de6bf5";
+		ctx.arc(300, 150, 40, 0, 3 * pi / 2, true);
+		ctx.closePath();//замыкает нарисованный путь
+		ctx.stroke();
+		ctx.fill();
 		jsCodeArr[2].innerHTML = ``
 	}
+functionArr[3][4] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		var pi = Math.PI;//заносим число пи в переменную для удобства
+		functionArr[3][0](canvasArr[3]);
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+		ctx.lineWidth = 5;//толщина линии 5px
+		ctx.strokeStyle = "red";//цвет линии красный
+		ctx.arc(150, 100, 75, 0, 2 * pi, false);
+		ctx.fillStyle = "#de6bf5";
+		ctx.stroke();
+		ctx.fill();
 
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+		ctx.arc(250, 100, 75, 0, 2 * pi, false);
+		ctx.stroke();
+		ctx.fillStyle = "#de8825";
+		ctx.fill();
+
+		jsCodeArr[2].innerHTML = ``
+	}
 //__end__Урок 4. Дуги и круги.
 
 //Урок 5.
