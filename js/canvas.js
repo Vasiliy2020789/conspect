@@ -26,7 +26,7 @@ const tabsNameArr = [
 	[arrLessonTemaTabs[0][3], "Очистить", "красный прямоугольник", "синий прямогуольник", "очистка облости", "незалитый", "обводка", "заливка"],
 	[arrLessonTemaTabs[1][3], "Очистить", "по умолчанию", "цвет / толщина ", "концы линий", "примыкание линий", "треугольник"],
 	[arrLessonTemaTabs[2][3], "Очистить", "Рисование"],
-	[arrLessonTemaTabs[3][3], "Очистить", "Дуга", "цвет / толщина", "заливка", "окружности", "_", "_", "_"],
+	[arrLessonTemaTabs[3][3], "Очистить", "Дуга", "цвет / толщина", "заливка", "окружности", "_", "_", "пакман"],
 	[arrLessonTemaTabs[4][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[5][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[6][3], "Очистить", " _ "],
@@ -370,11 +370,13 @@ exampleExplainArr[2].insertAdjacentHTML(
 	</div>`
 );
 //__end__Создаем элемент  управления (цвет)
+
 //_______Получаем цвет из input
 document.getElementById('L3MyColor').oninput = function () {
 	myColor = this.value;
 }
 //__end__Получаем цвет из input
+
 functionArr[2] = [
 	function (canvas) {
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
@@ -402,7 +404,6 @@ functionArr[2] = [
 		jsCodeArr[2].innerHTML = ``
 	}
 ];
-
 //__end__Урок 3.
 
 //Урок 4. Дуги и круги.
@@ -508,18 +509,91 @@ functionArr[3][4] =
 		functionArr[3][0](canvasArr[3]);
 		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
 		ctx.lineWidth = 5;//толщина линии 5px
-		ctx.strokeStyle = "red";//цвет линии красный
+		ctx.strokeStyle = "#00BFFF";//цвет линии красный
 		ctx.arc(150, 100, 75, 0, 2 * pi, false);
-		ctx.fillStyle = "#de6bf5";
+		ctx.fillStyle = "#9370DB";
 		ctx.stroke();
 		ctx.fill();
 
-		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)пути теперь не взаимосвязаны	
 		ctx.arc(250, 100, 75, 0, 2 * pi, false);
 		ctx.stroke();
-		ctx.fillStyle = "#de8825";
+		ctx.fillStyle = "#EE82EE";
 		ctx.fill();
 
+		jsCodeArr[2].innerHTML = ``
+	}
+
+functionArr[3][7] =//в этой вкладке нарисуес пакмана и анимируем его
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		var pi = Math.PI;//заносим число пи в переменную для удобства
+		var pacmanPosition = [100, 50];//текущее положение пакмана
+		var pacmanSize = 25;//размер пакмана в пикселях
+		var pacmanEyeOption = [[0, -12], [12, 0], [0, -12], [-12, 0]];//расположение центра глаза пакмана в зависимости от его направления
+		const pacmanSpinOption = [0, pi / 2, pi, 3 * pi / 2];//все возможные направления пакмана [0] - вправо, [1] - вниз, [2] - влево [3] - вверх. 
+		var pacmanSpin = pacmanSpinOption[0]; //здесь будем хранить текущее направление пакмана (изначально вправо)
+		var pacmanMouth =
+			functionArr[3][0](canvasArr[3]);
+		//_______рисуем пакмана направленого ВПРАВО
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+		ctx.lineWidth = 1;//толщина линии 1px
+		ctx.strokeStyle = "#FFF300";//цвет линии красный
+		ctx.arc(pacmanPosition[0], pacmanPosition[1], pacmanSize, pacmanSpin - (pi / 6), pacmanSpin + (pi / 6), true);
+		ctx.lineTo(pacmanPosition[0], pacmanPosition[1]);//указывает куда рисовать линию
+		ctx.closePath();//замыкает нарисованный путь
+		ctx.stroke();
+		ctx.fillStyle = "#FFF300";
+		ctx.fill();
+
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)
+		ctx.strokeStyle = "#000000";//цвет линии красный	
+		ctx.arc(pacmanPosition[0] + pacmanEyeOption[0][0], pacmanPosition[1] + pacmanEyeOption[0][1], 3, 0, 2 * pi, false);
+		ctx.stroke();
+		ctx.fillStyle = "#000000";
+		ctx.fill();
+		//__end__рисуем пакмана направленого ВПРАВО
+
+		pacmanPosition = [pacmanPosition[0] + 50, pacmanPosition[1]]; //меняем позицию пакмана
+
+		//_______рисуем пакмана направленого ВПРАВО
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+		ctx.lineWidth = 1;//толщина линии 1px
+		ctx.strokeStyle = "#000000";//цвет линии
+		ctx.arc(pacmanPosition[0], pacmanPosition[1], pacmanSize, pacmanSpin - (pi / 6), pacmanSpin + (pi / 6), true);
+		ctx.lineTo(pacmanPosition[0], pacmanPosition[1]);//указывает куда рисовать линию
+		ctx.closePath();//замыкает нарисованный путь
+		ctx.stroke();
+		ctx.fillStyle = "#FFF300";
+		ctx.fill();
+
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)
+		ctx.strokeStyle = "#000000";//цвет линии красный	
+		ctx.arc(pacmanPosition[0] + pacmanEyeOption[0][0], pacmanPosition[1] + pacmanEyeOption[0][1], 3, 0, 2 * pi, false);
+		ctx.stroke();
+		ctx.fillStyle = "#000000";
+		ctx.fill();
+		//__end__рисуем пакмана направленого ВПРАВО
+		pacmanPosition = [pacmanPosition[0] + 50, pacmanPosition[1]]; //меняем позицию пакмана
+
+		//_______рисуем пакмана направленого ВПРАВО
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+		ctx.lineWidth = 1;//толщина линии 1px
+		ctx.strokeStyle = "#000000";//цвет линии
+		ctx.arc(pacmanPosition[0], pacmanPosition[1], pacmanSize, pacmanSpin - (pi / 6), pacmanSpin + (pi / 6), true);
+		ctx.lineTo(pacmanPosition[0], pacmanPosition[1]);//указывает куда рисовать линию
+		ctx.closePath();//замыкает нарисованный путь
+		ctx.stroke();
+		ctx.fillStyle = "#FFF300";
+		ctx.fill();
+
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)
+		ctx.strokeStyle = "#000000";//цвет линии красный	
+		ctx.arc(pacmanPosition[0] + pacmanEyeOption[0][0], pacmanPosition[1] + pacmanEyeOption[0][1], 3, 0, 2 * pi, false);
+		ctx.stroke();
+		ctx.fillStyle = "#000000";
+		ctx.fill();
+		//__end__рисуем пакмана направленого ВПРАВО
 		jsCodeArr[2].innerHTML = ``
 	}
 //__end__Урок 4. Дуги и круги.
@@ -563,3 +637,19 @@ document.addEventListener("click", function name(event) {
 	}
 });
 //__end__Выводим выбраный пример
+
+
+//=======Итоги уроков (Шпаргалка)
+content.insertAdjacentHTML(
+	'beforeend',
+	`<h2>Итоги уроков</h2>
+		<p>Ниже приведены все изученые команды и комментарий с расшифровкой параметров</p>
+		<div class="js_text">
+		<p>ctx.arc(координата центра по оси X, координата центра по оси Y, радиус, стартовая точка пути в радианах, конечная точка пути в радианах, направление true/false)</p>
+		<p></p>
+		<p></p>
+		<p></p>
+		
+		</div>`
+);
+//==end==Итоги уроков (Шпаргалка)
