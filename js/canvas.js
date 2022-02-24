@@ -13,7 +13,7 @@ const arrLessonTemaTabs = [
 	[2, "Урок", "Рисуем линии", 6, 0],
 	[3, "Урок", "Paint в Canvas", 2, 0],
 	[4, "Урок", "Дуги и круги", 8, 0],
-	[5, "Урок", "Тема урока", 2, 0],
+	[5, "Урок", "Анимированый фон", 3, 0],
 	[6, "Урок", "Тема урока", 2, 0],
 	[7, "Урок", "Тема урока", 2, 0],
 	[8, "Урок", "Тема урока", 2, 0],
@@ -26,8 +26,8 @@ const tabsNameArr = [
 	[arrLessonTemaTabs[0][3], "Очистить", "красный прямоугольник", "синий прямогуольник", "очистка облости", "незалитый", "обводка", "заливка"],
 	[arrLessonTemaTabs[1][3], "Очистить", "по умолчанию", "цвет / толщина ", "концы линий", "примыкание линий", "треугольник"],
 	[arrLessonTemaTabs[2][3], "Очистить", "Рисование"],
-	[arrLessonTemaTabs[3][3], "Очистить", "Дуга", "цвет / толщина", "заливка", "окружности", "_", "_", "пакман"],
-	[arrLessonTemaTabs[4][3], "Очистить", " _ "],
+	[arrLessonTemaTabs[3][3], "Очистить", "Дуга", "цвет / толщина", "заливка", "окружности", "анимация", "_", "пакман"],
+	[arrLessonTemaTabs[4][3], "Очистить", "Анимация", "21 точка"],
 	[arrLessonTemaTabs[5][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[6][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[7][3], "Очистить", " _ "],
@@ -407,6 +407,10 @@ functionArr[2] = [
 //__end__Урок 3.
 
 //Урок 4. Дуги и круги.
+lessonArr[3].insertAdjacentHTML(
+	'beforeend',
+	``
+);
 functionArr[3][0] =
 	function (canvas) {
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
@@ -524,6 +528,30 @@ functionArr[3][4] =
 		jsCodeArr[2].innerHTML = ``
 	}
 
+functionArr[3][5] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		var pi = Math.PI;//заносим число пи в переменную для удобства
+		functionArr[3][0](canvasArr[3]);
+		ctx.lineWidth = 5;//толщина линии 5px
+		ctx.strokeStyle = "#00BFFF";//цвет обводки/линии
+		ctx.fillStyle = "#9370DB";//Цвет заливки
+		canvas.onmousemove = function (event) {
+			var x = event.offsetX;//координата X курсора
+			var y = event.offsetY;//координата Y курсора
+			ctx.clearRect(0, 0, 400, 200);//очищаем поле
+			ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+			let radius = Math.pow(Math.pow(x - 200, 2) + Math.pow(y - 100, 2), 0.5);//Вычисляем радиус окружности
+			ctx.arc(200, 100, radius, 0, 2 * pi, false);//рисуем окружность
+			ctx.stroke();//рисует путь
+			ctx.fill();//делает заливку
+		}
+		jsCodeArr[2].innerHTML = ``
+	}
+
+
+
+
 functionArr[3][7] =//в этой вкладке нарисуес пакмана и анимируем его
 	function (canvas) {
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
@@ -593,12 +621,84 @@ functionArr[3][7] =//в этой вкладке нарисуес пакмана 
 		ctx.stroke();
 		ctx.fillStyle = "#000000";
 		ctx.fill();
-		//__end__рисуем пакмана направленого ВПРАВО
 		jsCodeArr[2].innerHTML = ``
 	}
+//__end__рисуем пакмана направленого ВПРАВО
 //__end__Урок 4. Дуги и круги.
 
 //Урок 5.
+functionArr[4][0] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)
+		jsCodeArr[0].innerHTML = `		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать<br>
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)`
+	}
+//Анимируем движение точки на поле и рисуем линию от точки (юнит) до курсора мышки
+functionArr[4][1] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		let x = 200;
+		let y = 100;
+		let myX;
+		let myY;
+		let stepCount = 0;//Кол-во шагов в одном направлении
+		let direction; //направление движения (8 направлений движения)
+		let timer;
+		function drawDot() {
+			ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)
+			if (stepCount == 0) {
+				stepCount = Math.floor(15 * Math.random());
+				direction = Math.floor(8 * Math.random()); //0-7
+			} else {
+				stepCount--;
+			}
+			switch (direction) {
+				case 0:
+					y = y - 1;//вверх
+					break;
+				case 1:
+					x = x + 1;//вправо
+					break;
+				case 2:
+					y = y + 1;//вниз
+					break;
+				case 3:
+					x = x - 1;//влево 
+					break;
+				case 4:
+					y = y - 1;//вправо вверх
+					x = x + 1;
+					break;
+				case 5:
+					y = y + 1;//вправо вниз
+					x = x + 1;
+					break;
+				case 6:
+					y = y + 1;//влево вниз
+					x = x - 1;
+					break;
+				case 7:
+					y = y - 1;//влево вверх
+					x = x - 1;
+					break;
+			}
+			if (x < 0 || x > 400 || y < 0 || y > 200) step = 0;
+			ctx.fillRect(x - 3, y - 3, 6, 6);
+			ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.lineTo(myX, myY);
+			ctx.stroke();
+			timer = setTimeout(drawDot, 100);
+		}
+		drawDot();
+
+		canvas.onmousemove = function (event) {
+			myX = event.offsetX;
+			myY = event.offsetY;
+		}
+	}
+
 //__end__Урок 5.
 
 //Урок 6.
@@ -636,13 +736,13 @@ document.addEventListener("click", function name(event) {
 
 	}
 });
-//__end__Выводим выбраный пример
+		//__end__Выводим выбраный пример
 
-
-//=======Итоги уроков (Шпаргалка)
-content.insertAdjacentHTML(
-	'beforeend',
-	`<h2>Итоги уроков</h2>
+/*
+		//=======Итоги уроков (Шпаргалка)
+		content.insertAdjacentHTML(
+			'beforeend',
+			`<h2>Итоги уроков</h2>
 		<p>Ниже приведены все изученые команды и комментарий с расшифровкой параметров</p>
 		<div class="js_text">
 		<p>ctx.arc(координата центра по оси X, координата центра по оси Y, радиус, стартовая точка пути в радианах, конечная точка пути в радианах, направление true/false)</p>
@@ -651,5 +751,4 @@ content.insertAdjacentHTML(
 		<p></p>
 		
 		</div>`
-);
-//==end==Итоги уроков (Шпаргалка)
+		);//==end==Итоги уроков (Шпаргалка)*/
