@@ -14,7 +14,7 @@ const arrLessonTemaTabs = [
 	[3, "Урок", "Paint в Canvas", 2, 0],
 	[4, "Урок", "Дуги и круги", 8, 0],
 	[5, "Урок", "Анимированый фон", 3, 0],
-	[6, "Урок", "Тема урока", 2, 0],
+	[6, "Урок", "Анимированый график", 5, 0],
 	[7, "Урок", "Тема урока", 2, 0],
 	[8, "Урок", "Тема урока", 2, 0],
 	[9, "Урок", "Тема урока", 2, 0],
@@ -28,7 +28,7 @@ const tabsNameArr = [
 	[arrLessonTemaTabs[2][3], "Очистить", "Рисование"],
 	[arrLessonTemaTabs[3][3], "Очистить", "Дуга", "цвет / толщина", "заливка", "окружности", "анимация", "_", "пакман"],
 	[arrLessonTemaTabs[4][3], "Очистить", "Анимация", "21 точка"],
-	[arrLessonTemaTabs[5][3], "Очистить", " _ "],
+	[arrLessonTemaTabs[5][3], "Очистить", "График синуса", "Оси X Y 0 в центре", "Оси X Y 0 внизуслева", "Разные графики"],
 	[arrLessonTemaTabs[6][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[7][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[8][3], "Очистить", " _ "],
@@ -631,8 +631,8 @@ functionArr[4][0] =
 	function (canvas) {
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
 		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)
-		jsCodeArr[0].innerHTML = `		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать<br>
-		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)`
+		jsCodeArr[4].innerHTML = `		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать<br>
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)`;
 	}
 //Анимируем движение точки на поле и рисуем линию от точки (юнит) до курсора мышки
 functionArr[4][1] =
@@ -645,14 +645,16 @@ functionArr[4][1] =
 		let stepCount = 0;//Кол-во шагов в одном направлении
 		let direction; //направление движения (8 направлений движения)
 		let timer;
+		let delay = 42;
 		function drawDot() {
 			ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)
 			if (stepCount == 0) {
-				stepCount = Math.floor(15 * Math.random());
-				direction = Math.floor(8 * Math.random()); //0-7
+				stepCount = Math.floor(15 * Math.random());//генерация случайного кол-ва шагов 0 - 15 пикселей
+				direction = Math.floor(8 * Math.random()); //генерация случайного направления 0-7
 			} else {
-				stepCount--;
+				stepCount--;//
 			}
+			//изменение координат точки:
 			switch (direction) {
 				case 0:
 					y = y - 1;//вверх
@@ -683,13 +685,18 @@ functionArr[4][1] =
 					x = x - 1;
 					break;
 			}
-			if (x < 0 || x > 400 || y < 0 || y > 200) step = 0;
+			if (x <= 10 || x >= 390 || y <= 10 || y >= 190) step = 0;//проверка на пересечение границ canvas
+			//рисуем прямоугольник:
 			ctx.fillRect(x - 3, y - 3, 6, 6);
 			ctx.beginPath();
 			ctx.moveTo(x, y);
 			ctx.lineTo(myX, myY);
 			ctx.stroke();
-			timer = setTimeout(drawDot, 100);
+			timer = setTimeout(drawDot, delay);//запускаем функцию с
+			if (arrLessonTemaTabs[4][5] === 0) {
+				clearTimeout(timer);
+				functionArr[4][0]();
+			}
 		}
 		drawDot();
 
@@ -701,7 +708,78 @@ functionArr[4][1] =
 
 //__end__Урок 5.
 
-//Урок 6.
+//Урок 6. Анимированые графики
+functionArr[5][0] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)
+		jsCodeArr[5].innerHTML = `const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать<br>
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)`;
+	}
+functionArr[5][1] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		let x = 0;
+		let y;
+		let timer;
+		let delay = 10;
+		//для лучшей визуализации графика растянем его и сдвинем:
+		let shiftY = 100;//сдвинуть Y 
+		let stretchY = 50;//растянуть Y
+		let shiftX = 100;//сдвинуть X
+		let stretchX = 50;//растянуть X
+		function drawSin() {
+			y = Math.sin(x);
+			x = x + 0.01;
+			ctx.fillRect(x * stretchX - 1, (y * (-1) * stretchY + shiftY - 1), 2, 2);
+			ctx.stroke();
+			timer = setTimeout(drawSin, delay)
+		}
+		jsCodeArr[5].innerHTML = ``;
+		drawSin();
+	}
+
+functionArr[5][2] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+
+		let x = 0;//значение X передаваемое в функцию графика
+		let y = 0;//значение Y передаваемое в функцию графика
+		let scale = 10;//задает масштаб (сколько пикселей в еденице)
+		let shiftX = 100;//сдвинуть X
+		let shiftY = 100;//сдвинуть Y 
+		let stretchX = scale;//растянуть X
+		let stretchY = scale;//растянуть Y
+		console.log(canvasArr[5]);
+		console.log(canvas);
+		console.log(canvasArr[5].getAttribute(width));
+		console.log(canvasArr[5].getAttribute(height));
+		let homeСore = {
+			x0: canvasArr[5].getAttribute(width) / 2,
+			y0: canvasArr[5].getAttribute(height) / 2
+		};
+		console.log(homeСore);
+		let timer;//таймер отрисовки графика
+		let delay = 10;//задержка между отрисовкой точек графика
+
+		//для лучшей визуализации графика растянем его и сдвинем:
+		let inversionX = 1;//инверсия осей (1 - нет инверсии, -1 инвертировать оси)
+		let inversionY = -1;//инверсия осей (1 - нет инверсии, -1 инвертировать оси)
+		let сorrectedX = x * stretchX + shiftX;
+		let сorrectedY = y * stretchY + shiftY;
+		//_______рисуем график:
+		function drawSchedule() {
+			y = Math.sin(x);
+			x = x + 0.01;
+			ctx.fillRect(x * stretchX - 1, (y * (-1) * stretchY + shiftY - 1), 2, 2);
+			ctx.stroke();
+			timer = setTimeout(drawSin, delay)
+		}
+		jsCodeArr[5].innerHTML = ``;
+		drawSchedule();
+		//__end__рисуем график:
+	}
+
 //__end__Урок 6.
 
 //Урок 7.
