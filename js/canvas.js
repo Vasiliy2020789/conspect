@@ -745,35 +745,71 @@ functionArr[5][2] =
 
 		let x = 0;//значение X передаваемое в функцию графика
 		let y = 0;//значение Y передаваемое в функцию графика
-		let scale = 10;//задает масштаб (сколько пикселей в еденице)
-		let shiftX = 100;//сдвинуть X
+		let scale = 30;//задает масштаб (сколько пикселей в еденице)
+		let shiftX = 200;//сдвинуть X
 		let shiftY = 100;//сдвинуть Y 
 		let stretchX = scale;//растянуть X
 		let stretchY = scale;//растянуть Y
-		console.log(canvasArr[5]);
-		console.log(canvas);
-		console.log(canvasArr[5].getAttribute(width));
-		console.log(canvasArr[5].getAttribute(height));
 		let homeСore = {
-			x0: canvasArr[5].getAttribute(width) / 2,
-			y0: canvasArr[5].getAttribute(height) / 2
+			x0: canvasArr[5].getAttribute('width') / 2,
+			y0: canvasArr[5].getAttribute('height') / 2
 		};
 		console.log(homeСore);
 		let timer;//таймер отрисовки графика
-		let delay = 10;//задержка между отрисовкой точек графика
+		let delay = 5;//задержка между отрисовкой точек графика
 
 		//для лучшей визуализации графика растянем его и сдвинем:
 		let inversionX = 1;//инверсия осей (1 - нет инверсии, -1 инвертировать оси)
 		let inversionY = -1;//инверсия осей (1 - нет инверсии, -1 инвертировать оси)
-		let сorrectedX = x * stretchX + shiftX;
-		let сorrectedY = y * stretchY + shiftY;
+		let сorrectedX = x * inversionX * stretchX + shiftX;
+		let сorrectedY = y * inversionY * stretchY + shiftY;
+		//canvas.backgroundImage.remove();
+
+		//_______рисуем координатные оси с подписями едениц
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)
+		ctx.lineWidth = '2';//устанавливает ширину линии
+		//_______Рисуем ось Х
+		ctx.moveTo(10, homeСore.y0);
+		ctx.lineTo(canvasArr[5].getAttribute('width') - 10, homeСore.y0);
+		ctx.lineTo(canvasArr[5].getAttribute('width') - 10 - 10, homeСore.y0 - 3);
+		ctx.moveTo(canvasArr[5].getAttribute('width') - 10, homeСore.y0);
+		ctx.lineTo(canvasArr[5].getAttribute('width') - 10 - 10, homeСore.y0 + 3);
+		ctx.stroke();
+		//добавляем точки и подписи осей
+
+
+
+
+		let sumDots = (canvasArr[5].getAttribute('width') - 10 - 10) / stretchX;// определяем количество точек по оси X
+		console.log(sumDots);
+		//__end__Рисуем ось Х
+
+		//_______Рисуем ось Y
+		ctx.moveTo(homeСore.x0, canvasArr[5].getAttribute('height') - 10);
+		ctx.lineTo(homeСore.x0, 10);
+		ctx.lineTo(homeСore.x0 - 3, 10 + 10);
+		ctx.moveTo(homeСore.x0, 10);
+		ctx.lineTo(homeСore.x0 + 3, 10 + 10);
+		ctx.stroke();
+		//__end__Рисуем ось Y
+
+		//_______рисуем координатные оси с подписями едениц
+
 		//_______рисуем график:
+		x = -6;
 		function drawSchedule() {
 			y = Math.sin(x);
+			//y = 2 * x + x * x;// парабола
+			//y = 2 / x;
 			x = x + 0.01;
-			ctx.fillRect(x * stretchX - 1, (y * (-1) * stretchY + shiftY - 1), 2, 2);
+			сorrectedX = x * inversionX * stretchX + shiftX;
+			сorrectedY = y * inversionY * stretchY + shiftY;
+			//console.log(`x =${x} y= ${y}`);
+			//console.log(`ОТРИСОВКА x =${сorrectedX} y= ${сorrectedY}`);
+			//ctx.fillRect(x * stretchX - 1, (y * (-1) * stretchY + shiftY - 1), 2, 2);
+			ctx.fillRect(сorrectedX - 1, сorrectedY - 1, 2, 2);
 			ctx.stroke();
-			timer = setTimeout(drawSin, delay)
+			timer = setTimeout(drawSchedule, delay)
 		}
 		jsCodeArr[5].innerHTML = ``;
 		drawSchedule();

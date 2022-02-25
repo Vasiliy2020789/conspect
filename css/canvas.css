@@ -161,6 +161,11 @@ canvas {
 	border: 3px solid #000;
 	background-image: url(../img/setka.png);
 }
+#c_6 {
+	background-image: none;
+	background-color: #BDE5F2;
+}
+
 .js_code, .html_text, .css_text,.js_text{
 	position: relative;
 	width: 400px;
