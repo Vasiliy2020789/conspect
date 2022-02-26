@@ -756,6 +756,148 @@ functionArr[5][2] =
 		};
 		console.log(homeСore);
 		let timer;//таймер отрисовки графика
+		let delay = 1;//задержка между отрисовкой точек графика
+
+		//для лучшей визуализации графика растянем его и сдвинем:
+		let inversionX = 1;//инверсия осей (1 - нет инверсии, -1 инвертировать оси)
+		let inversionY = -1;//инверсия осей (1 - нет инверсии, -1 инвертировать оси)
+		let сorrectedX = x * inversionX * stretchX + shiftX;
+		let сorrectedY = y * inversionY * stretchY + shiftY;
+		//canvas.backgroundImage.remove();
+
+		//_______рисуем координатные оси с подписями едениц
+		ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)
+		ctx.lineWidth = '2';//устанавливает ширину линии
+		//_______Рисуем ось Х
+		ctx.moveTo(10, homeСore.y0);
+		ctx.lineTo(canvasArr[5].getAttribute('width') - 10, homeСore.y0);
+		ctx.lineTo(canvasArr[5].getAttribute('width') - 10 - 10, homeСore.y0 - 3);
+		ctx.moveTo(canvasArr[5].getAttribute('width') - 10, homeСore.y0);
+		ctx.lineTo(canvasArr[5].getAttribute('width') - 10 - 10, homeСore.y0 + 3);
+		ctx.stroke();
+		//_______Рисуем ось Y
+		ctx.moveTo(homeСore.x0, canvasArr[5].getAttribute('height') - 10);
+		ctx.lineTo(homeСore.x0, 10);
+		ctx.lineTo(homeСore.x0 - 3, 10 + 10);
+		ctx.moveTo(homeСore.x0, 10);
+		ctx.lineTo(homeСore.x0 + 3, 10 + 10);
+		ctx.stroke();
+		//Подписываем оси и 0
+		ctx.font = "15px Monospace";// Назначаем размер и шрифт текста Tahoma
+		ctx.fillText("0", homeСore.x0 + 2, homeСore.y0 + 13);// Пишем сам текст
+		ctx.fillText("X", canvasArr[5].getAttribute('width') - 10 + 2, homeСore.y0 + 13);// Пишем сам текст
+		ctx.fillText("Y", homeСore.x0 + 2, 10);// Пишем сам текст
+		//__end__Рисуем координатные оси
+
+		//_______Рисуем разметку деления осей
+		function markingAxes() {
+			let sectionLength;//длинна отрезка разметки
+			let sumDots;
+			let stepX;
+			let stepY;
+
+			for (let i = 0; i < 4; i++) { // i - направление 0 - вправо, 1 - вниз, 2 - влево, 3 - вверх
+				console.log(i);
+
+				switch (i) {
+					case 0://вправо 
+						sectionLength = canvasArr[5].getAttribute('width') - homeСore.x0 - 20;
+						summDots = Math.floor(sectionLength / scale);
+						stepX = scale;
+						stepY = 0;
+						console.log(sectionLength);
+						console.log(summDots);
+						break;
+					case 1://вниз
+						sectionLength = canvasArr[5].getAttribute('height') - homeСore.y0 - 20;
+						summDots = Math.floor(sectionLength / scale);
+						stepX = 0;
+						stepY = -1 * scale;
+						console.log(sectionLength);
+						console.log(summDots);
+						break;
+					case 2://влево 
+						sectionLength = homeСore.x0 - 20;
+						summDots = Math.floor(sectionLength / scale);
+						stepX = -1 * scale;
+						stepY = 0;
+						console.log(sectionLength);
+						console.log(summDots);
+						break;
+					case 3://вверх 
+						sectionLength = homeСore.y0 - 20;
+						summDots = Math.floor(sectionLength / scale);
+						stepX = 0;
+						stepY = scale;
+						console.log(sectionLength);
+						console.log(summDots);
+						break;
+
+				}
+				console.log(stepX, stepY, summDots, sectionLength);
+				drawMarking(stepX, stepY, summDots, sectionLength);
+			}
+		}
+		//_______Функция отрисовки разметки осей (направление(0-3), кол-во точек, шаг деления оси)
+		function drawMarking(stepX, stepY, summDots, sectionLength) {
+			var pi = Math.PI;//заносим число пи в переменную для удобства
+			for (let i = 0; i <= summDots; i++) {
+				ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+				ctx.lineWidth = 2;//толщина линии
+				ctx.strokeStyle = "black";//цвет линии
+				ctx.arc((i * stepX) + shiftX, (i * stepY) + shiftY, 2, 0, 2 * pi, false);//задает параметры контура окружности (центрX, центрY, радиус, начало пути в радианах, Конец пути в радианах, направление)
+				ctx.stroke();
+				ctx.font = "15px Monospace";// Назначаем размер и шрифт текста Tahoma
+				ctx.fillText(`${i}`, (i * stepX) + shiftX + 2, (i * stepY) + shiftY + 13);// Пишем сам текст
+			}
+		}
+		markingAxes();
+
+		//__end__Функция отрисовки разметки осей (направление(0-3), кол-во точек, шаг деления оси)
+		//__end__Рисуем разметку деления осей
+
+		//__end__подписями едениц
+
+
+		//_______рисуем график:
+		x = -6;
+		function drawSchedule() {
+			//y = Math.tan(x / 5);
+			y = Math.sin(x);
+			//y = 2 * x + x * x;// парабола
+			//y = 2 / x;
+			x = x + 0.002;
+			сorrectedX = x * inversionX * stretchX + shiftX;
+			сorrectedY = y * inversionY * stretchY + shiftY;
+			//console.log(`x =${x} y= ${y}`);
+			//console.log(`ОТРИСОВКА x =${сorrectedX} y= ${сorrectedY}`);
+			//ctx.fillRect(x * stretchX - 1, (y * (-1) * stretchY + shiftY - 1), 2, 2);
+			ctx.fillRect(сorrectedX - 1, сorrectedY - 1, 2, 2);
+			ctx.stroke();
+			timer = setTimeout(drawSchedule, delay)
+		}
+		jsCodeArr[5].innerHTML = ``;
+		drawSchedule();
+		//__end__рисуем график:
+
+	}
+functionArr[5][3] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+
+		let x = 0;//значение X передаваемое в функцию графика
+		let y = 0;//значение Y передаваемое в функцию графика
+		let scale = 20;//задает масштаб (сколько пикселей в еденице)
+		let homeСore = {
+			x0: 15,
+			y0: canvasArr[5].getAttribute('height') - 15
+		};
+		let shiftX = homeСore.x0;//сдвинуть X
+		let shiftY = homeСore.y0;//сдвинуть Y
+		let stretchX = scale;//растянуть X
+		let stretchY = scale;//растянуть Y
+		console.log(homeСore);
+		let timer;//таймер отрисовки графика
 		let delay = 5;//задержка между отрисовкой точек графика
 
 		//для лучшей визуализации графика растянем его и сдвинем:
@@ -775,15 +917,6 @@ functionArr[5][2] =
 		ctx.moveTo(canvasArr[5].getAttribute('width') - 10, homeСore.y0);
 		ctx.lineTo(canvasArr[5].getAttribute('width') - 10 - 10, homeСore.y0 + 3);
 		ctx.stroke();
-		//добавляем точки и подписи осей
-
-
-
-
-		let sumDots = (canvasArr[5].getAttribute('width') - 10 - 10) / stretchX;// определяем количество точек по оси X
-		console.log(sumDots);
-		//__end__Рисуем ось Х
-
 		//_______Рисуем ось Y
 		ctx.moveTo(homeСore.x0, canvasArr[5].getAttribute('height') - 10);
 		ctx.lineTo(homeСore.x0, 10);
@@ -791,9 +924,85 @@ functionArr[5][2] =
 		ctx.moveTo(homeСore.x0, 10);
 		ctx.lineTo(homeСore.x0 + 3, 10 + 10);
 		ctx.stroke();
-		//__end__Рисуем ось Y
+		//Подписываем оси и 0
+		ctx.font = "15px Monospace";// Назначаем размер и шрифт текста Tahoma
+		ctx.fillText("0", homeСore.x0 + 2, homeСore.y0 + 13);// Пишем сам текст
+		ctx.fillText("X", canvasArr[5].getAttribute('width') - 10 + 2, homeСore.y0 + 13);// Пишем сам текст
+		ctx.fillText("Y", homeСore.x0 + 2, 10);// Пишем сам текст
+		//__end__Рисуем координатные оси
 
-		//_______рисуем координатные оси с подписями едениц
+		//_______Рисуем разметку деления осей
+		function markingAxes() {
+			let sectionLength;//длинна отрезка разметки
+			let sumDots;
+			let stepX;
+			let stepY;
+
+			for (let i = 0; i < 4; i++) { // i - направление 0 - вправо, 1 - вниз, 2 - влево, 3 - вверх
+				console.log(i);
+
+				switch (i) {
+					case 0://вправо 
+						sectionLength = canvasArr[5].getAttribute('width') - homeСore.x0 - 20;
+						if (sectionLength < scale) break;
+						summDots = Math.floor(sectionLength / scale);
+						stepX = scale;
+						stepY = 0;
+						console.log(sectionLength);
+						console.log(summDots);
+						break;
+					case 1://вниз
+						sectionLength = canvasArr[5].getAttribute('height') - homeСore.y0 - 20;
+						if (sectionLength < scale) break;
+						summDots = Math.floor(sectionLength / scale);
+						stepX = 0;
+						stepY = -1 * scale;
+						console.log(sectionLength);
+						console.log(summDots);
+						break;
+					case 2://влево 
+						sectionLength = homeСore.x0 - 20;
+						if (sectionLength < scale) break;
+						summDots = Math.floor(sectionLength / scale);
+						stepX = -1 * scale;
+						stepY = 0;
+						console.log(sectionLength);
+						console.log(summDots);
+						break;
+					case 3://вверх 
+						sectionLength = homeСore.y0 - 20;
+						if (sectionLength < scale) break;
+						summDots = Math.floor(sectionLength / scale);
+						stepX = 0;
+						stepY = scale;
+						console.log(sectionLength);
+						console.log(summDots);
+						break;
+				}
+				console.log(stepX, stepY, summDots, sectionLength);
+				drawMarking(stepX, stepY, summDots, sectionLength);
+			}
+		}
+		//_______Функция отрисовки разметки осей (направление(0-3), кол-во точек, шаг деления оси)
+		function drawMarking(stepX, stepY, summDots, sectionLength) {
+			var pi = Math.PI;//заносим число пи в переменную для удобства
+			for (let i = 0; i <= summDots; i++) {
+				ctx.beginPath();//начинает новый путь(сбрасывает стили и положение кисти)		
+				ctx.lineWidth = 2;//толщина линии
+				ctx.strokeStyle = "black";//цвет линии
+				ctx.arc((i * stepX) + shiftX, (i * stepY) + shiftY, 2, 0, 2 * pi, false);//задает параметры контура окружности (центрX, центрY, радиус, начало пути в радианах, Конец пути в радианах, направление)
+				ctx.stroke();
+				ctx.font = "15px Monospace";// Назначаем размер и шрифт текста Tahoma
+				ctx.fillText(`${i}`, (i * stepX) + shiftX + 2, (i * stepY) + shiftY + 13);// Пишем сам текст
+			}
+		}
+		markingAxes();
+
+		//__end__Функция отрисовки разметки осей (направление(0-3), кол-во точек, шаг деления оси)
+		//__end__Рисуем разметку деления осей
+
+		//__end__подписями едениц
+
 
 		//_______рисуем график:
 		x = -6;
@@ -814,7 +1023,9 @@ functionArr[5][2] =
 		jsCodeArr[5].innerHTML = ``;
 		drawSchedule();
 		//__end__рисуем график:
+
 	}
+
 
 //__end__Урок 6.
 
