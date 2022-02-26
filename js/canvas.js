@@ -15,7 +15,7 @@ const arrLessonTemaTabs = [
 	[4, "Урок", "Дуги и круги", 8, 0],
 	[5, "Урок", "Анимированый фон", 3, 0],
 	[6, "Урок", "Анимированый график", 5, 0],
-	[7, "Урок", "Тема урока", 2, 0],
+	[7, "Урок", "Спирограф", 3, 1],
 	[8, "Урок", "Тема урока", 2, 0],
 	[9, "Урок", "Тема урока", 2, 0],
 	[10, "Урок", "Тема урока", 2, 0],
@@ -26,10 +26,10 @@ const tabsNameArr = [
 	[arrLessonTemaTabs[0][3], "Очистить", "красный прямоугольник", "синий прямогуольник", "очистка облости", "незалитый", "обводка", "заливка"],
 	[arrLessonTemaTabs[1][3], "Очистить", "по умолчанию", "цвет / толщина ", "концы линий", "примыкание линий", "треугольник"],
 	[arrLessonTemaTabs[2][3], "Очистить", "Рисование"],
-	[arrLessonTemaTabs[3][3], "Очистить", "Дуга", "цвет / толщина", "заливка", "окружности", "анимация", "_", "пакман"],
+	[arrLessonTemaTabs[3][3], "Очистить", "Дуга", "цвет / толщина", "заливка", "окружности", "анимация", "_", "*пакман"],
 	[arrLessonTemaTabs[4][3], "Очистить", "Анимация", "21 точка"],
-	[arrLessonTemaTabs[5][3], "Очистить", "График синуса", "Оси X Y 0 в центре", "Оси X Y 0 внизуслева", "Разные графики"],
-	[arrLessonTemaTabs[6][3], "Очистить", " _ "],
+	[arrLessonTemaTabs[5][3], "Очистить", "График синуса", "*Оси X Y 0 в центре", "*Оси X Y 0 внизуслева", "*Разные графики"],
+	[arrLessonTemaTabs[6][3], "Очистить", " Спирограф", "*с настройками"],
 	[arrLessonTemaTabs[7][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[8][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[9][3], "Очистить", " _ "]
@@ -1029,7 +1029,54 @@ functionArr[5][3] =
 
 //__end__Урок 6.
 
-//Урок 7.
+//_______Урок 7.Спирограф
+
+//console.log(canvasArr[6].getAttribute(`height`));
+//console.log(canvasArr[6].getAttribute(`width`));
+canvasArr[6].setAttribute(`height`, 600);
+canvasArr[6].setAttribute(`width`, 600);
+//console.log(canvasArr[6].getAttribute(`height`));
+//console.log(canvasArr[6].getAttribute(`width`));
+
+functionArr[6][0] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)
+		jsCodeArr[5].innerHTML = `const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать<br>
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)`;
+	}
+functionArr[6][1] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		//functionArr[6][0]();
+		let R = 180;
+		let r = 110;
+		let d = 50;
+		let teta = 0;
+		let timer;
+		let delay = 1;
+		function spiro() {
+			let x = (R - r) * Math.cos(teta) + d * Math.cos((R - r) * teta / r);
+			let y = (R - r) * Math.sin(teta) + d * Math.sin((R - r) * teta / r);
+			console.log(x);
+			console.log(y);
+			teta = teta + 0.1;
+			//ctx.strokeStyle = "#000000";  //цвет обводки
+			//ctx.fillStyle = "#000000";  //выбор цвета заливки
+			//ctx.fillRect(timer + 300, timer + 300, timer, timer);
+			ctx.fillRect(Math.abs(300 + x), Math.abs(300 + y), 4, 4);
+			ctx.fillStyle = "magenta";  //выбор цвета заливки
+			ctx.fill();  //заливает отрисованную фигуру последним выбраным цветом
+			//ctx.stroke();
+			timer = setTimeout(spiro, delay);
+		}
+		spiro();
+
+		jsCodeArr[5].innerHTML = `const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать<br>
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)`;
+	}
+console.log(functionArr[6][1]);
+//elem.getAttribute(name)
 //__end__Урок 7.
 
 //Урок 8.
