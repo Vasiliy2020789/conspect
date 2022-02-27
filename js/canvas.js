@@ -1041,7 +1041,7 @@ canvasArr[6].setAttribute(`width`, 600);
 functionArr[6][0] =
 	function (canvas) {
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
-		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)
+		ctx.clearRect(0, 0, 600, 600);  //стирает весь canvas (выбран весь canvas)
 		jsCodeArr[5].innerHTML = `const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать<br>
 		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)`;
 	}
@@ -1049,23 +1049,63 @@ functionArr[6][1] =
 	function (canvas) {
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
 		//functionArr[6][0]();
-		let R = 180;
-		let r = 110;
-		let d = 50;
+		//_______Создаем элемент  управления (цвет)
+		exampleExplainArr[6].innerHTML = "";
+		exampleExplainArr[6].insertAdjacentHTML(
+			'beforeend',
+			`<div class="options">
+			<span>| Цвет контура: </span><input type="color" id="L7MyColor" name="Выбрать цвет">
+			<span>   | Размер кисти: </span><input type="range" id="L7brushSize" min="1" max="30" step="1" value="2"></br>
+			<span>| R: </span><input type="range" id="L7R" min="0" max="300" step="5" value="200">
+			<span>   | r: </span><input type="range" id="L7r" min="0" max="300" step="5" value="180">
+			<span>   | d: </span><input type="range" id="L7d" min="0" max="300" step="5" value="20"></br>
+			<span>| Задержка прорисовки: </span><input type="range" id="L7delay" min="1" max="100" step="1" value="1"></br>
+			<button class="button" id="L7clear">Очистить поле</button>
+			</div>`
+		);
+		//__end__Создаем элемент  управления (цвет)
+		let R = document.getElementById('L7R').value;
+		let r = document.getElementById('L7r').value;
+		let d = document.getElementById('L7d').value;
 		let teta = 0;
 		let timer;
-		let delay = 1;
+		let delay = document.getElementById('L7delay').value;;
+		let brushSize = 6;
+		let myColor = document.getElementById('L7MyColor').value;
+		//_______Получаем переменные из input
+		//brushSize = document.getElementById('L7brushSize').value;
+		document.getElementById('L7MyColor').onchange = function () {
+			myColor = this.value;
+		}
+		document.getElementById('L7brushSize').onchange = function () {
+			brushSize = this.value;
+		}
+		document.getElementById('L7R').onchange = function () {
+			R = this.value;
+		}
+		document.getElementById('L7r').onchange = function () {
+			r = this.value;
+		}
+		document.getElementById('L7d').onchange = function () {
+			d = this.value;
+		}
+		document.getElementById('L7delay').onchange = function () {
+			delay = this.value;
+		}
+		document.getElementById('L7clear').onclick = function () {
+			//	functionArr[6][0]();
+			ctx.clearRect(0, 0, 600, 600);  //стирает весь canvas (выбран весь canvas)
+		}
+		//__end__Получаем переменные из input
+
 		function spiro() {
 			let x = (R - r) * Math.cos(teta) + d * Math.cos((R - r) * teta / r);
 			let y = (R - r) * Math.sin(teta) + d * Math.sin((R - r) * teta / r);
 			console.log(x);
 			console.log(y);
-			teta = teta + 0.1;
-			//ctx.strokeStyle = "#000000";  //цвет обводки
-			//ctx.fillStyle = "#000000";  //выбор цвета заливки
-			//ctx.fillRect(timer + 300, timer + 300, timer, timer);
-			ctx.fillRect(Math.abs(300 + x), Math.abs(300 + y), 4, 4);
-			ctx.fillStyle = "magenta";  //выбор цвета заливки
+			teta = teta + 0.01;
+			ctx.fillRect(Math.abs(300 + x), Math.abs(300 + y), brushSize, brushSize);
+			ctx.fillStyle = myColor;//выбор цвета заливки
 			ctx.fill();  //заливает отрисованную фигуру последним выбраным цветом
 			//ctx.stroke();
 			timer = setTimeout(spiro, delay);
