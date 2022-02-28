@@ -1121,8 +1121,8 @@ console.log(functionArr[6][1]);
 //__end__Урок 7.
 
 //Урок 8. Игра жизнь.
-canvasArr[7].setAttribute(`height`, 700);
-canvasArr[7].setAttribute(`width`, 700);
+canvasArr[7].setAttribute(`height`, 600);
+canvasArr[7].setAttribute(`width`, 600);
 
 functionArr[7][0] =
 	function (canvas) {
@@ -1132,14 +1132,37 @@ functionArr[7][0] =
 		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)`;
 	}
 
-//_______Рисование "новой жизни"
+
 functionArr[7][1] =
 	function (canvas) {
+		exampleExplainArr[7].insertAdjacentHTML(
+			'beforeend',
+			`<p>Количество циклов:  <span id ="count">0</span></p>
+			<button id="start">Старт</button>`
+		);
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
 		ctx.clearRect(0, 0, 600, 600);  //стирает весь canvas (выбран весь canvas)
 		let mas = [];
+		let n = 60, m = 60;//Количество клеток по горизонтали/вертикали
+		let timer;
+		//_______Расставляем клетки
+		canvas.onclick = function (event) {
+			let x = event.offsetX;
+			let y = event.offsetY;
+			console.log(x);
+			console.log(y);
+			x = Math.floor(x / 10);
+			y = Math.floor(y / 10);
+			mas[y][x] = 1;
+			let count = 0;
+			console.log(mas);
+			drawField();
+		}
+		//__end__Расставляем клетки
+
+		//_______Создание массива клеток
 		function goLife() {
-			let n = 30, m = 30;
+			//let n = 60, m = 60;
 			for (let i = 0; i < m; i++) {
 				mas[i] = [];
 				for (let k = 0; k < n; k++) {
@@ -1148,12 +1171,72 @@ functionArr[7][1] =
 				}
 			}
 		}
+		//_______Создание массива клеток
+
+		//_______Рисование начала жизни
+		function drawField() {
+			ctx.clearRect(0, 0, 600, 600);
+			//let n = 60, m = 60;
+			for (let i = 0; i < m; i++) {
+				for (let k = 0; k < n; k++) {
+					if (mas[i][k] == 1) {
+						ctx.fillRect(k * 10, i * 10, 10, 10);
+						ctx.stroke();
+					}
+				}
+			}
+		}
+		//_______Рисование "новой жизни"
+		function startLife() {
+			let mas2 = [];
+			for (let i = 0; i < 60; i++) {
+				mas2[i] = [];
+				for (let k = 0; k < 60; k++) {
+					let neighbors = 0;//счетчик соседей
+					if (mas[fpm(i) - 1][k] == 1) neighbors++;//верх
+					if (mas[i][fpp(k) + 1] == 1) neighbors++;//право
+					if (mas[fpp(i) + 1][k] == 1) neighbors++;//низ
+					if (mas[i][fpm(k) - 1] == 1) neighbors++;//лево
+					if (mas[fpm(i) - 1][fpp(k) + 1] == 1) neighbors++;//вправо вверх
+					if (mas[fpp(i) + 1][fpp(k) + 1] == 1) neighbors++;//вправо вниз
+					if (mas[fpp(i) + 1][fpm(k) - 1] == 1) neighbors++;//влево вниз
+					if (mas[fpm(i) - 1][fpm(k) - 1] == 1) neighbors++;//влево вверх
+					(neighbors == 2 || neighbors == 3) ? mas2[i][k] = 1 : mas2[i][k] = 0;
+
+				}
+			}
+			mas = mas2;
+			drawField();
+			count++;
+			document.getElementById('count').innerHTML = count;
+			//<p>Количество циклов:  <span id ="count">0</span></p>
+			timer = setTimeout(startLife, 300)
+		}
+		//__end__Рисование "новой жизни"
+
+		//_______Кнопка старт
+		const startButton = document.getElementById('start');
+		startButton.onclick = startLife;
+		//__end__Кнопка старт
+		//_______Граничные условия(поле безгранично)
+		//условие для минуса(если клетка у верхнего или левого края то соседом будет клетка у противоположной границы поля)
+		function fpm(i) {
+			if (i == 0) return 60;
+			else return i;
+		}
+		//условие для плюса(если клетка у нижнего или правого края то соседом будет клетка у противоположной границы поля)
+		function fpp(q) {
+			if (q == 59) return -1;
+			else return i;
+		}
+		//__end__Граничные условия(поле безгранично)
+
 
 		goLife();
 		console.log(mas);
 	}
 
-//_______Рисование "новой жизни"
+
 
 //__end__Урок 8. Игра жизнь.
 
