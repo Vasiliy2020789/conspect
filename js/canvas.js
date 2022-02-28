@@ -16,7 +16,7 @@ const arrLessonTemaTabs = [
 	[5, "Урок", "Анимированый фон", 3, 0],
 	[6, "Урок", "Анимированый график", 5, 0],
 	[7, "Урок", "Спирограф", 3, 1],
-	[8, "Урок", "Тема урока", 2, 0],
+	[8, "Урок", "Игра 'Жизнь'", 2, 0],
 	[9, "Урок", "Тема урока", 2, 0],
 	[10, "Урок", "Тема урока", 2, 0],
 ];
@@ -30,7 +30,7 @@ const tabsNameArr = [
 	[arrLessonTemaTabs[4][3], "Очистить", "Анимация", "21 точка"],
 	[arrLessonTemaTabs[5][3], "Очистить", "График синуса", "*Оси X Y 0 в центре", "*Оси X Y 0 внизуслева", "*Разные графики"],
 	[arrLessonTemaTabs[6][3], "Очистить", " Спирограф", "*с настройками"],
-	[arrLessonTemaTabs[7][3], "Очистить", " _ "],
+	[arrLessonTemaTabs[7][3], "Очистить", "Играть"],
 	[arrLessonTemaTabs[8][3], "Очистить", " _ "],
 	[arrLessonTemaTabs[9][3], "Очистить", " _ "]
 ];
@@ -1117,10 +1117,45 @@ functionArr[6][1] =
 	}
 console.log(functionArr[6][1]);
 //elem.getAttribute(name)
+
 //__end__Урок 7.
 
-//Урок 8.
-//__end__Урок 8.
+//Урок 8. Игра жизнь.
+canvasArr[7].setAttribute(`height`, 700);
+canvasArr[7].setAttribute(`width`, 700);
+
+functionArr[7][0] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		ctx.clearRect(0, 0, 600, 600);  //стирает весь canvas (выбран весь canvas)
+		jsCodeArr[5].innerHTML = `const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать<br>
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)`;
+	}
+
+//_______Рисование "новой жизни"
+functionArr[7][1] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		ctx.clearRect(0, 0, 600, 600);  //стирает весь canvas (выбран весь canvas)
+		let mas = [];
+		function goLife() {
+			let n = 30, m = 30;
+			for (let i = 0; i < m; i++) {
+				mas[i] = [];
+				for (let k = 0; k < n; k++) {
+					mas[i][k] = 0;
+					console.log(mas[i][k]);
+				}
+			}
+		}
+
+		goLife();
+		console.log(mas);
+	}
+
+//_______Рисование "новой жизни"
+
+//__end__Урок 8. Игра жизнь.
 
 //Урок 9.
 //__end__Урок 9.

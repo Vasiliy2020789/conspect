@@ -171,6 +171,12 @@ canvas {
 	background-image: none;
 	background-color: #ffffff;
 }
+#c_8 {
+	width: 700px;
+	height: 700px;
+	background-image: none;
+	background-color: #ffffff;
+}
 
 .js_code, .html_text, .css_text,.js_text{
 	position: relative;
