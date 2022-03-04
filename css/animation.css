@@ -1,0 +1,136 @@
+/*Обнуление*/
+/* Очищаем все отступы и границы во ВСЕХ тегах на странице*/
+/**{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*/
+/* Меняет подсчет ширины блока для удобства верстания*/
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* Убираем линии обводки у некооторых браузеров*/
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+/* Делает теги блочными*/
+nav,footer,header,aside{display: block;}
+/* Уравнивает поведение шрифтов в разных браузерах*/
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1; /* просто 1(без 'px') */
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+/* Задаем наследование шрифта (по умолчанию эти теги не наследуют шрифт)*/
+input,button,textarea{font-family:inherit;}/* */
+/* Убирают некоторые особености в некоторых  браузерах*/
+input::-ms-clear{display: none;}/* */
+button{cursor: pointer;}/* */
+button::-moz-focus-inner {padding:0;border:0;}/* */
+a, a:visited{text-decoration: none;}/* */
+a:hover{text-decoration: none;}/* */
+/*ul li{list-style: none;}/* чистит стили в маркированых списках*/
+img{vertical-align: top;}/* */
+
+/*h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}/*Обнуляет заголовки */
+/*--------------------*/
+/* Далее задаем стили согласно ТЕХ. ЗАДАНИЮ */
+* {
+	font-size: 18px;
+}
+
+
+/* Стили отзывчиво-адаптивной верстки===========================*/
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+@media (max-width: 1200px) {
+	.container {
+		max-width: 970px;
+	}
+}
+
+@media (max-width: 992px) {
+	.container {
+		max-width: 750px;
+	}
+}
+
+@media (max-width: 767px) {
+	.container {
+		max-width: none;
+	}
+}
+@media (max-width: 400px) {
+canvas {
+	width: 300px;
+}
+}
+/*end Стили отзывчиво-адаптивной верстки===========================*/
+/*Цвета для сайта 66FFCC__#23B39A-фиолетовый__#EE7272-мягкий красный__#81BB26-зеленый как трава__#0A202F-цвет панели виндовс10__#2B303B-цвет VScode
+Цвета для вкладок FFFFCC-неактивная вкладка__#FFFF99-наведение__#FFFF00-выбраная вкладка
+Цвета текста #EC5E29-цвет html__#2980C1-цвет CSS__#F1C23C-цвет Jawascript*/
+body {	
+	margin: 0;
+	overflow: hidden;
+	background-color: rgb(20,25,45);
+}
+/*Стили шапки сайта*/
+.header {
+	font-size: 20px;
+	position: fixed;
+	background-color: #6666FF;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 40px;
+		z-index: 50;
+}
+	.header__menu {
+		background-color: #6666FF;
+		height: 30px;
+		width: 100%;
+		background-color: #fff;
+	}
+	.header__list {
+		display: flex;
+		position: relative;
+		height: 40px;
+		padding: 0;
+		margin: 0;
+		background-color: #6666FF;
+	}
+	.header__list>li {
+		display: flex;
+		flex-direction: column;
+		height: 30px;
+	}
+	.header__list>li>a {
+		text-decoration: none;
+		color: #FFFF00;
+		height: 30px;
+		padding: 8px;
+	}
+	.header__list>li>a:hover {
+		background-color: #FFFF00;
+		color: #6666FF;
+	}
+	.content {
+		padding: 40px 0 0 0;
+	}
+	/*__end__Стили шапки сайта*/
+
+
+	/*_______Стили для canvas */
+
+
+	/*__end__Стили для canvas */

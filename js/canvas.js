@@ -17,8 +17,8 @@ const arrLessonTemaTabs = [
 	[6, "Урок", "Анимированый график", 5, 0],
 	[7, "Урок", "Спирограф", 3, 1],
 	[8, "Урок", "Игра 'Жизнь'", 2, 0],
-	[9, "Урок", "Тема урока", 2, 0],
-	[10, "Урок", "Тема урока", 2, 0],
+	[9, "Урок", "Тема урока", 3, 0],
+	[10, "Урок", "Кривые", 2, 0],
 ];
 //__end__Основной массив данных
 //Матрица хранящая названия кнопок в каждом уроке [номер урока][название кнопки1, имя кнопки2] и т.д.
@@ -31,7 +31,7 @@ const tabsNameArr = [
 	[arrLessonTemaTabs[5][3], "Очистить", "График синуса", "*Оси X Y 0 в центре", "*Оси X Y 0 внизуслева", "*Разные графики"],
 	[arrLessonTemaTabs[6][3], "Очистить", " Спирограф", "*с настройками"],
 	[arrLessonTemaTabs[7][3], "Очистить", "Играть"],
-	[arrLessonTemaTabs[8][3], "Очистить", " _ "],
+	[arrLessonTemaTabs[8][3], "Очистить", "кривые", "рисование мышкой"],
 	[arrLessonTemaTabs[9][3], "Очистить", " _ "]
 ];
 
@@ -1135,16 +1135,21 @@ functionArr[7][0] =
 
 functionArr[7][1] =
 	function (canvas) {
+		/*
 		exampleExplainArr[7].insertAdjacentHTML(
 			'beforeend',
-			`<p>Количество циклов:  <span id ="count">0</span></p>
+			`<p>Количество циклов:  <span id="count">0</span></p>
 			<button id="start">Старт</button>`
 		);
+		*/
+		exampleExplainArr[7].innerHTML = (`<p>Количество циклов:  <span id="count">0</span></p>
+		<button id="start">Старт</button>`);
 		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
 		ctx.clearRect(0, 0, 600, 600);  //стирает весь canvas (выбран весь canvas)
 		let mas = [];
 		let n = 60, m = 60;//Количество клеток по горизонтали/вертикали
 		let timer;
+
 		//_______Расставляем клетки
 		canvas.onclick = function (event) {
 			let x = event.offsetX;
@@ -1154,7 +1159,6 @@ functionArr[7][1] =
 			x = Math.floor(x / 10);
 			y = Math.floor(y / 10);
 			mas[y][x] = 1;
-			let count = 0;
 			console.log(mas);
 			drawField();
 		}
@@ -1186,6 +1190,7 @@ functionArr[7][1] =
 				}
 			}
 		}
+		let count = 0;
 		//_______Рисование "новой жизни"
 		function startLife() {
 			let mas2 = [];
@@ -1205,10 +1210,13 @@ functionArr[7][1] =
 
 				}
 			}
+
 			mas = mas2;
 			drawField();
 			count++;
-			document.getElementById('count').innerHTML = count;
+			const countSpan = document.getElementById('count');
+			countSpan.innerHTML = count;
+			console.log(count);
 			//<p>Количество циклов:  <span id ="count">0</span></p>
 			timer = setTimeout(startLife, 300)
 		}
@@ -1241,6 +1249,51 @@ functionArr[7][1] =
 //__end__Урок 8. Игра жизнь.
 
 //Урок 9.
+functionArr[8][0] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)
+		jsCodeArr[1].innerHTML = ``
+	}
+
+functionArr[8][1] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)
+		ctx.strokeStyle = "green";
+		ctx.fillStyle = "red";
+		ctx.beginPath();
+		ctx.moveTo(200, 50);
+		ctx.quadraticCurveTo(150, 0, 100, 50);//рисуем кривую(X точки искривления, Y точки искривления, X конечная точка, Y конечная точка)
+		ctx.quadraticCurveTo(50, 150, 200, 180);//рисуем кривую(X точки искривления, Y точки искривления, X конечная точка, Y конечная точка)
+		ctx.quadraticCurveTo(350, 150, 300, 50);//рисуем кривую(X точки искривления, Y точки искривления, X конечная точка, Y конечная точка)
+		ctx.quadraticCurveTo(250, 0, 200, 50);//рисуем кривую(X точки искривления, Y точки искривления, X конечная точка, Y конечная точка)
+		ctx.stroke();
+		ctx.fill();
+		ctx.closePath();
+		jsCodeArr[1].innerHTML = ``
+	}
+functionArr[8][2] =
+	function (canvas) {
+		const ctx = canvas.getContext('2d');  //получаем в переменную контекст канваса('2d'), с этой переменнной и будем работать
+		ctx.strokeStyle = "green";
+		ctx.fillStyle = "red";
+		canvas.onmousemove = function (event) {
+			let x = event.offsetX;
+			let y = event.offsetY;
+			ctx.clearRect(0, 0, 400, 200);  //стирает весь canvas (выбран весь canvas)
+			ctx.beginPath();
+			ctx.moveTo(200, 25);
+			ctx.quadraticCurveTo(x, y, 200, 175);//рисуем кривую(X точки искривления, Y точки искривления, X конечная точка, Y конечная точка)
+			ctx.stroke();
+			ctx.fill();
+			ctx.closePath();
+		}
+		jsCodeArr[1].innerHTML = ``
+		if (arrLessonTemaTabs[8][4] != 2) {
+			return;
+		}
+	}
 //__end__Урок 9.
 
 //Урок 10.
