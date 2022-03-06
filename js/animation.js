@@ -1,19 +1,28 @@
 (() => {
+	const canvas = document.querySelector('canvas');
+	const TWO_PI = 2 * Math.PI;
+	const ctx = canvas.getContext('2d');
+	let w, h, mouse, dots, e;//переменные ширина, высота, состояние ЛКМ, массив с данными всех точек
+	w = canvas.width = innerWidth;
+	h = canvas.height = innerHeight;
+
 	const config = {
+		w: canvas.width = innerWidth,
+		h: canvas.height = innerHeight,
 		dotMinRad: 1,//минимальный радиус частицы
-		dotMaxRad: 20,//максимальный радиус частицы
+		dotMaxRad: Math.round(w / 40),//максимальный радиус частицы
+		bigDotRad: Math.round(w / 30), //диаметр частицы-курсора
+		sphereRad: Math.round(w / 4), //радиус сферы отталкивания если 0 то соберуться в точку
+		//dotMinRad: 1,//минимальный радиус частицы
+		//dotMaxRad: 20,//максимальный радиус частицы
+		//bigDotRad: 35, //диаметр частицы-курсора
+		//sphereRad: 300, //радиус сферы отталкивания если 0 то соберуться в точку
 		massFactor: 0.002,//множитель массы для уменьшения скорости
 		defColor: `rgba(250, 10, 30, 0.9)`,//цвет частиц
 		smooth: 0.95,//сила трения 1 - трения нет
-		sphereRad: 300, //радиус сферы отталкивания если 0 то соберуться в точку
-		bigDotRad: 35, //диаметр частицы-курсора
 		mouseSize: 120,
+
 	}
-	const TWO_PI = 2 * Math.PI;
-	//_______Настройка canvas 
-	const canvas = document.querySelector('canvas');
-	const ctx = canvas.getContext('2d');
-	let w, h, mouse, dots, e;//переменные ширина, высота, состояние ЛКМ, массив с данными всех точек
 	//В классе Dot будем хранить параметры частицы
 	//_______конструктор объекта "Частица"
 	class Dot {
@@ -83,8 +92,7 @@
 	}
 
 	function init() {
-		w = canvas.width = innerWidth;
-		h = canvas.height = innerHeight;
+
 
 		mouse = { x: w / 2, y: h / 2, down: false }
 		dots = [];
@@ -119,17 +127,17 @@
 	function isDown() {
 		mouse.down = !mouse.down; //инвертируем состояние ЛКМ
 	}
-
+	//_______Работает только с событиями мыши
 	//canvas.addEventListener('mousemove', setPos);
 	//window.addEventListener('mousedown', isDown);
 	//window.addEventListener('mouseup', isDown);
+	//__end__Работает только с событиями мыши
 
+	//_______Работает с событиями мыши и на тачскринах
 	canvas.addEventListener('pointermove', setPos);
 	window.addEventListener('pointerdown', isDown);
 	window.addEventListener('pointerup', isDown);
+	//__end__Работает с событиями мыши и на тачскринах
 
-
-
-	//__end__Настройка canvas
 })();
 
