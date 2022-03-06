@@ -131,6 +131,10 @@ body {
 
 
 	/*_______Стили для canvas */
-
+canvas {
+	color: #fff;
+	
+	z-index: 200;
+}
 
 	/*__end__Стили для canvas */
