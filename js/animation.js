@@ -1,9 +1,11 @@
 (() => {
 	const config = {
-		dotMinRad: 6,//минимальный радиус частицы
+		dotMinRad: 5,//минимальный радиус частицы
 		dotMaxRad: 20,//максимальный радиус частицы
 		massFactor: 0.002,//множитель массы для уменьшения скорости
-		defColor: `rgba(250, 10, 30, 0.9)`,
+		defColor: `rgba(250, 10, 30, 0.9)`,//цвет частиц
+		smooth: 0.95,//сила трения
+		sphereRad: 300, //радиус сферы отталкивания если 0 то соберуться в точку
 	}
 	const TWO_PI = 2 * Math.PI;
 	//_______Настройка canvas 
@@ -40,16 +42,16 @@
 				let [a, b] = [dots[i], dots[k]];
 
 				let delta = { x: b.pos.x - a.pos.x, y: b.pos.y - a.pos.y }
-				let dist = Math.sqrt(delta.x * delta.x + delta.y * delta.y);
-				let force = b.mass;
+				let dist = Math.sqrt(delta.x * delta.x + delta.y * delta.y) || 1;//если частицы создавать не двигая курсор то dist = 0, в этом случае dist = 1
+				let force = (dist - config.sphereRad) / dist * b.mass;
 
-				acc.x += delta.x * force * config.massFactor;
-				acc.y += delta.y * force * config.massFactor;
+				acc.x += delta.x * force;
+				acc.y += delta.y * force;
 
 			}
 
-			dots[i].vel.x = dots[i].vel.x + acc.x * dots[i].mass;
-			dots[i].vel.y = dots[i].vel.y + acc.y * dots[i].mass;
+			dots[i].vel.x = dots[i].vel.x * config.smooth + acc.x * dots[i].mass;
+			dots[i].vel.y = dots[i].vel.y * config.smooth + acc.y * dots[i].mass;
 		}
 	}
 	//__end__Обновление положения точек(массива dots)
