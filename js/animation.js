@@ -5,14 +5,14 @@
 	let w, h, mouse, dots, e;//переменные ширина, высота, состояние ЛКМ, массив с данными всех точек
 	w = canvas.width = innerWidth;
 	h = canvas.height = innerHeight;
-
+	//console.log(Math.min(w, h));
 	const config = {
 		w: canvas.width = innerWidth,
 		h: canvas.height = innerHeight,
 		dotMinRad: 1,//минимальный радиус частицы
-		dotMaxRad: Math.round(w / 40),//максимальный радиус частицы
-		bigDotRad: Math.round(w / 30), //диаметр частицы-курсора
-		sphereRad: Math.round(w / 4), //радиус сферы отталкивания если 0 то соберуться в точку
+		dotMaxRad: Math.round(Math.min(w, h) / 40),//максимальный радиус частицы
+		bigDotRad: Math.round(Math.min(w, h) / 30), //диаметр частицы-курсора
+		sphereRad: Math.round(Math.min(w, h) / 4), //радиус сферы отталкивания если 0 то соберуться в точку
 		//dotMinRad: 1,//минимальный радиус частицы
 		//dotMaxRad: 20,//максимальный радиус частицы
 		//bigDotRad: 35, //диаметр частицы-курсора
@@ -21,7 +21,6 @@
 		defColor: `rgba(250, 10, 30, 0.9)`,//цвет частиц
 		smooth: 0.95,//сила трения 1 - трения нет
 		mouseSize: Math.round(w / 10),
-
 	}
 	//В классе Dot будем хранить параметры частицы
 	//_______конструктор объекта "Частица"
@@ -66,14 +65,11 @@
 				}
 				acc.x += delta.x * force;
 				acc.y += delta.y * force;
-
 			}
-
 			dots[i].vel.x = dots[i].vel.x * config.smooth + acc.x * dots[i].mass;
 			dots[i].vel.y = dots[i].vel.y * config.smooth + acc.y * dots[i].mass;
 		}
 		dots.map(e => e == dots[0] ? e.draw(mouse.x, mouse.y) : e.draw());
-
 	}
 	//__end__Обновление положения точек(массива dots)
 
@@ -92,7 +88,6 @@
 	}
 
 	function init() {
-
 
 		mouse = { x: w / 2, y: h / 2, down: false }
 		dots = [];
@@ -115,14 +110,7 @@
 	function setPos({ layerX, layerY }) {
 		//	canvas.addEventListener('pointermove',);
 		[mouse.x, mouse.y] = [layerX, layerY];
-
-
-		//[mouse.x, mouse.y] = [layerX, layerY];
-		//console.log(mouse);
-		//canvas.innerHTML = `${mouse.x}  ${mouse.y}`;
-		//console.log(Dot.pos, Dot.vel, Dot.rad, Dot.color);
 	}
-
 
 	function isDown() {
 		mouse.down = !mouse.down; //инвертируем состояние ЛКМ
@@ -138,6 +126,4 @@
 	window.addEventListener('pointerdown', isDown);
 	window.addEventListener('pointerup', isDown);
 	//__end__Работает с событиями мыши и на тачскринах
-
 })();
-
