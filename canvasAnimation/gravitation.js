@@ -23,9 +23,8 @@
 		mouseSize: Math.round(w / 10),
 	}
 	//В классе Dot будем хранить параметры частицы
-	//_______конструктор объекта "Частица"
 	class Dot {
-		constructor(r) {
+		constructor(r) {//конструктор объекта "Частица"
 			this.pos = { x: mouse.x, y: mouse.y }//координаты отрисовки частицы
 			this.vel = { x: 0, y: 0 }//скорость частицы
 			this.rad = r || random(config.dotMinRad, config.dotMaxRad); //диаметр частицы r - диаметр курсора(если значение пустое то диаметр случайный)
@@ -34,7 +33,7 @@
 			//this.color = `rgba(${Math.round(random(0, 255))}, ${Math.round(random(0, 255))}, ${Math.round(random(0, 255))}, 0.9)`;//цвета каждой частицы случайны
 			//console.log(this.color);
 		}
-
+		//кметоды объекта "Частица"
 		draw(x, y) {
 			this.pos.x = x || this.pos.x + this.vel.x;//если координата x получена то используем её, если нет то прибавляем к координате скорость по x
 			this.pos.y = y || this.pos.y + this.vel.y;//если координата y получена то используем её, если нет то прибавляем к координате скорость по y
