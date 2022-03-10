@@ -65,11 +65,17 @@
 		}
 
 		killDot(id) {//метод удаления точки
-			console.log(` id = ${id}`);
-			let percent = Math.random * Math.exp(this.step / 1);
+			//console.log(` id = ${id}`);
+			console.log(` БЫЛО `);
+			console.log(dotsList);
+			console.log(`this.step = ${this.step}`);
+			let percent = Math.exp(this.step / config.distance);
+			console.log(`percent = ${percent}`);
 			if (percent > 100) {
-				console.log(` id = ${id}`);
-				dotsList.splice(id, 1);
+				//console.log(` id = ${id}`);
+				dotsList.splice(id, 1);// начиная с id удаляет 1 элемент в массиве
+				console.log(` СТАЛО `);
+				console.log(dotsList);
 			}
 		}
 	}
