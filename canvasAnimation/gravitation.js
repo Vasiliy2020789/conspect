@@ -2,9 +2,11 @@
 	const canvas = document.querySelector('canvas');
 	const TWO_PI = 2 * Math.PI;
 	const ctx = canvas.getContext('2d');
+
 	let w, h, mouse, dots, e;//переменные ширина, высота, состояние ЛКМ, массив с данными всех точек
 	w = canvas.width = innerWidth;
 	h = canvas.height = innerHeight;
+
 	//console.log(Math.min(w, h));
 	const config = {
 		w: canvas.width = innerWidth,
