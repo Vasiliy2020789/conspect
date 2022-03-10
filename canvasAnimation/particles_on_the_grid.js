@@ -17,11 +17,11 @@
 	const config = {
 		hue: 0,//оттенок 
 		bgFillColor: ' rgba(50, 50, 50, .01)',//цвет фона
-		dirsCount: 6,//количество направлений
+		dirsCount: 12,//количество направлений
 		stepsToTurn: 20,//шаги до смены направления
 		dotSize: 2,//размер частицы
 		dotsCount: 120,
-		dotVelocity: 1,//множитель скорости
+		dotVelocity: 2,//множитель скорости
 		distance: 150,//множитель времени жизни частицы
 		gradientLen: 5,//длинна градиента
 		grigAngle: 90,// наклон сетки
@@ -53,8 +53,8 @@
 			let color = `hsl(${makeHue}, 100%, 50%)`;
 			//let blur = 4;//фиксированный размер свечения
 			let blur = config.dotSize - Math.sin(xy / 8) * 2;//изменяющийся размер свечения
-			let size = config.dotSize;//фиксированный размер частицы
-			//let size = config.dotSize - Math.sin(xy / 9) * 2 - Math.sin(xy / 2);//изменяющийся размер частицы
+			//let size = config.dotSize;//фиксированный размер частицы
+			let size = config.dotSize - Math.sin(xy / 9) * 2 - Math.sin(xy / 2);//изменяющийся размер частицы
 			let x = this.pos.x - size / 2;
 			let y = this.pos.y - size / 2;
 
@@ -119,7 +119,7 @@
 			i.moveDot();
 			i.redrawDot();
 			i.changeDir();
-			i.killDot(id);
+			//i.killDot(id);
 		})
 	}
 	//__emd__Создаём множество точек
