@@ -5,7 +5,7 @@
 //Свойства и методы форм
 //Коллекция всех форм на странице
 //document.forms
-
+const lesson = document.querySelector('.lesson')
 
 
 console.log("// Пример 1 cвойства и методы форм");
@@ -59,7 +59,7 @@ console.log(mainFormTextarea.value);
 
 console.log("// Пример 3.3 присваиваем значение Textarea mainFormInput.value = :");
 
-document.body.insertAdjacentHTML(
+lesson.insertAdjacentHTML(
 	"beforeend",
 	`	<div class="lesson__text lesson__text_P_3">
 		<h3>Пример 3.3 </h3>
@@ -103,20 +103,24 @@ console.log(mainFormFile.value);
 
 console.log("// Пример 3.5 присвоение значения поля type radio someElement.value и someElement.checked :");
 
-document.body.insertAdjacentHTML(
+lesson.insertAdjacentHTML(
 	"beforeend",
 	`	<div class="lesson__text lesson__text_P3_5">
 		<h3>Пример 3.5 </h3>
-		<h4>Присвоение значения полям radio и check box </h4>
+		<h4>Присвоение значения полям radio, check box file</h4>
 		<div tabindex="-1" class="lesson__text-content lesson__text-content_noDecore">
 			<button class="button button_P3_5_1">Изменить значение radio</button>
 			<button class="button button_P3_5_2">Изменить выбор radio</button>
-		</div>
+			<button class="button button_P3_5_3">Изменить значение и выбрать чекбокс</button>
+			<button class="button button_P3_5_4">поставить / убрать галочку</button>
+			</div>
 	</div>`
 );
 
 const buttonP3_5_1 = document.querySelector('.button_P3_5_1');
 const buttonP3_5_2 = document.querySelector('.button_P3_5_2');
+const buttonP3_5_3 = document.querySelector('.button_P3_5_3');
+const buttonP3_5_4 = document.querySelector('.button_P3_5_4');
 
 buttonP3_5_1.addEventListener("click", function (e) {//при событии "click" выполняем функцию
 	mainFormRadioButtons[0].value = "left";
@@ -124,6 +128,95 @@ buttonP3_5_1.addEventListener("click", function (e) {//при событии "cl
 });
 
 buttonP3_5_2.addEventListener("click", function (e) {//при событии "click" выполняем функцию
-	mainFormRadioButtons[1].checked = true
+	mainFormRadioButtons[1].checked = true;//меняем выбор радиокнопки
+});
+
+
+buttonP3_5_3.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	mainFormCheckBox.value = "save";//присваиваем своё значение чекбоксу
+	mainFormCheckBox.checked = true;//выбираем чекбокс
+});
+
+buttonP3_5_4.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	mainFormCheckBox.checked = !mainFormCheckBox.checked;//инвертируем чекбокс
+});
+
+//назначить значение поля type file неполучится, можно только присвоить пустую строку
+mainFormFile.value = "";
+
+console.log("// Пример 3.6 Работа с select и options:");
+
+const mainFormSelect = mainForm.nameSelect;//получаем элемент options
+console.log(mainFormSelect);
+
+lesson.insertAdjacentHTML(
+	"beforeend",
+	`	<div class="lesson__text lesson__text_P3_6">
+		<h3>Пример 3.6 </h3>
+		<h4>Работа с select и options</h4>
+		<div tabindex="-1" class="lesson__text-content lesson__text-content_noDecore">
+		<p>Элемент select имеет 3 важных свойства:</br>
+		someSelect.options - коллекция из подэлементов options,</br>
+		someSelect.selectedIndex - номер выбранного в данный момент options (0, 1....),</br>
+		someSelect.value - значение выбранного в данный момент options (атрибут указанный в теге html),</br>
+		</p>
+		<p>Подэлементы select - options имеют свойства:</br>
+		someOptions.selected - выбрана ли опция (t или f),</br>
+		someOptions.index - номер опции среди других в списке select (0, 1....),</br>
+		someOptions.text - содержимое options (ато что видит посетитель),</br>
+		</p>
+		</div>
+		<div tabindex="-1" class="lesson__text-content lesson__text-content_noDecore">
+			<button class="button button_P3_6_1">получить все options</button>
+			<button class="button button_P3_6_2">получить индекс выбранного options</button>
+			<button class="button button_P3_6_3">получить значение выбранного options</button>
+			<button class="button button_P3_6_4">получить текст выбранного options</button>
+			</div><button class="button button_P3_6_5">выбрать следующий options</button>
+			<div tabindex="-1" class="lesson__text-content lesson__text-value"> </div>
+	</div>`
+);
+
+const buttonP3_6_1 = document.querySelector('.button_P3_6_1');
+const buttonP3_6_2 = document.querySelector('.button_P3_6_2');
+const buttonP3_6_3 = document.querySelector('.button_P3_6_3');
+const buttonP3_6_4 = document.querySelector('.button_P3_6_4');
+const buttonP3_6_5 = document.querySelector('.button_P3_6_5');
+const getValue = document.querySelector('.lesson__text-value')
+
+buttonP3_6_1.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	console.log(mainFormSelect.options);
+	getValue.insertAdjacentHTML(
+		"beforeend",
+		`Живая коллекция всех options: ${mainFormSelect.options} (смотреть в консоль!!!)</br>`
+	)
+});
+
+buttonP3_6_2.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	console.log(mainFormSelect.selectedIndex);
+	getValue.insertAdjacentHTML(
+		"beforeend",
+		`индекс выбранного options: ${mainFormSelect.selectedIndex}</br>`
+	)
+});
+
+buttonP3_6_3.addEventListener("click", function (e) {//при событии "click" выполняем функцию	
+	console.log(mainFormSelect.value);
+	getValue.insertAdjacentHTML(
+		"beforeend",
+		`значение выбранного options: ${mainFormSelect.value}</br>`
+	)
+});
+
+buttonP3_6_4.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	console.log(mainFormSelect.options[mainFormSelect.selectedIndex].text);
+	getValue.insertAdjacentHTML(
+		"beforeend",
+		`текст выбранного options: ${mainFormSelect.options[mainFormSelect.selectedIndex].text}</br>`
+	)
+});
+
+console.log("Пример 3.6.5 выбрать некий options");
+buttonP3_6_5.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	console.log('выбираем следующий options');
 
 });

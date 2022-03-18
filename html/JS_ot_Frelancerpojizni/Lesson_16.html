@@ -11,58 +11,59 @@
 <body>
 	<h1> <span class="yellow">JavaScript</span> ФОРМЫ. Свойства, события, методы. Практические примеры. </h1>
 	<h2>Урок №16</h2>
-	<div class="lesson lesson-form"></div>
+	<div class="lesson lesson-form">
 
-	<div class="lesson__text lesson__text_P1">
-		<h3>Пример 1 </h3>
-		<h4>Получение формы</h4>
-		<div tabindex="-1" class="lesson__text-content lesson__text-content_noDecore">
-			<form name="main" class="main-form" action="#">
-				<div class="main-form__column">
-					<div class="main-form__item">
-						<label for="input_1" class="main-form__label">Поле ввода</label>
-						<input tabindex="2" value="Привет!" id="input_1" type="text" name="nameInput" class="main-form__input"
-							placeholder="Введите что-то..." autocomplete="off">
-					</div>
-					<div class="main-form__item">
-						<label for="input_2" class="main-form__label">Текстовое поле ввода</label>
-						<textarea tabindex="1" id="input_2" type="text" name="nameTextarea" class="main-form__textarea"
-							placeholder="Введите что-то..." autocomplete="off">Это фрилансер по жизни</textarea>
-					</div>
-				</div>
-				<div class="main-form__column">
-					<div class="main-form__item">
-						<label class="main-form__label">Радиокнопки</label>
-						<div class="main-form__radio">
-							<input checked type="radio" name="nameRadio" class="main-form__radio" id="radio_1">
-							<label for="radio_1" class="main-form__inline-label">Кнопка №1</label>
+		<div class="lesson__text lesson__text_P1">
+			<h3>Пример 1 </h3>
+			<h4>Получение формы</h4>
+			<div tabindex="-1" class="lesson__text-content lesson__text-content_noDecore">
+				<form name="main" class="main-form" action="#">
+					<div class="main-form__column">
+						<div class="main-form__item">
+							<label for="input_1" class="main-form__label">Поле ввода</label>
+							<input tabindex="2" value="Привет!" id="input_1" type="text" name="nameInput"
+								class="main-form__input" placeholder="Введите что-то..." autocomplete="off">
 						</div>
-						<div class="main-form__radio">
-							<input type="radio" name="nameRadio" class="main-form__radio" id="radio_2">
-							<label for="radio_2" class="main-form__inline-label">Кнопка №2</label>
+						<div class="main-form__item">
+							<label for="input_2" class="main-form__label">Текстовое поле ввода</label>
+							<textarea tabindex="1" id="input_2" type="text" name="nameTextarea" class="main-form__textarea"
+								placeholder="Введите что-то..." autocomplete="off">Это фрилансер по жизни</textarea>
 						</div>
 					</div>
-					<div class="main-form__item">
-						<input type="checkbox" name="nameCheck" class="main-form__radio" id="check_1">
-						<label for="check_1" class="main-form__inline-label">Чекбокс</label>
+					<div class="main-form__column">
+						<div class="main-form__item">
+							<label class="main-form__label">Радиокнопки</label>
+							<div class="main-form__radio">
+								<input checked type="radio" name="nameRadio" class="main-form__radio" id="radio_1">
+								<label for="radio_1" class="main-form__inline-label">Кнопка №1</label>
+							</div>
+							<div class="main-form__radio">
+								<input type="radio" name="nameRadio" class="main-form__radio" id="radio_2">
+								<label for="radio_2" class="main-form__inline-label">Кнопка №2</label>
+							</div>
+						</div>
+						<div class="main-form__item">
+							<input type="checkbox" name="nameCheck" class="main-form__radio" id="check_1">
+							<label for="check_1" class="main-form__inline-label">Чекбокс</label>
+						</div>
+						<div class="main-form__item">
+							<label for="file_1" class="main-form__label">Прикрепить файл</label>
+							<input id="file_1" name="nameFile" type="file">
+						</div>
+						<div class="main-form__item">
+							<label for="select_1" class="main-form__label">Список</label>
+							<select id="select_1" name="nameSelect" class="main-form__select">
+								<option value="1" selected>20</option>
+								<option value="2">30</option>
+								<option value="3">50</option>
+							</select>
+						</div>
 					</div>
-					<div class="main-form__item">
-						<label for="file_1" class="main-form__label">Прикрепить файл</label>
-						<input id="file_1" name="nameFile" type="file">
+					<div class="main-form__column">
+						<button type="submit" class="main-form__button">Кнопка отправки формы</button>
 					</div>
-					<div class="main-form__item">
-						<label for="select_1" class="main-form__label">Список</label>
-						<select id="select_1" name="nameSelect" class="main-form__select">
-							<option value="1" selected>20</option>
-							<option value="2">30</option>
-							<option value="3">50</option>
-						</select>
-					</div>
-				</div>
-				<div class="main-form__column">
-					<button type="submit" class="main-form__button">Кнопка отправки формы</button>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 	</div>
 	<script src="../../js/JawaScriptFPJ/Lesson_16.js"></script>

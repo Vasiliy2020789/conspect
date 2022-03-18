@@ -11,7 +11,7 @@ font-size: 18px;
 body{
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	background-color: #9ED0D1;
-	border: 5px solid #000;
+	/*border: 5px solid #000;*/
 }
 body.scroll-lock {
 	overflow: hidden;
@@ -457,3 +457,7 @@ button:hover {
 }
 
 /*__end__Урок№ 16 ФОРМЫ*/
+
+.lesson__text-cvalue {
+	border: solid 5px rgb(248, 248, 89);
+}
