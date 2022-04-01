@@ -171,7 +171,6 @@ lesson.insertAdjacentHTML(
 			<button class="button button_P3_6_2">получить индекс выбранного options</button>
 			<button class="button button_P3_6_3">получить значение выбранного options</button>
 			<button class="button button_P3_6_4">получить текст выбранного options</button>
-			</div><button class="button button_P3_6_5">выбрать следующий options</button>
 			<div tabindex="-1" class="lesson__text-content lesson__text-value"> </div>
 	</div>`
 );
@@ -180,7 +179,6 @@ const buttonP3_6_1 = document.querySelector('.button_P3_6_1');
 const buttonP3_6_2 = document.querySelector('.button_P3_6_2');
 const buttonP3_6_3 = document.querySelector('.button_P3_6_3');
 const buttonP3_6_4 = document.querySelector('.button_P3_6_4');
-const buttonP3_6_5 = document.querySelector('.button_P3_6_5');
 const getValue = document.querySelector('.lesson__text-value')
 
 buttonP3_6_1.addEventListener("click", function (e) {//при событии "click" выполняем функцию
@@ -192,31 +190,98 @@ buttonP3_6_1.addEventListener("click", function (e) {//при событии "cl
 });
 
 buttonP3_6_2.addEventListener("click", function (e) {//при событии "click" выполняем функцию
-	console.log(mainFormSelect.selectedIndex);
+	console.log(mainFormSelect.selectedIndex);//число от 0,1,2...
 	getValue.insertAdjacentHTML(
 		"beforeend",
-		`индекс выбранного options: ${mainFormSelect.selectedIndex}</br>`
+		`индекс выбранного options: ${mainFormSelect.selectedIndex}</br>` //число от 0,1,2...
 	)
 });
 
 buttonP3_6_3.addEventListener("click", function (e) {//при событии "click" выполняем функцию	
-	console.log(mainFormSelect.value);
+	console.log(mainFormSelect.value);//позиция выбранного options 1,2,3...
 	getValue.insertAdjacentHTML(
 		"beforeend",
-		`значение выбранного options: ${mainFormSelect.value}</br>`
+		`значение выбранного options: ${mainFormSelect.value}</br>`//позиция выбранного options 1,2,3...
 	)
 });
 
 buttonP3_6_4.addEventListener("click", function (e) {//при событии "click" выполняем функцию
-	console.log(mainFormSelect.options[mainFormSelect.selectedIndex].text);
+	console.log(mainFormSelect.options[mainFormSelect.selectedIndex].text);//то что видит в options пользователь
 	getValue.insertAdjacentHTML(
 		"beforeend",
-		`текст выбранного options: ${mainFormSelect.options[mainFormSelect.selectedIndex].text}</br>`
+		`текст выбранного options: ${mainFormSelect.options[mainFormSelect.selectedIndex].text}</br>`//то что видит в options пользователь
 	)
 });
 
-console.log("Пример 3.6.5 выбрать некий options");
-buttonP3_6_5.addEventListener("click", function (e) {//при событии "click" выполняем функцию
-	console.log('выбираем следующий options');
+lessonTextP3_6 = document.querySelector(".lesson__text_P3_6");
+lessonTextP3_6.insertAdjacentHTML(
+	"beforeend",
+	`	<h3>Пример 3.6.2 </h3>
+		<h4>Выбрать некий options из JavaScript</h4>
+		<p>Есть 3 способа выбрать options:</br>
+			1. установить true на нужный индекс options</br>
+			2. изменить someSelect.selectedIndex
+			3. изменить someSelect.value
+		</p>
+		<button class="button button_P3_6_5">первый options</button>
+		<button class="button button_P3_6_6">последний options</button>
+		<button class="button button_P3_6_7">следующий options</button>
+		`
+);
+const buttonP3_6_5 = document.querySelector('.button_P3_6_5');
+const buttonP3_6_6 = document.querySelector('.button_P3_6_6');
+const buttonP3_6_7 = document.querySelector('.button_P3_6_7');
 
+console.log("Пример 3.6.5 выбрать некий options");
+
+buttonP3_6_5.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	console.log('выбираем первый options');
+	mainFormSelect.options[0].selected = true;// присваиваем true options с индексом 0
+});
+
+buttonP3_6_6.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	console.log('выбираем последний options');
+	mainFormSelect.value = mainFormSelect.options.length; //значению options присваиваем длинну коллекции элементов options
+});
+let i;
+
+buttonP3_6_7.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	console.log('выбираем следующий options');
+	i = mainFormSelect.selectedIndex;
+	if (i >= 0 && i <= mainFormSelect.options.length - 1) {
+		i++;
+	}
+	else { i = 0; }
+	mainFormSelect.selectedIndex = i;
+});
+
+lessonTextP3_6.insertAdjacentHTML(
+	"beforeend",
+	`	<h3>Пример 3.6.3 </h3>
+		<h4>Добавляем новый options из JavaScript</h4>
+		<p>let newOpion("text", "value", defaultSelected, selected);</br>
+			Параметры:</br>
+			text - текст внутри option</br>
+			value - значение</br>
+			defaultSelected - если true, то ставится HTML - атрибут selected
+			selected - если true, то элемент option будет выбранным
+		</p>
+		<button class="button button_P3_6_8">добавляем новый options</button>
+		<button class="button button_P3_6_9">заменяем существующий 0-й options</button>
+		<button class="button button_P3_6_10">следующий options</button>
+		`
+);
+const buttonP3_6_8 = document.querySelector('.button_P3_6_8');
+const buttonP3_6_9 = document.querySelector('.button_P3_6_9');
+const buttonP3_6_10 = document.querySelector('.button_P3_6_10');
+
+buttonP3_6_8.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	console.log('Добавляем новый options');
+	let newOptions = new Option("100", "4", false, false);
+	mainFormSelect.append(newOptions);
+});
+buttonP3_6_9.addEventListener("click", function (e) {//при событии "click" выполняем функцию
+	console.log('Добавляем новый options');
+	let newOptions = new Option("10", "0", false, false);
+	mainFormSelect.append(newOptions);
 });
