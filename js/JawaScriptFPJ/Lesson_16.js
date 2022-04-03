@@ -248,10 +248,12 @@ let i;
 buttonP3_6_7.addEventListener("click", function (e) {//при событии "click" выполняем функцию
 	console.log('выбираем следующий options');
 	i = mainFormSelect.selectedIndex;
-	if (i >= 0 && i <= mainFormSelect.options.length - 1) {
+	if (i >= 0 && i < mainFormSelect.options.length - 1) {
 		i++;
 	}
 	else { i = 0; }
+	console.log(` индекс выбраного options = ${i}`);
+	console.log(mainFormSelect.options[i]);
 	mainFormSelect.selectedIndex = i;
 });
 
@@ -263,13 +265,12 @@ lessonTextP3_6.insertAdjacentHTML(
 			Параметры:</br>
 			text - текст внутри option</br>
 			value - значение</br>
-			defaultSelected - если true, то ставится HTML - атрибут selected
-			selected - если true, то элемент option будет выбранным
+			defaultSelected - если true, то ставится HTML - атрибут selected</br>
+			selected - если true, то элемент option будет выбранным</br>
 		</p>
 		<button class="button button_P3_6_8">добавляем новый options</button>
-		<button class="button button_P3_6_9">заменяем существующий 0-й options</button>
-		<button class="button button_P3_6_10">следующий options</button>
-		`
+		<button class="button button_P3_6_9">Добавляем новый options и сразу его выбираем</button>
+		`//<button class="button button_P3_6_10">следующий options</button>
 );
 const buttonP3_6_8 = document.querySelector('.button_P3_6_8');
 const buttonP3_6_9 = document.querySelector('.button_P3_6_9');
@@ -282,6 +283,36 @@ buttonP3_6_8.addEventListener("click", function (e) {//при событии "cl
 });
 buttonP3_6_9.addEventListener("click", function (e) {//при событии "click" выполняем функцию
 	console.log('Добавляем новый options');
-	let newOptions = new Option("10", "0", false, false);
+	let newOptions = new Option("150", "0", true, true);
 	mainFormSelect.append(newOptions);
 });
+
+lessonTextP3_6.insertAdjacentHTML(
+	"beforeend",
+	`	<h3>Пример 3.6.4 </h3>
+		<h4>Выбрать несколько options</h4>
+		<p>Select можно переключить в режим мультивыбора,</br>
+		для этого нужно установить атрибут multiple в теге html.
+		</p>
+		`
+);
+
+const mainFormColumnColl = document.querySelectorAll('.main-form__column');
+//console.log(mainFormColumnColl);
+
+mainFormColumnColl[1].insertAdjacentHTML(
+	"beforeend",
+	`<div class="main-form__item">
+	<label for="select_2" class="main-form__label">Список</label>
+	<select multiple id="select_2" name="nameSelect_2" class="main-form__select">
+		<option value="1" selected>200</option>
+		<option value="2" selected>250</option>
+		<option value="3">300</option>
+	</select>
+</div>
+		`
+);
+const mainFormSelect_2 = mainForm.nameSelect_2;
+//получение всех выбраных option 
+let selectedOptions = Array.from(mainFormSelect_2.options).filter(option => option.selected).map(option => option.value);
+console.log(selectedOptions);
