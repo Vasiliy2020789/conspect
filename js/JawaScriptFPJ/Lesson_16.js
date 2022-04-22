@@ -387,3 +387,22 @@ tabindex = "0" ставит элемент в один ряд с элемент�
 tabindex = "-1" позволяет фокусироваться на элементе только програмно.
 Клавиша tab проигнарирует такой элемент, но метод someElement.focus() будет действовать.
 */
+
+//const lesson = document.querySelector('.lesson');
+
+lesson.addEventListener('focus', function (e) {
+	lesson.classList.add('_focus');
+	console.log("Див lesson в фокусе!");
+	console.log(document.activeElement);//получаем текущий элемент с фокусом
+})
+lesson.addEventListener('blur', function (e) {
+	lesson.classList.remove('_focus');
+	console.log("Див lesson потерял фокус!");
+	console.log(document.activeElement);//получаем текущий элемент с фокусом
+})
+
+
+/*
+События focusin и focusщге 
+//Работают также как focus / blur но при этом всплывают
+*/
