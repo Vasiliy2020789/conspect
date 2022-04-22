@@ -303,7 +303,7 @@ const mainFormColumnColl = document.querySelectorAll('.main-form__column');
 mainFormColumnColl[1].insertAdjacentHTML(
 	"beforeend",
 	`<div class="main-form__item">
-	<label for="select_2" class="main-form__label">Список</label>
+	<label for="select_2" class="main-form__label">Список с мультивыбором</label>
 	<select multiple id="select_2" name="nameSelect_2" class="main-form__select">
 		<option value="1" selected>200</option>
 		<option value="2" selected>250</option>
@@ -313,6 +313,77 @@ mainFormColumnColl[1].insertAdjacentHTML(
 		`
 );
 const mainFormSelect_2 = mainForm.nameSelect_2;
-//получение всех выбраных option 
+//получение всех выбраных option в конкретном select
 let selectedOptions = Array.from(mainFormSelect_2.options).filter(option => option.selected).map(option => option.value);
 console.log(selectedOptions);
+//События форм и элементов
+
+//фокусировка focus и blur
+
+/*Элемент получает фокус, когда пользователь кликает по нему или использует клавишу tab.
+Также существует HTML - атрибут autofocus, который который устанавливает фокус на элемент когда страница загружается.
+Есть и другие способы получения фокуса.
+
+Фокусировка обычно означает:
+"приготовится к вводу данных на этом элементе",
+это хороший момент чтобы инициализировать или загрузить что-нибудь.
+
+Момент потери фокуса (blur) - это момент,
+когда пользователь кликает кудато еще или нажимает tab,
+чтобы переключиться на следующее поле формы.
+Есть другие причины потери фокуса.
+
+В момент потери фокуса мы можемвыполнить проверку данных или даже отправить данные на сервер и так далее.*/
+
+//Добавим новое поле ввода в форму и поработаем с ним
+mainFormColumnColl[0].insertAdjacentHTML(
+	"beforeend",
+	`<div class="main-form__item">
+	<label for="input_1" class="main-form__label">Поле ввода #2</label>
+	<input tabindex="2" value="" id="input_1" type="text" name="nameInput_2"
+		class="main-form__input" placeholder="Введите что-то..." autocomplete="off">
+</div>`
+);
+//получаем в переменную добавленное поле
+const mainFormInput_2 = mainForm.nameInput_2;
+const mainFormInput_2Placeholder = mainFormInput_2.placeholder;
+
+mainFormInput_2.addEventListener("focus", function (e) {
+	mainFormInput_2.placeholder = "";//убираем placeholder
+});
+
+mainFormInput_2.addEventListener("blur", function (e) {
+	mainFormInput_2.placeholder = mainFormInput_2Placeholder;//возвращаем placeholder
+});
+//действия могут быть самыми разными: валидация поля, отправка поля и так далее.
+
+
+//методы someElem.focus() someElem.blur() устанавливают или снимают фокус
+
+mainFormInput_2.focus();//добавляе фокус элементу
+
+//убирает фокус через 3 секунды
+setTimeout(() => {
+	mainFormInput_2.blur();
+}, 3000);
+
+/*Фокусировка на любом элементе с помощью tabindex
+
+Многие элементы по умолчанию не поддерживают фокусировку.
+Какие именно - зависит от браузера, но одно всегда верно:
+поддержка focus / blur гарантирована для элементов с которыми посетитель может взаимодействовать:
+<button> <input> <select> <a> и т.д.
+С другой стороны, элементы форматирования <div>, <span> - по умолчанию не могут получить фокус.
+
+Метод someElement.focus() не срабатывает на них и события focus / blur никогда не срабатывают.
+
+Это можно изменить HTML - атрибутом tabindex/
+*/
+
+/*
+tabindex = "0" ставит элемент в один ряд с элементами без tabindex. То есть, при переключении такие элементы будут после элементов с tabindex >= 1.
+Обычно используется , чтобы включить фокусировку на элементе, но не менять порядок переключения. Чтобы элемент мог участвовать в форме на равне с обычным <input>.
+
+tabindex = "-1" позволяет фокусироваться на элементе только програмно.
+Клавиша tab проигнарирует такой элемент, но метод someElement.focus() будет действовать.
+*/
